@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model>
+  <entity name="model" root="true">
+    <entity-ref name="ticket" type="list" names="tickets" />
+  </entity>
+  <entity name="ticket">
+    <attribute name="id" value-type="String" />
+    <attribute name="state" value-type="String" />
+    <element name="subject" value-type="String" />
+    <element name="content" value-type="String" />
+    <element name="creation-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <element name="last-modified-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <element name="created-by" value-type="String" />
+    <element name="last-modified-by" value-type="String" />
+    <element name="assigned-to" value-type="String" />
+    <entity-ref name="assignment" type="list" names="assignments" xml-indent="true" />
+    <entity-ref name="comment" type="list" names="comments" xml-indent="true" />
+  </entity>
+  <entity name="assignment">
+    <attribute name="by" value-type="String" />
+    <attribute name="to" value-type="String" />
+    <attribute name="at" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+  </entity>
+  <entity name="comment">
+    <attribute name="by" value-type="String" />
+    <attribute name="at" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <element name="text" value-type="String" text="true" />
+  </entity>
+</model>
+

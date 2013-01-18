@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model>
+   <ticket id="email-message-id" state="ACCEPTED">
+      <subject>...</subject>
+      <content>...</content>
+      <creation-date>2013-01-18 18:14:00</creation-date>
+      <last-modified-date>2013-01-18 18:16:00</last-modified-date>
+      <created-by>cat</created-by>
+      <last-modified-by>qimin.wu</last-modified-by>
+      <assigned-to>yong.you</assigned-to>
+      <assignments>
+         <assignment by="yong.you" to="qimin.wu" at="2013-01-18 18:14:00"/>
+         <assignment/>
+      </assignments>
+      <comments>
+         <comment by="yong.you" at="2013-01-18 18:14:00">comment 1</comment>
+         <comment by="qimin.wu" at="2013-01-18 18:16:00">comment 2</comment>
+      </comments>
+   </ticket>
+   <ticket>
+   </ticket>
+</model>
