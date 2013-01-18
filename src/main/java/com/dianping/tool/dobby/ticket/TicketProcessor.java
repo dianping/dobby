@@ -29,5 +29,5 @@ public interface TicketProcessor {
 	 * @param args
 	 *           arguments of command. optional.
 	 */
-	public void processTicket(String id, String by, String comment, String cmd, String[] args) throws Exception;
+	public void processTicket(String id, String by, String comment, String cmd, String... args) throws Exception;
 }

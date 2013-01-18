@@ -51,7 +51,7 @@ public class DefaultTicketProcessor extends ContainerHolder implements TicketPro
 	}
 
 	@Override
-	public void processTicket(String id, String by, String comment, String cmd, String[] args) throws Exception {
+	public void processTicket(String id, String by, String comment, String cmd, String... args) throws Exception {
 		Ticket ticket = m_manager.getTicket(id);
 		Date now = new Date();
 

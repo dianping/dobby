@@ -53,6 +53,10 @@ public enum TicketState {
 	}
 
 	public void moveTo(DefaultTicketContext ctx, TicketState nextState) throws Exception {
+		if (nextState == null) {
+			nextState = this;
+		}
+
 		check(nextState);
 
 		TicketListener listener = ctx.getListener();
