@@ -3,7 +3,7 @@ package com.dianping.tool.dobby.ticket;
 public enum TicketState {
 	CREATED(1, 2, 9),
 
-	ASSIGNED(2, 2, 3, 9),
+	ASSIGNED(2, 3, 4, 9),
 
 	ACCEPTED(3, 2, 4, 9),
 
@@ -13,7 +13,7 @@ public enum TicketState {
 
 	public static TicketState getByName(String name, TicketState defaultState) {
 		for (TicketState state : values()) {
-			if (state.name() == name) {
+			if (state.name().equals(name)) {
 				return state;
 			}
 		}

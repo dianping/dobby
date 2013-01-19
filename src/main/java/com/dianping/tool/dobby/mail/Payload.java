@@ -55,35 +55,41 @@ public class Payload {
 			parseComment(res, lines);
 		}
 
-		String escapedSubject = subject.substring(subject.lastIndexOf("Re: ") + "Re: ".length());
-		res.setSubject(escapedSubject);
+		int pos = subject.lastIndexOf("Re: ");
+
+		if (pos >= 0) {
+			String escapedSubject = subject.substring(pos + "Re: ".length());
+			res.setSubject(escapedSubject);
+		} else {
+			res.setSubject(subject);
+		}
 
 		return res;
 	}
 
 	private static void parseComment(Payload res, List<String> lines) {
-	   int i = 0;
-	   for (i = 0; i < lines.size(); i++) {
-	   	if (lines.get(i) == null) {
-	   		continue;
-	   	}
+		int i = 0;
+		for (i = 0; i < lines.size(); i++) {
+			if (lines.get(i) == null) {
+				continue;
+			}
 
-	   	String trimmed = lines.get(i).trim();
-	   	if (!trimmed.startsWith("@") && (trimmed.endsWith(":") || trimmed.endsWith("£º"))) {
-	   		if (lines.get(i + 1) != null && lines.get(i + 1).startsWith(">")) {
-	   			break;
-	   		}
-	   	}
-	   }
+			String trimmed = lines.get(i).trim();
+			if (!trimmed.startsWith("@") && (trimmed.endsWith(":") || trimmed.endsWith("£º"))) {
+				if (lines.get(i + 1) != null && lines.get(i + 1).startsWith(">")) {
+					break;
+				}
+			}
+		}
 
-	   StringBuilder sb = new StringBuilder();
-	   for (int j = 0; j < i; j++) {
-	   	if (lines.get(j) != null && !lines.get(j).trim().startsWith("@")) {
-	   		sb.append(lines.get(j)).append("\n");
-	   	}
-	   }
-	   res.setComment(sb.toString());
-   }
+		StringBuilder sb = new StringBuilder();
+		for (int j = 0; j < i; j++) {
+			if (lines.get(j) != null && !lines.get(j).trim().startsWith("@")) {
+				sb.append(lines.get(j)).append("\n");
+			}
+		}
+		res.setComment(sb.toString());
+	}
 
 	private static void parseCommand(Message msg, Payload res, List<String> lines) throws Exception, MessagingException {
 		for (String line : lines) {

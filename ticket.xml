@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <model>
-   <ticket id="TKT001" state="ASSIGNED" assigned-to="qimin.wu" creation-date="2013-01-18 18:14:00" last-modified-date="2013-01-18 18:16:00" created-by="cat" last-modified-by="yong.you">
+   <ticket id="TKT001" state="ASSIGNED" assigned-to="qimin.wu" creation-date="2013-01-18 18:14:00" last-modified-date="2013-01-19 13:27:50" created-by="cat" last-modified-by="qimin.wu@dianping.com">
       <subject>Alert 1</subject>
       <content>Content here</content>
       <actions>
          <action by="yong.you" at="2013-01-18 18:14:00" assigned-to="qimin.wu" state="ASSIGNED">
             <comment>please help check</comment>
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:27:50">
+            <comment>This is the description.
+
+
+-- 
+Thanks,
+Frankie
+&lt;div dir="ltr"&gt;This is the description.&lt;div&gt;&lt;br clear="all"&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+</comment>
          </action>
       </actions>
    </ticket>
@@ -27,73 +39,242 @@
          </action>
       </actions>
    </ticket>
-   <ticket id=" ShopWeb " state="CREATED" creation-date="2013-01-19 12:43:52" last-modified-date="2013-01-19 12:43:52" created-by="qimin.wu@dianping.com" last-modified-by="qimin.wu@dianping.com">
-      <subject>: CAT异常过多告警[ ShopWeb ][SMS]</subject>
-      <content>异常超过阀值告警
- 项目名称 ShopWeb  告警时间 2013-01-19 01:34:11  告警规则 [ Interval:3; Min:250;
-Max:2500000]  错误个数 384  CAT链接
-link&lt;http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;date=2013011901&gt;
+   <ticket id="ALERT002" state="ACCEPTED" assigned-to="tong.song@dianping.com" creation-date="2013-01-19 13:01:01" last-modified-date="2013-01-19 13:36:19" created-by="qimin.wu@dianping.com" last-modified-by="tong.song@dianping.com">
+      <subject>[ALERT002] CAT异常过多告警[ ShopWeb ][SMS]</subject>
+      <content>I will take a look.
+异常超过阀值告警项目名称ShopWeb告警时间2013-01-19 01:34:11告警规则[ Interval:3; Min:250;
+Max:2500000]错误个数384CAT链接link&lt;http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;date=2013011901&gt;
 -- 
 Thanks,
 Frankie
-&lt;div dir="ltr"&gt;异常超过阀值告警&lt;div&gt;&lt;br&gt;&lt;div class="gmail_quote"&gt;
-&lt;table rules="all" border="1"&gt;
-	&lt;tbody&gt;&lt;tr&gt;
-		&lt;td&gt;项目名称&lt;/td&gt;
-		&lt;td&gt;ShopWeb&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;告警时间&lt;/td&gt;
-		&lt;td&gt;2013-01-19 01:34:11&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;告警规则&lt;/td&gt;
-		&lt;td&gt;[ Interval:3; Min:250; Max:2500000]&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;错误个数&lt;/td&gt;
-		&lt;td&gt;384&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;CAT链接&lt;/td&gt;
-		&lt;td&gt; &lt;a href="http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;amp;date=2013011901" target="_blank"&gt;link&lt;/a&gt;&lt;/td&gt;
-	&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;img style="border:0" alt="" src="http://mailt.dianping.com/NewTrack.aspx?t=15&amp;amp;e=qimin.wu%40dianping.com" width="1" height="1"&gt;
-&lt;/div&gt;&lt;br&gt;&lt;br clear="all"&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div dir="ltr"&gt;&lt;div class="gmail_extra"&gt;&lt;span style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;@吴其敏&lt;/span&gt;&lt;br style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;&lt;div style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;
+&lt;br&gt;&lt;/div&gt;&lt;div style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;I will take a look.&lt;/div&gt;&lt;div class="gmail_quote"&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;h4 style="color:rgb(80,0,80);font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;
+异常超过阀值告警&lt;/h4&gt;&lt;table rules="all" border="1" style="color:rgb(80,0,80);font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;项目名称&lt;/td&gt;&lt;td&gt;ShopWeb&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;告警时间&lt;/td&gt;&lt;td&gt;2013-01-19 01:34:11&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;告警规则&lt;/td&gt;&lt;td&gt;[ Interval:3; Min:250; Max:2500000]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;错误个数&lt;/td&gt;&lt;td&gt;384&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CAT链接&lt;/td&gt;&lt;td&gt;&lt;a href="http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;amp;date=2013011901" target="_blank"&gt;link&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;img alt="" src="http://mailt.dianping.com/NewTrack.aspx?t=15&amp;amp;e=qimin.wu%40dianping.com" width="1" height="1" style="color: rgb(80, 0, 80); font-family: arial, sans-serif; font-size: 12.727272033691406px; border: 0px;"&gt;&lt;br&gt;
+&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
 &lt;div&gt;Frankie&lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;
 </content>
-   </ticket>
-   <ticket id="ALERT001" state="CREATED" creation-date="2013-01-19 12:48:56" last-modified-date="2013-01-19 12:48:56" created-by="qimin.wu@dianping.com" last-modified-by="qimin.wu@dianping.com">
-      <subject>ERT001] CAT异常过多告警[ ShopWeb ][SMS]</subject>
-      <content>异常超过阀值告警  项目名称 ShopWeb  告警时间 2013-01-19 01:34:11  告警规则 [ Interval:3;
-Min:250; Max:2500000]  错误个数 384  CAT链接
-link&lt;http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;date=2013011901&gt;
-&lt;div dir="ltr"&gt;&lt;br&gt;&lt;div class="gmail_quote"&gt;&lt;h4&gt;异常超过阀值告警&lt;/h4&gt;
-&lt;table rules="all" border="1"&gt;
-	&lt;tbody&gt;&lt;tr&gt;
-		&lt;td&gt;项目名称&lt;/td&gt;
-		&lt;td&gt;ShopWeb&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;告警时间&lt;/td&gt;
-		&lt;td&gt;2013-01-19 01:34:11&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;告警规则&lt;/td&gt;
-		&lt;td&gt;[ Interval:3; Min:250; Max:2500000]&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;错误个数&lt;/td&gt;
-		&lt;td&gt;384&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;CAT链接&lt;/td&gt;
-		&lt;td&gt; &lt;a href="http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;amp;date=2013011901" target="_blank"&gt;link&lt;/a&gt;&lt;/td&gt;
-	&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;img style="border:0" alt="" src="http://mailt.dianping.com/NewTrack.aspx?t=15&amp;amp;e=qimin.wu%40dianping.com" width="1" height="1"&gt;
-&lt;/div&gt;&lt;br&gt;
+      <actions>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:01:01" assigned-to="qimin.wu@dianping.com" state="ASSIGNED">
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:02:32" assigned-to="yong.you@dianping.com" state="ASSIGNED">
+            <comment>请帮忙先看一下！
+2013/1/19 吴其敏 &lt;qimin.wu@dianping.com&gt;
+&gt; @吴其敏
+&gt;
+&gt; I will take a look.
+&gt;
+&gt; 异常超过阀值告警项目名称ShopWeb告警时间2013-01-19 01:34:11 告警规则[ Interval:3; Min:250;
+&gt; Max:2500000]错误个数384CAT链接link&lt;http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;date=2013011901&gt;
+&gt;
+&gt; --
+&gt; Thanks,
+&gt; Frankie
+&gt;
+-- 
+Thanks,
+Frankie
+&lt;div dir="ltr"&gt;@尤勇&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;请帮忙先看一下！&lt;/div&gt;&lt;/div&gt;&lt;div class="gmail_extra"&gt;&lt;br&gt;&lt;br&gt;&lt;div class="gmail_quote"&gt;2013/1/19 吴其敏 &lt;span dir="ltr"&gt;&amp;lt;&lt;a href="mailto:qimin.wu@dianping.com" target="_blank"&gt;qimin.wu@dianping.com&lt;/a&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;
+&lt;blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"&gt;&lt;div dir="ltr"&gt;&lt;div class="gmail_extra"&gt;&lt;div class="im"&gt;&lt;span style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;@吴其敏&lt;/span&gt;&lt;br style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;
+&lt;div style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;
+&lt;br&gt;&lt;/div&gt;&lt;div style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;I will take a look.&lt;/div&gt;&lt;div class="gmail_quote"&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="im"&gt;&lt;div&gt;&lt;h4 style="color:rgb(80,0,80);font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;
+
+异常超过阀值告警&lt;/h4&gt;&lt;table rules="all" border="1" style="color:rgb(80,0,80);font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;项目名称&lt;/td&gt;&lt;td&gt;ShopWeb&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;告警时间&lt;/td&gt;&lt;td&gt;2013-01-19 01:34:11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;告警规则&lt;/td&gt;&lt;td&gt;[ Interval:3; Min:250; Max:2500000]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;错误个数&lt;/td&gt;&lt;td&gt;384&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CAT链接&lt;/td&gt;&lt;td&gt;&lt;a href="http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;amp;date=2013011901" target="_blank"&gt;link&lt;/a&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;img alt="" src="http://mailt.dianping.com/NewTrack.aspx?t=15&amp;amp;e=qimin.wu%40dianping.com" width="1" height="1" style="color:rgb(80,0,80);font-family:arial,sans-serif;font-size:12.727272033691406px;border:0px"&gt;&lt;br&gt;
+
+&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;br clear="all"&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
 &lt;/div&gt;
+</comment>
+         </action>
+         <action by="yong.you@dianping.com" at="2013-01-19 13:07:41" state="ACCEPTED">
+            <comment>我会处理下
+</comment>
+         </action>
+         <action by="yong.you@dianping.com" at="2013-01-19 13:08:54" assigned-to="qimin.wu@dianping.com" state="ASSIGNED">
+            <comment>我处理好了，剩下的错误你来
+</comment>
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:09:15" state="ACCEPTED">
+            <comment>sure
+2013/1/19 尤勇 &lt;yong.you@dianping.com&gt;
+&gt; @吴其敏
+&gt; 我处理好了，剩下的错误你来
+&gt;
+&gt;
+</comment>
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:11:03">
+            <comment>哈哈，搞定了，谢谢大家！
+2013/1/19 吴其敏 &lt;qimin.wu@dianping.com&gt;
+&gt; @@accepted
+&gt;
+&gt; sure
+&gt;
+&gt;
+&gt; 2013/1/19 尤勇 &lt;yong.you@dianping.com&gt;
+&gt;
+&gt;&gt; @吴其敏
+&gt;&gt; 我处理好了，剩下的错误你来
+&gt;&gt;
+&gt;&gt;
+</comment>
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:23:05">
+            <comment>哈哈，搞定了，谢谢大家
+2013/1/19 吴其敏 &lt;qimin.wu@dianping.com&gt;
+&gt; @@resolved
+&gt;
+&gt; 哈哈，搞定了，谢谢大家
+&gt;
+&gt;
+&gt; 2013/1/19 吴其敏 &lt;qimin.wu@dianping.com&gt;
+&gt;
+&gt;&gt; @@resolved
+&gt;&gt;
+&gt;&gt; 哈哈，搞定了，谢谢大家！
+&gt;&gt;
+&gt;&gt;
+&gt;&gt; 2013/1/19 吴其敏 &lt;qimin.wu@dianping.com&gt;
+&gt;&gt;
+&gt;&gt;&gt; @@accepted
+&gt;&gt;&gt;
+&gt;&gt;&gt; sure
+&gt;&gt;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; 2013/1/19 尤勇 &lt;yong.you@dianping.com&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt;&gt; @吴其敏
+&gt;&gt;&gt;&gt; 我处理好了，剩下的错误你来
+&gt;&gt;&gt;&gt;
+&gt;&gt;&gt;&gt;
+</comment>
+         </action>
+         <action by="yong.you@dianping.com" at="2013-01-19 13:33:51" assigned-to="tong.song@dianping.com" state="ASSIGNED">
+            <comment>通少，你来处理
+</comment>
+         </action>
+         <action by="tong.song@dianping.com" at="2013-01-19 13:34:48" state="ACCEPTED">
+            <comment>让我瞅瞅~
+</comment>
+         </action>
+         <action by="tong.song@dianping.com" at="2013-01-19 13:36:19">
+            <comment>这个问题不是早就出现过吗？
+</comment>
+         </action>
+      </actions>
+   </ticket>
+   <ticket id="ISSUE001" state="IGNORED" assigned-to="tong.song@dianping.com" creation-date="2013-01-19 13:31:22" last-modified-date="2013-01-19 13:45:55" created-by="qimin.wu@dianping.com" last-modified-by="qimin.wu@dianping.com">
+      <subject>[ISSUE001] There is a major issue on production!!!!!</subject>
+      <content>This is the description.
+
+
+
+On Sat, Jan 19, 2013 at 1:27 PM, 吴其敏 &lt;qimin.wu@dianping.com&gt; wrote:
+
+&gt; This is the description.
+&gt;
+&gt;
+&gt; --
+&gt; Thanks,
+&gt; Frankie
+&gt;
+
+
+
+-- 
+Thanks,
+Frankie
+&lt;div dir="ltr"&gt;This is the description.&lt;div&gt;&lt;span class=""&gt;&lt;font color="#888888"&gt;&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;div class="gmail_extra"&gt;&lt;br&gt;&lt;br&gt;&lt;div class="gmail_quote"&gt;On Sat, Jan 19, 2013 at 1:27 PM, 吴其敏 &lt;span dir="ltr"&gt;&amp;lt;&lt;a href="mailto:qimin.wu@dianping.com" target="_blank"&gt;qimin.wu@dianping.com&lt;/a&gt;&amp;gt;&lt;/span&gt; wrote:&lt;br&gt;
+&lt;blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-color:rgb(204,204,204);border-left-style:solid;padding-left:1ex"&gt;&lt;div dir="ltr"&gt;This is the description.&lt;span class=""&gt;&lt;font color="#888888"&gt;&lt;div&gt;
+&lt;br clear="all"&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
+&lt;/div&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;br clear="all"&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
+      <actions>
+         <action by="jinhua.liang@dianping.com" at="2013-01-19 13:32:54" assigned-to="yong.you@dianping.com" state="ASSIGNED">
+            <comment>看一下
+
+发自我的 iPhone
+
+在 2013-1-19，下午1:31，吴其敏 &lt;qimin.wu@dianping.com&gt; 写道：
+
+&gt; This is the description.
+&gt; 
+&gt; 
+&gt; 
+</comment>
+         </action>
+         <action by="yong.you@dianping.com" at="2013-01-19 13:37:27" assigned-to="tong.song@dianping.com" state="ASSIGNED">
+            <comment>通少。。。
+2013/1/19 梁锦华 &lt;jinhua.liang@dianping.com&gt;
+&gt; @尤勇
+&gt; 看一下
+&gt;
+&gt; 发自我的 iPhone
+&gt;
+</comment>
+         </action>
+         <action by="tong.song@dianping.com" at="2013-01-19 13:37:47" state="ACCEPTED">
+            <comment>让我看看怎么回事儿，喵的~
+</comment>
+         </action>
+         <action by="tong.song@dianping.com" at="2013-01-19 13:39:01">
+            <comment>我以前遇到过这种问题，是由于hackthon引起的~
+</comment>
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:40:14">
+            <comment>那就先放一放吧~
+2013/1/19 宋通 &lt;tong.song@dianping.com&gt;
+&gt; 我以前遇到过这种问题，是由于hackthon引起的~
+&gt;
+&gt;
+</comment>
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:42:38">
+            <comment>那就先放一放吧~
+2013/1/19 吴其敏 &lt;qimin.wu@dianping.com&gt;
+&gt; @@ignore
+&gt;
+&gt; 那就先放一放吧~
+&gt;
+&gt;
+&gt; 2013/1/19 宋通 &lt;tong.song@dianping.com&gt;
+&gt;
+&gt;&gt; 我以前遇到过这种问题，是由于hackthon引起的~
+&gt;&gt;
+&gt;&gt;
+</comment>
+         </action>
+         <action by="qimin.wu@dianping.com" at="2013-01-19 13:45:55" state="IGNORED">
+            <comment>那就先放一放吧~
+2013/1/19 吴其敏 &lt;qimin.wu@dianping.com&gt;
+&gt; @@ignore
+&gt;
+&gt; 那就先放一放吧~
+&gt;
+-- 
+Thanks,
+Frankie
+&lt;div dir="ltr"&gt;&lt;div class="gmail_extra"&gt;&lt;div dir="ltr" style="font-family:arial,sans-serif;font-size:13.63636302947998px"&gt;@@ignored&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;那就先放一放吧~&lt;/div&gt;&lt;/div&gt;&lt;div class="" style="font-family:arial,sans-serif;font-size:12.727272033691406px"&gt;
+&lt;/div&gt;&lt;div class="gmail_quote"&gt;2013/1/19 吴其敏 &lt;span dir="ltr"&gt;&amp;lt;&lt;a href="mailto:qimin.wu@dianping.com" target="_blank"&gt;qimin.wu@dianping.com&lt;/a&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-color:rgb(204,204,204);border-left-style:solid;padding-left:1ex"&gt;
+&lt;div dir="ltr" style="font-family:arial,sans-serif;font-size:13.63636302947998px"&gt;@@ignore&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;那就先放一放吧~&lt;/div&gt;&lt;/div&gt;&lt;div class=""&gt;&lt;div id=":6ia" class="" tabindex="0"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;br clear="all"&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+</comment>
+         </action>
+      </actions>
    </ticket>
 </model>

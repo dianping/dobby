@@ -58,12 +58,17 @@ public class DefaultTicketProcessor extends ContainerHolder implements TicketPro
 			throw new RuntimeException(String.format("Ticket(%s) is not found!", id));
 		} else {
 			TicketState state = TicketState.getByName(ticket.getState(), null);
+
+			if (state == null) {
+				throw new RuntimeException(String.format("Invalid Ticket state(%s)!", ticket.getState()));
+			}
+
 			Action action = new Action().setAt(now).setBy(by).setComment(comment);
 			TicketState nextState = null;
 
 			ticket.addAction(action);
 
-			if ("assignTo".equals(cmd)) {
+			if ("assignTo".equalsIgnoreCase(cmd)) {
 				String assignedTo = args.length > 0 ? args[0] : null;
 
 				if (assignedTo == null) {
@@ -73,11 +78,11 @@ public class DefaultTicketProcessor extends ContainerHolder implements TicketPro
 				nextState = TicketState.ASSIGNED;
 				ticket.setAssignedTo(assignedTo);
 				action.setAssignedTo(assignedTo);
-			} else if ("accepted".equals(cmd)) {
+			} else if ("accepted".equalsIgnoreCase(cmd)) {
 				nextState = TicketState.ACCEPTED;
-			} else if ("done".equals(cmd)) {
+			} else if ("done".equalsIgnoreCase(cmd)) {
 				nextState = TicketState.RESOLVED;
-			} else if ("ignored".equals(cmd)) {
+			} else if ("ignored".equalsIgnoreCase(cmd)) {
 				nextState = TicketState.IGNORED;
 			}
 

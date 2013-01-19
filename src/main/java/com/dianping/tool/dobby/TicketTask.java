@@ -34,12 +34,20 @@ public class TicketTask implements Task, Initializable {
 	private void handle(Payload payload) throws Exception {
 		String id = payload.getId();
 		Ticket ticket = m_manager.getTicket(id);
+		String subject = payload.getSubject();
+		String content = payload.getComment();
+		String by = payload.getFrom();
+		String cmd = payload.getCommand();
+		String[] args = payload.getCommandParams();
 
 		if (ticket == null) {
-			m_processor.createTicket(id, payload.getSubject(), payload.getComment(), payload.getFrom());
+			m_processor.createTicket(id, subject, content, by);
+
+			if (cmd != null) {
+				m_processor.processTicket(id, by, null, cmd, args);
+			}
 		} else {
-			m_processor.processTicket(id, payload.getFrom(), payload.getComment(), payload.getCommand(),
-			      payload.getCommandParams());
+			m_processor.processTicket(id, by, content, cmd, args);
 		}
 	}
 
