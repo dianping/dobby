@@ -6,25 +6,21 @@
   <entity name="ticket">
     <attribute name="id" value-type="String" />
     <attribute name="state" value-type="String" />
+    <attribute name="assigned-to" value-type="String" />
+    <attribute name="creation-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <attribute name="last-modified-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <attribute name="created-by" value-type="String" />
+    <attribute name="last-modified-by" value-type="String" />
     <element name="subject" value-type="String" />
     <element name="content" value-type="String" />
-    <element name="creation-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
-    <element name="last-modified-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
-    <element name="created-by" value-type="String" />
-    <element name="last-modified-by" value-type="String" />
-    <element name="assigned-to" value-type="String" />
-    <entity-ref name="assignment" type="list" names="assignments" xml-indent="true" />
-    <entity-ref name="comment" type="list" names="comments" xml-indent="true" />
+    <entity-ref name="action" type="list" names="actions" xml-indent="true" />
   </entity>
-  <entity name="assignment">
-    <attribute name="by" value-type="String" />
-    <attribute name="to" value-type="String" />
-    <attribute name="at" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
-  </entity>
-  <entity name="comment">
+  <entity name="action">
     <attribute name="by" value-type="String" />
     <attribute name="at" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
-    <element name="text" value-type="String" text="true" />
+    <attribute name="assigned-to" value-type="String" />
+    <attribute name="state" value-type="String" />
+    <element name="comment" value-type="String" />
   </entity>
 </model>
 

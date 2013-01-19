@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model model-package="com.dianping.tool.dobby.model"
-	enable-sax-parser="true">
-	<entity name="model" root="true">
-		<entity-ref name="ticket" type="map" names="tickets" />
-	</entity>
-	<entity name="ticket">
-		<attribute name="id" value-type="String" key="true" />
-		<attribute name="state" value-type="String" />
-	</entity>
+<model model-package="com.dianping.tool.dobby.model" enable-sax-parser="true">
+  <entity name="model" root="true">
+    <entity-ref name="ticket" type="map" names="tickets" />
+  </entity>
+  <entity name="ticket">
+    <attribute name="id" value-type="String" key="true" />
+    <entity-ref name="action" type="list" names="actions" xml-indent="true" />
+  </entity>
+  <entity name="action">
+    <attribute name="by" value-type="String" />
+    <attribute name="at" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <attribute name="assigned-to" value-type="String" />
+    <attribute name="state" value-type="String" />
+    <element name="comment" value-type="String" />
+  </entity>
 </model>
 

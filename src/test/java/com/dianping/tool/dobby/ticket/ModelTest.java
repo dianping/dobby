@@ -17,6 +17,6 @@ public class ModelTest {
 		String xml = Files.forIO().readFrom(in, "utf-8");
 		Model model = DefaultSaxParser.parse(xml);
 
-		Assert.assertEquals(xml, model.toString());
+		Assert.assertEquals(xml.replaceAll("\r", ""), model.toString().replaceAll("\r", ""));
 	}
 }

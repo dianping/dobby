@@ -59,6 +59,9 @@
 				<requirement>
 					<role>com.dianping.tool.dobby.conosle.page.home.JspViewer</role>
 				</requirement>
+				<requirement>
+					<role>com.dianping.tool.dobby.ticket.TicketManager</role>
+				</requirement>
 			</requirements>
 		</component>
 		<component>

@@ -2,6 +2,8 @@ package com.dianping.tool.dobby.ticket;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
@@ -46,5 +48,10 @@ public class DefaultTicketManager implements TicketManager, Initializable {
 	@Override
 	public void addTicket(Ticket ticket) {
 		m_model.addTicket(ticket);
+	}
+
+	@Override
+	public List<Ticket> getTickets() {
+		return new ArrayList<Ticket>(m_model.getTickets().values());
 	}
 }

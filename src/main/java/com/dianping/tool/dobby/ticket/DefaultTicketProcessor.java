@@ -5,8 +5,7 @@ import java.util.Date;
 import org.unidal.lookup.ContainerHolder;
 import org.unidal.lookup.annotation.Inject;
 
-import com.dianping.tool.dobby.model.entity.Assignment;
-import com.dianping.tool.dobby.model.entity.Comment;
+import com.dianping.tool.dobby.model.entity.Action;
 import com.dianping.tool.dobby.model.entity.Ticket;
 
 public class DefaultTicketProcessor extends ContainerHolder implements TicketProcessor {
@@ -59,18 +58,21 @@ public class DefaultTicketProcessor extends ContainerHolder implements TicketPro
 			throw new RuntimeException(String.format("Ticket(%s) is not found!", id));
 		} else {
 			TicketState state = TicketState.getByName(ticket.getState(), null);
+			Action action = new Action().setAt(now).setBy(by).setComment(comment);
 			TicketState nextState = null;
 
-			if ("assignTo".equals(cmd)) {
-				String assignTo = args.length > 0 ? args[0] : null;
+			ticket.addAction(action);
 
-				if (assignTo == null) {
+			if ("assignTo".equals(cmd)) {
+				String assignedTo = args.length > 0 ? args[0] : null;
+
+				if (assignedTo == null) {
 					throw new IllegalArgumentException("No assignTo found in the arguments!");
 				}
 
 				nextState = TicketState.ASSIGNED;
-				ticket.setAssignedTo(assignTo);
-				ticket.addAssignment(new Assignment().setAt(now).setBy(by).setTo(assignTo));
+				ticket.setAssignedTo(assignedTo);
+				action.setAssignedTo(assignedTo);
 			} else if ("accepted".equals(cmd)) {
 				nextState = TicketState.ACCEPTED;
 			} else if ("done".equals(cmd)) {
@@ -83,15 +85,12 @@ public class DefaultTicketProcessor extends ContainerHolder implements TicketPro
 
 			try {
 				if (nextState != null) {
+					action.setState(nextState.name());
 					ticket.setState(nextState.name());
 				}
 
 				ticket.setLastModifiedBy(by);
 				ticket.setLastModifiedDate(now);
-
-				if (comment != null) {
-					ticket.addComment(new Comment().setAt(now).setBy(by).setText(comment));
-				}
 
 				state.moveTo(ctx, nextState);
 			} finally {
