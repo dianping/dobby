@@ -40,6 +40,30 @@
 			<implementation>com.dianping.tool.dobby.ticket.DefaultTicketSummarizer</implementation>
 		</component>
 		<component>
+			<role>com.dianping.tool.dobby.TicketTask</role>
+			<implementation>com.dianping.tool.dobby.TicketTask</implementation>
+			<requirements>
+				<requirement>
+					<role>com.dianping.tool.dobby.ticket.TicketProcessor</role>
+				</requirement>
+				<requirement>
+					<role>com.dianping.tool.dobby.ticket.TicketManager</role>
+				</requirement>
+			</requirements>
+		</component>
+		<component>
+			<role>org.unidal.initialization.Module</role>
+			<role-hint>ticket</role-hint>
+			<implementation>com.dianping.tool.dobby.TicketModule</implementation>
+		</component>
+		<component>
+			<role>org.unidal.initialization.ModuleManager</role>
+			<implementation>org.unidal.initialization.DefaultModuleManager</implementation>
+			<configuration>
+				<topLevelModules>ticket</topLevelModules>
+			</configuration>
+		</component>
+		<component>
 			<role>org.unidal.web.mvc.model.ModuleRegistry</role>
 			<implementation>org.unidal.web.mvc.model.ModuleRegistry</implementation>
 			<configuration>

@@ -3,11 +3,9 @@ package com.dianping.tool.dobby.mail;
 import java.net.MalformedURLException;
 import java.security.Security;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 import javax.mail.Flags;
@@ -30,32 +28,6 @@ public class GmailService {
 
 	private String password;
 
-	public static void main(String[] args) throws Exception {
-		BlockingQueue<Payload> queue = new LinkedBlockingQueue<Payload>();
-		GmailService s = new GmailService(queue);
-
-//		s.sendMail("testJava", "testContent",
-//		      Arrays.asList(new String[] { "yong.you@dianping.com", "jinhua.liang@dianping.com" }),
-//		      Arrays.asList("youyong205@126.com"));
-//
-//		s.sendHtmlMail("testJava", "testContent",
-//		      Arrays.asList(new String[] { "yong.you@dianping.com", "jinhua.liang@dianping.com" }),
-//		      Arrays.asList("youyong205@126.com"));
-
-		while (true) {
-			try {
-				Payload message = queue.poll(5, TimeUnit.SECONDS);
-				if (message != null) {
-					System.out.println("=================");
-					System.out.println(message);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-	}
-
 	public GmailService(final BlockingQueue<Payload> queue) {
 		this(queue, "ticketmatetest@gmail.com", "xgeskoauugnqddyf");
 	}
@@ -64,26 +36,26 @@ public class GmailService {
 		this.name = userName;
 		this.password = password;
 		Thread t = new Thread(new Runnable() {
-
 			@Override
 			public void run() {
-				while (true) {
-					try {
-						List<Payload> payloads = getUnreadMessages();
-						queue.addAll(payloads);
+				try {
+					while (true) {
+						try {
+							List<Payload> payloads = getUnreadMessages();
+							queue.addAll(payloads);
 
-						markAllMessagesAsRead(payloads);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					try {
+							markAllMessagesAsRead(payloads);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+
 						TimeUnit.SECONDS.sleep(10);
-					} catch (InterruptedException e) {
-
 					}
+				} catch (InterruptedException e) {
 				}
 			}
 		});
+
 		t.setDaemon(true);
 		t.start();
 	}

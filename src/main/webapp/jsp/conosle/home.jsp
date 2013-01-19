@@ -55,7 +55,7 @@
 	  			<c:forEach var="ticket" items="${model.tickets}">
 	  				<c:if test="${not(ticket.state eq 'IGNORED' or ticket.state eq 'RESOLVED')}">
 			  			<tr>
-			  				<td>${ticket.id}</td>
+			  				<td><a href="#${ticket.id}" role="button" data-toggle="modal">${ticket.id}</a></td>
 			  				<td>${ticket.subject}</td>
 			  				<td>${ticket.state}</td>
 			  				<td>${ticket.assignedTo}</td>
@@ -81,7 +81,7 @@
 	  			<c:forEach var="ticket" items="${model.tickets}">
 	  				<c:if test="${ticket.state eq 'IGNORED' or ticket.state eq 'RESOLVED'}">
 			  			<tr>
-			  				<td>${ticket.id}</td>
+			  				<td><a href="#${ticket.id}" role="button" data-toggle="modal">${ticket.id}</a></td>
 			  				<td>${ticket.subject}</td>
 			  				<td>${ticket.state}</td>
 			  				<td>${ticket.assignedTo}</td>
@@ -101,10 +101,11 @@
 		  </div>
 		  <div class="modal-body">
   			<c:forEach var="action" items="${ticket.actions}">
-  				<div class="blockquote">[${w:format(action.at, 'yyyy-MM-dd hh:mm:ss')}] ${action.by}</div>
+  				<h5>[${w:format(action.at, 'yyyy-MM-dd hh:mm:ss')}] ${action.by}</h5>
   				<c:if test="${not empty action.comment}">
   					<div class="blockquote">${action.comment}</div>
   				</c:if>
+  				<hr>
   			</c:forEach>
 		  </div>
 		  <div class="modal-footer">

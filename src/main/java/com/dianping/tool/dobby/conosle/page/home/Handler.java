@@ -35,10 +35,21 @@ public class Handler implements PageHandler<Context> {
 	@OutboundActionMeta(name = "home")
 	public void handleOutbound(Context ctx) throws ServletException, IOException {
 		Model model = new Model(ctx);
+		Payload payload = ctx.getPayload();
 
-		model.setAction(Action.VIEW);
+		model.setAction(payload.getAction());
 		model.setPage(ConoslePage.HOME);
-		model.setTickets(getSortedTickets());
+
+		switch (payload.getAction()) {
+		case VIEW:
+			model.setTickets(getSortedTickets());
+			break;
+		case SUMMARY:
+			Ticket ticket = m_manager.getTicket(payload.getId());
+			
+			model.setTicket(ticket);
+			break;
+		}
 
 		m_jspViewer.view(ctx, model);
 	}

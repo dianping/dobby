@@ -27,4 +27,73 @@
          </action>
       </actions>
    </ticket>
+   <ticket id=" ShopWeb " state="CREATED" creation-date="2013-01-19 12:43:52" last-modified-date="2013-01-19 12:43:52" created-by="qimin.wu@dianping.com" last-modified-by="qimin.wu@dianping.com">
+      <subject>: CAT异常过多告警[ ShopWeb ][SMS]</subject>
+      <content>异常超过阀值告警
+ 项目名称 ShopWeb  告警时间 2013-01-19 01:34:11  告警规则 [ Interval:3; Min:250;
+Max:2500000]  错误个数 384  CAT链接
+link&lt;http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;date=2013011901&gt;
+-- 
+Thanks,
+Frankie
+&lt;div dir="ltr"&gt;异常超过阀值告警&lt;div&gt;&lt;br&gt;&lt;div class="gmail_quote"&gt;
+&lt;table rules="all" border="1"&gt;
+	&lt;tbody&gt;&lt;tr&gt;
+		&lt;td&gt;项目名称&lt;/td&gt;
+		&lt;td&gt;ShopWeb&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;告警时间&lt;/td&gt;
+		&lt;td&gt;2013-01-19 01:34:11&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;告警规则&lt;/td&gt;
+		&lt;td&gt;[ Interval:3; Min:250; Max:2500000]&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;错误个数&lt;/td&gt;
+		&lt;td&gt;384&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;CAT链接&lt;/td&gt;
+		&lt;td&gt; &lt;a href="http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;amp;date=2013011901" target="_blank"&gt;link&lt;/a&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;img style="border:0" alt="" src="http://mailt.dianping.com/NewTrack.aspx?t=15&amp;amp;e=qimin.wu%40dianping.com" width="1" height="1"&gt;
+&lt;/div&gt;&lt;br&gt;&lt;br clear="all"&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+</content>
+   </ticket>
+   <ticket id="ALERT001" state="CREATED" creation-date="2013-01-19 12:48:56" last-modified-date="2013-01-19 12:48:56" created-by="qimin.wu@dianping.com" last-modified-by="qimin.wu@dianping.com">
+      <subject>ERT001] CAT异常过多告警[ ShopWeb ][SMS]</subject>
+      <content>异常超过阀值告警  项目名称 ShopWeb  告警时间 2013-01-19 01:34:11  告警规则 [ Interval:3;
+Min:250; Max:2500000]  错误个数 384  CAT链接
+link&lt;http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;date=2013011901&gt;
+&lt;div dir="ltr"&gt;&lt;br&gt;&lt;div class="gmail_quote"&gt;&lt;h4&gt;异常超过阀值告警&lt;/h4&gt;
+&lt;table rules="all" border="1"&gt;
+	&lt;tbody&gt;&lt;tr&gt;
+		&lt;td&gt;项目名称&lt;/td&gt;
+		&lt;td&gt;ShopWeb&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;告警时间&lt;/td&gt;
+		&lt;td&gt;2013-01-19 01:34:11&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;告警规则&lt;/td&gt;
+		&lt;td&gt;[ Interval:3; Min:250; Max:2500000]&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;错误个数&lt;/td&gt;
+		&lt;td&gt;384&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;CAT链接&lt;/td&gt;
+		&lt;td&gt; &lt;a href="http://10.1.6.128:8080/cat/r/p?domain=ShopWeb&amp;amp;date=2013011901" target="_blank"&gt;link&lt;/a&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;img style="border:0" alt="" src="http://mailt.dianping.com/NewTrack.aspx?t=15&amp;amp;e=qimin.wu%40dianping.com" width="1" height="1"&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;/div&gt;
+</content>
+   </ticket>
 </model>

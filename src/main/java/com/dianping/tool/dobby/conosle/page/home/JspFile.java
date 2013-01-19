@@ -3,6 +3,8 @@ package com.dianping.tool.dobby.conosle.page.home;
 public enum JspFile {
 	VIEW("/jsp/conosle/home.jsp"),
 
+	SUMMARY("/jsp/conosle/summary.jsp"),
+
 	;
 
 	private String m_path;

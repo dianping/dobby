@@ -11,6 +11,8 @@ public class JspViewer extends BaseJspViewer<ConoslePage, Action, Context, Model
 		switch (action) {
 		case VIEW:
 			return JspFile.VIEW.getPath();
+		case SUMMARY:
+			return JspFile.SUMMARY.getPath();
 		}
 
 		throw new RuntimeException("Unknown action: " + action);

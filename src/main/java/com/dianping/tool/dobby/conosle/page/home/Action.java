@@ -1,7 +1,9 @@
 package com.dianping.tool.dobby.conosle.page.home;
 
 public enum Action implements org.unidal.web.mvc.Action {
-	VIEW("view");
+	VIEW("view"),
+	
+	SUMMARY("summary");
 
 	private String m_name;
 
