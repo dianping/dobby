@@ -5,6 +5,8 @@ import junit.framework.Assert;
 import org.junit.Test;
 import org.unidal.lookup.ComponentTestCase;
 
+import com.dianping.dobby.email.MessageParser;
+
 public class MessageParserTest extends ComponentTestCase {
 	@Test
 	public void testParseId() throws Exception {

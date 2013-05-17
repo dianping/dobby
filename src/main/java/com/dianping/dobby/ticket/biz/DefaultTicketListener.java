@@ -11,7 +11,6 @@ public class DefaultTicketListener implements TicketListener {
 
 	@Override
 	public void beforeStateChange(TicketContext ctx) throws Exception {
-
 	}
 
 	@Override

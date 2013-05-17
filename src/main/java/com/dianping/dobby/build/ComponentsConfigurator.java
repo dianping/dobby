@@ -9,11 +9,17 @@ import org.unidal.initialization.ModuleManager;
 import org.unidal.lookup.configuration.AbstractResourceConfigurator;
 import org.unidal.lookup.configuration.Component;
 
-import com.dianping.dobby.TicketModule;
-import com.dianping.dobby.TicketTask;
-import com.dianping.dobby.mail.ContentBuilder;
-import com.dianping.dobby.mail.DefaultMessageParser;
-import com.dianping.dobby.mail.MessageParser;
+import com.dianping.dobby.DobbyConstants;
+import com.dianping.dobby.DobbyModule;
+import com.dianping.dobby.book.biz.BookMessageHandler;
+import com.dianping.dobby.email.DefaultMessageParser;
+import com.dianping.dobby.email.EmailDispatcher;
+import com.dianping.dobby.email.EmailService;
+import com.dianping.dobby.email.GmailEmailService;
+import com.dianping.dobby.email.MessageContentExtractor;
+import com.dianping.dobby.email.MessageHandler;
+import com.dianping.dobby.email.MessageParser;
+import com.dianping.dobby.email.MessageQueue;
 import com.dianping.dobby.ticket.biz.DefaultTicketContext;
 import com.dianping.dobby.ticket.biz.DefaultTicketListener;
 import com.dianping.dobby.ticket.biz.DefaultTicketManager;
@@ -22,41 +28,72 @@ import com.dianping.dobby.ticket.biz.DefaultTicketSummarizer;
 import com.dianping.dobby.ticket.biz.TicketContext;
 import com.dianping.dobby.ticket.biz.TicketListener;
 import com.dianping.dobby.ticket.biz.TicketManager;
+import com.dianping.dobby.ticket.biz.TicketMessageHandler;
 import com.dianping.dobby.ticket.biz.TicketProcessor;
 import com.dianping.dobby.ticket.biz.TicketSummarizer;
 
-public class ComponentsConfigurator extends AbstractResourceConfigurator {
-	@Override
-	public List<Component> defineComponents() {
-		List<Component> all = new ArrayList<Component>();
+public class ComponentsConfigurator extends AbstractResourceConfigurator implements DobbyConstants {
+   @Override
+   public List<Component> defineComponents() {
+      List<Component> all = new ArrayList<Component>();
 
-		all.add(C(ContentBuilder.class));
-		all.add(C(MessageParser.class, DefaultMessageParser.class) //
-		      .req(ContentBuilder.class));
+      defineEmailComponents(all);
+      defineTicketComponents(all);
+      defineBookComponents(all);
 
-		all.add(C(TicketManager.class, DefaultTicketManager.class));
-		all.add(C(TicketProcessor.class, DefaultTicketProcessor.class) //
-		      .req(TicketManager.class));
-		all.add(C(TicketContext.class, DefaultTicketContext.class).is(PER_LOOKUP) //
-		      .req(TicketListener.class));
-		all.add(C(TicketListener.class, DefaultTicketListener.class) //
-		      .req(TicketManager.class, TicketSummarizer.class));
-		all.add(C(TicketSummarizer.class, DefaultTicketSummarizer.class));
+      all.add(C(Module.class, DobbyModule.ID, DobbyModule.class));
+      all.add(C(ModuleManager.class, DefaultModuleManager.class) //
+            .config(E("topLevelModules").value(DobbyModule.ID)));
 
-		all.add(C(TicketTask.class) //
-		      .req(TicketProcessor.class, TicketManager.class));
+      // Please keep it as last
+      all.addAll(new WebComponentConfigurator().defineComponents());
 
-		all.add(C(Module.class, TicketModule.ID, TicketModule.class));
-		all.add(C(ModuleManager.class, DefaultModuleManager.class) //
-		      .config(E("topLevelModules").value(TicketModule.ID)));
+      return all;
+   }
 
-		// Please keep it as last
-		all.addAll(new WebComponentConfigurator().defineComponents());
+   private void defineEmailComponents(List<Component> all) {
+      all.add(C(MessageContentExtractor.class));
+      all.add(C(MessageParser.class, DefaultMessageParser.class) //
+            .req(MessageContentExtractor.class));
+   }
 
-		return all;
-	}
+   private void defineBookComponents(List<Component> all) {
+      all.add(C(EmailService.class, ID_BOOK, GmailEmailService.class) //
+            .req(MessageQueue.class, ID_BOOK) //
+            .req(MessageParser.class) //
+            .config(E("name").value("book.robot.dianping@gmail.com"), // book.robot.dianping123
+                  E("password").value("xudgtsnoxivwclna")));
+      all.add(C(EmailDispatcher.class, ID_BOOK, EmailDispatcher.class) //
+            .req(MessageQueue.class, ID_BOOK) //
+            .req(MessageHandler.class, ID_BOOK));
+      all.add(C(MessageQueue.class, ID_BOOK, MessageQueue.class));
+      all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class));
+   }
 
-	public static void main(String[] args) {
-		generatePlexusComponentsXmlFile(new ComponentsConfigurator());
-	}
+   private void defineTicketComponents(List<Component> all) {
+      all.add(C(EmailService.class, ID_TICKET, GmailEmailService.class) //
+            .req(MessageQueue.class, ID_TICKET) //
+            .req(MessageParser.class) //
+            .config(E("name").value("ticketmatetest@gmail.com"), //
+                  E("password").value("xgeskoauugnqddyf")));
+      all.add(C(EmailDispatcher.class, ID_TICKET, EmailDispatcher.class) //
+            .req(MessageQueue.class, ID_TICKET) //
+            .req(MessageHandler.class, ID_TICKET));
+      all.add(C(MessageQueue.class, ID_TICKET, MessageQueue.class));
+      all.add(C(MessageHandler.class, ID_TICKET, TicketMessageHandler.class) //
+            .req(TicketProcessor.class, TicketManager.class));
+
+      all.add(C(TicketManager.class, DefaultTicketManager.class));
+      all.add(C(TicketProcessor.class, DefaultTicketProcessor.class) //
+            .req(TicketManager.class));
+      all.add(C(TicketContext.class, DefaultTicketContext.class).is(PER_LOOKUP) //
+            .req(TicketListener.class));
+      all.add(C(TicketListener.class, DefaultTicketListener.class) //
+            .req(TicketManager.class, TicketSummarizer.class));
+      all.add(C(TicketSummarizer.class, DefaultTicketSummarizer.class));
+   }
+
+   public static void main(String[] args) {
+      generatePlexusComponentsXmlFile(new ComponentsConfigurator());
+   }
 }

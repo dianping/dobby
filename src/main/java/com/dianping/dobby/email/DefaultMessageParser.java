@@ -1,4 +1,4 @@
-package com.dianping.dobby.mail;
+package com.dianping.dobby.email;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +16,7 @@ public class DefaultMessageParser implements MessageParser {
 	private static final String[] SUBJECT_PREFIXES = { "Re:", "Fwd:", "�ظ�:", "ת��:" };
 
 	@Inject
-	private ContentBuilder m_builder;
+	private MessageContentExtractor m_builder;
 
 	private Map<String, String> buildNameToEmailMap(Address[] addresses) {
 		// name => email
