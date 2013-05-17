@@ -1,4 +1,4 @@
-package com.dianping.dobby.mail;
+package com.dianping.dobby.email;
 
 import junit.framework.Assert;
 

@@ -46,6 +46,11 @@
 			<version>2.0.1</version>
 		</dependency>
 		<dependency>
+         <groupId>org.freemarker</groupId>
+         <artifactId>freemarker</artifactId>
+         <version>2.3.9</version>
+      </dependency>
+		<dependency>
 			<groupId>org.unidal.framework</groupId>
 			<artifactId>test-framework</artifactId>
 			<version>2.0.0</version>
@@ -118,7 +123,10 @@ org.eclipse.jdt.core.compiler.compliance=1.6]]></content>
 							<goal>dal-model</goal>
 						</goals>
 						<configuration>
-							<manifest><![CDATA[${basedir}/src/main/resources/META-INF/dal/model/ticket-manifest.xml,]]></manifest>
+							<manifest><![CDATA[
+							${basedir}/src/main/resources/META-INF/dal/model/ticket-manifest.xml,
+							${basedir}/src/main/resources/META-INF/dal/model/book-manifest.xml,
+							]]></manifest>
 						</configuration>
 					</execution>
 				</executions>

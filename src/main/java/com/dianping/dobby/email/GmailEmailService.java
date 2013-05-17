@@ -4,7 +4,6 @@ import java.security.Security;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import javax.mail.Address;
 import javax.mail.Authenticator;
 import javax.mail.Flags;
 import javax.mail.Folder;
@@ -206,7 +205,8 @@ public class GmailEmailService implements EmailService, Initializable {
    }
 
    @Override
-   public void send(Address[] tos, Address[] ccs, String subject, String content, String htmlContent) throws Exception {
+   public void send(InternetAddress[] tos, InternetAddress[] ccs, String subject, String content, String htmlContent)
+         throws Exception {
       HtmlEmail email = createHtmlEmail();
 
       email.setSubject(subject);
@@ -220,29 +220,21 @@ public class GmailEmailService implements EmailService, Initializable {
       }
 
       if (tos != null) {
-         for (Address to : tos) {
-            if (to instanceof InternetAddress) {
-               InternetAddress address = (InternetAddress) to;
-
-               if (address.getPersonal() != null) {
-                  email.addTo(address.getAddress(), address.getPersonal());
-               } else {
-                  email.addTo(address.getAddress());
-               }
+         for (InternetAddress to : tos) {
+            if (to.getPersonal() != null) {
+               email.addTo(to.getAddress(), to.getPersonal());
+            } else {
+               email.addTo(to.getAddress());
             }
          }
       }
 
       if (ccs != null) {
-         for (Address cc : ccs) {
-            if (cc instanceof InternetAddress) {
-               InternetAddress address = (InternetAddress) cc;
-
-               if (address.getPersonal() != null) {
-                  email.addCc(address.getAddress(), address.getPersonal());
-               } else {
-                  email.addCc(address.getAddress());
-               }
+         for (InternetAddress cc : ccs) {
+            if (cc.getPersonal() != null) {
+               email.addCc(cc.getAddress(), cc.getPersonal());
+            } else {
+               email.addCc(cc.getAddress());
             }
          }
       }
