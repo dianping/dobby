@@ -48,4 +48,9 @@ public class DefaultBookManager implements BookManager, Initializable {
    public Collection<Book> findAllBooks() {
       return m_model.getBooks().values();
    }
+
+	@Override
+   public BookModel getModel() {
+	   return m_model;
+   }
 }
