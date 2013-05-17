@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model>
+	<book id="101" isbn="9784072344071" created-date="2013-01-15 18:14:00">
+		<title>21年精通Java</title>
+		<description>本书深入浅出指导Java菜鸟的成神之路</description>
+		<author>老吴</author>
+		<press>点评大学出版社</press>
+		<category>技术</category>
+		<total>3</total>
+		<remaining>2</remaining>
+		<borrow-history>
+			<borrow status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
+				<return-time>2013-01-23 18:14:00</return-time>
+			</borrow>
+			<borrow status="borrowing" borrower="yiz.zhang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00" />
+		</borrow-history>
+	</book>
+	
+	<book id="102" isbn="9784072344072" created-date="2013-01-15 18:14:00">
+		<title>7天7语言</title>
+		<description>本书傻瓜式的指导初学者学习包括日语，爱斯基摩语，汉语...等7门语言</description>
+		<author>老马</author>
+		<press>点评大学出版社</press>
+		<category>语言</category>
+		<total>3</total>
+		<remaining>2</remaining>
+		<borrow-history>
+			<borrow status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
+				<return-time>2013-01-23 18:14:00</return-time>
+			</borrow>
+			<borrow status="borrowing" borrower="jinghua.liang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00" />
+		</borrow-history>
+	</book>
+	
+	<book id="103" isbn="9784072344074" created-date="2013-01-15 18:14:00">
+		<title>我的小学</title>
+		<description>本书撰写了梁锦华的小学时代</description>
+		<author>梁锦华</author>
+		<press>屌丝协会出版社</press>
+		<category>人物传记</category>
+		<total>1000</total>
+		<remaining>999</remaining>
+		<borrow-history>
+			<borrow status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
+				<return-time>2013-01-23 18:14:00</return-time>
+			</borrow>
+			<borrow status="borrowing" borrower="jinghua.liang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00" />
+		</borrow-history>
+	</book>
+	
+	<book id="104" isbn="9784072344075" created-date="2013-01-15 18:14:00">
+		<title>我的初中</title>
+		<description>本书撰写了梁锦华的初中时代</description>
+		<author>梁锦华</author>
+		<press>屌丝协会出版社</press>
+		<category>人物传记</category>
+		<total>1000</total>
+		<remaining>999</remaining>
+		<borrow-history>
+			<borrow status="returned" borrower="tong.song@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
+				<return-time>2013-01-23 18:14:00</return-time>
+			</borrow>
+		</borrow-history>
+	</book>
+	
+	<book id="105" isbn="9784072344074" created-date="2013-01-15 18:14:00">
+		<title>我的高中</title>
+		<description>本书撰写了梁锦华的高中时代</description>
+		<author>梁锦华</author>
+		<press>屌丝协会出版社</press>
+		<category>人物传记</category>
+		<total>1000</total>
+		<remaining>999</remaining>
+		<borrow-history>
+			<borrow status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
+				<return-time>2013-01-23 18:14:00</return-time>
+			</borrow>
+			<borrow status="borrowing" borrower="tong.song@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00" />
+		</borrow-history>
+	</book>
+	<book />
+</model>

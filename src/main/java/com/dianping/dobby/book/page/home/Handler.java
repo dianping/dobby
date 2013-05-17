@@ -1,7 +1,7 @@
 package com.dianping.dobby.book.page.home;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.servlet.ServletException;
 
@@ -14,6 +14,7 @@ import org.unidal.web.mvc.annotation.PayloadMeta;
 import org.xml.sax.SAXException;
 
 import com.dianping.dobby.book.BookPage;
+import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.book.model.entity.BookModel;
 import com.dianping.dobby.book.model.transform.DefaultSaxParser;
 
@@ -35,21 +36,23 @@ public class Handler implements PageHandler<Context> {
 
 		BookModel books = new BookModel();
 
-		File m_modelFile = new File("book.xml").getCanonicalFile();
+		InputStream in = getClass().getResourceAsStream("book.xml");
 
-		if (m_modelFile.canRead()) {
-			String xml = Files.forIO().readFrom(m_modelFile, "utf-8");
-			System.out.println(xml);
-			try {
-				books = DefaultSaxParser.parse(xml);
-				System.out.println(books);
-			} catch (SAXException e) {
-				e.printStackTrace();
-			}
+		String xml = Files.forIO().readFrom(in, "utf-8");
+		try {
+			books = DefaultSaxParser.parse(xml);
+		} catch (SAXException e) {
+			e.printStackTrace();
 		}
 		
+		int id = ctx.getPayload().getId();
+		if(id != 0){
+			Book book = books.findBook(id);
+			books = new BookModel();
+			books.addBook(book);
+		}
 
-		model.setBooks(books);
+		model.setBooks(books.getBooks());
 		model.setAction(Action.VIEW);
 		model.setPage(BookPage.HOME);
 		m_jspViewer.view(ctx, model);

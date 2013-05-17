@@ -11,6 +11,14 @@ import org.unidal.lookup.configuration.Component;
 
 import com.dianping.dobby.TicketModule;
 import com.dianping.dobby.TicketTask;
+import com.dianping.dobby.book.biz.BorrowContext;
+import com.dianping.dobby.book.biz.BorrowListener;
+import com.dianping.dobby.book.biz.BookManager;
+import com.dianping.dobby.book.biz.BookProcessor;
+import com.dianping.dobby.book.biz.DefaultBorrowContext;
+import com.dianping.dobby.book.biz.DefaultBorrowListener;
+import com.dianping.dobby.book.biz.DefaultBookManager;
+import com.dianping.dobby.book.biz.DefaultBookProcessor;
 import com.dianping.dobby.mail.ContentBuilder;
 import com.dianping.dobby.mail.DefaultMessageParser;
 import com.dianping.dobby.mail.MessageParser;
@@ -52,6 +60,12 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator {
 
 		// Please keep it as last
 		all.addAll(new WebComponentConfigurator().defineComponents());
+		
+		// For book
+		all.add(C(BorrowContext.class, DefaultBorrowContext.class));
+		all.add(C(BookManager.class, DefaultBookManager.class));
+		all.add(C(BorrowListener.class, DefaultBorrowListener.class));
+		all.add(C(BookProcessor.class, DefaultBookProcessor.class).req(BookManager.class));
 
 		return all;
 	}
