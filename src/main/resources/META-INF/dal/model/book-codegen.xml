@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model>
+  <entity name="model" root="true">
+    <entity-ref name="book" type="list" names="books" />
+  </entity>
+  <entity name="book">
+    <attribute name="id" value-type="int" />
+    <attribute name="isbn" value-type="String" />
+    <attribute name="created-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <element name="title" value-type="String" />
+    <element name="description" value-type="String" />
+    <element name="author" value-type="String" />
+    <element name="press" value-type="String" />
+    <element name="category" value-type="String" />
+    <element name="total" value-type="int" />
+    <element name="remaining" value-type="int" />
+    <entity-ref name="borrow" type="list" names="borrow-history" xml-indent="true" />
+  </entity>
+  <entity name="borrow">
+    <attribute name="status" value-type="String" />
+    <attribute name="borrower" value-type="String" />
+    <attribute name="borrow-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <attribute name="expired-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <element name="return-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+  </entity>
+</model>
+
