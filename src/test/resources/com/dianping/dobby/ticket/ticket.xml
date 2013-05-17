@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model>
+   <ticket id="TKT001" state="ASSIGNED" assigned-to="qimin.wu" creation-date="2013-01-18 18:14:00" last-modified-date="2013-01-18 18:16:00" created-by="cat" last-modified-by="yong.you">
+      <subject>Alert 1</subject>
+      <content>Content here</content>
+      <actions>
+         <action by="yong.you" at="2013-01-18 18:14:00" assigned-to="qimin.wu" state="ASSIGNED">
+            <comment>please help check</comment>
+         </action>
+      </actions>
+   </ticket>
+   <ticket id="TKT002" state="RESOLVED" assigned-to="yong.you" creation-date="2013-01-18 19:15:00" last-modified-date="2013-01-18 19:26:00" created-by="cat" last-modified-by="qimin.wu">
+      <subject>Alert 2</subject>
+      <content>This is the content</content>
+      <actions>
+         <action by="yong.you" at="2013-01-18 19:15:00" assigned-to="qimin.wu" state="ASSIGNED">
+            <comment>please help check</comment>
+         </action>
+         <action by="qimin.wu" at="2013-01-18 19:26:00" assigned-to="yong.you" state="ASSIGNED">
+            <comment>root cause found. This is an issue of configuration file.</comment>
+         </action>
+         <action by="yong.you" at="2013-01-18 19:35:00" state="ACCEPTED">
+            <comment>code changed. rollout to production now.</comment>
+         </action>
+         <action by="yi.chen" at="2013-01-18 19:45:00" state="RESOLVED">
+            <comment>issue fixed. Thanks everybody.</comment>
+         </action>
+      </actions>
+   </ticket>
+</model>

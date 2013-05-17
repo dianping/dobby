@@ -108,7 +108,7 @@ org.eclipse.jdt.core.compiler.compliance=1.6]]></content>
 							<goal>plexus</goal>
 						</goals>
 						<configuration>
-							<className>com.dianping.tool.dobby.build.ComponentsConfigurator</className>
+							<className>com.dianping.dobby.build.ComponentsConfigurator</className>
 						</configuration>
 					</execution>
 					<execution>

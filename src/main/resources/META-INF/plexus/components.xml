@@ -1,73 +1,73 @@
 <plexus>
 	<components>
 		<component>
-			<role>com.dianping.tool.dobby.mail.ContentBuilder</role>
-			<implementation>com.dianping.tool.dobby.mail.ContentBuilder</implementation>
+			<role>com.dianping.dobby.mail.ContentBuilder</role>
+			<implementation>com.dianping.dobby.mail.ContentBuilder</implementation>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.mail.MessageParser</role>
-			<implementation>com.dianping.tool.dobby.mail.DefaultMessageParser</implementation>
+			<role>com.dianping.dobby.mail.MessageParser</role>
+			<implementation>com.dianping.dobby.mail.DefaultMessageParser</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.tool.dobby.mail.ContentBuilder</role>
+					<role>com.dianping.dobby.mail.ContentBuilder</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.ticket.TicketManager</role>
-			<implementation>com.dianping.tool.dobby.ticket.DefaultTicketManager</implementation>
+			<role>com.dianping.dobby.ticket.TicketManager</role>
+			<implementation>com.dianping.dobby.ticket.DefaultTicketManager</implementation>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.ticket.TicketProcessor</role>
-			<implementation>com.dianping.tool.dobby.ticket.DefaultTicketProcessor</implementation>
+			<role>com.dianping.dobby.ticket.TicketProcessor</role>
+			<implementation>com.dianping.dobby.ticket.DefaultTicketProcessor</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.tool.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.TicketManager</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.ticket.TicketContext</role>
-			<implementation>com.dianping.tool.dobby.ticket.DefaultTicketContext</implementation>
+			<role>com.dianping.dobby.ticket.TicketContext</role>
+			<implementation>com.dianping.dobby.ticket.DefaultTicketContext</implementation>
 			<instantiation-strategy>per-lookup</instantiation-strategy>
 			<requirements>
 				<requirement>
-					<role>com.dianping.tool.dobby.ticket.TicketListener</role>
+					<role>com.dianping.dobby.ticket.TicketListener</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.ticket.TicketListener</role>
-			<implementation>com.dianping.tool.dobby.ticket.DefaultTicketListener</implementation>
+			<role>com.dianping.dobby.ticket.TicketListener</role>
+			<implementation>com.dianping.dobby.ticket.DefaultTicketListener</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.tool.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.TicketManager</role>
 				</requirement>
 				<requirement>
-					<role>com.dianping.tool.dobby.ticket.TicketSummarizer</role>
+					<role>com.dianping.dobby.ticket.TicketSummarizer</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.ticket.TicketSummarizer</role>
-			<implementation>com.dianping.tool.dobby.ticket.DefaultTicketSummarizer</implementation>
+			<role>com.dianping.dobby.ticket.TicketSummarizer</role>
+			<implementation>com.dianping.dobby.ticket.DefaultTicketSummarizer</implementation>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.TicketTask</role>
-			<implementation>com.dianping.tool.dobby.TicketTask</implementation>
+			<role>com.dianping.dobby.TicketTask</role>
+			<implementation>com.dianping.dobby.TicketTask</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.tool.dobby.ticket.TicketProcessor</role>
+					<role>com.dianping.dobby.ticket.TicketProcessor</role>
 				</requirement>
 				<requirement>
-					<role>com.dianping.tool.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.TicketManager</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
 			<role>org.unidal.initialization.Module</role>
 			<role-hint>ticket</role-hint>
-			<implementation>com.dianping.tool.dobby.TicketModule</implementation>
+			<implementation>com.dianping.dobby.TicketModule</implementation>
 		</component>
 		<component>
 			<role>org.unidal.initialization.ModuleManager</role>
@@ -81,29 +81,29 @@
 			<implementation>org.unidal.web.mvc.model.ModuleRegistry</implementation>
 			<configuration>
 				<modules>
-					<module default="true">com.dianping.tool.dobby.conosle.ConosleModule</module>
+					<module default="true">com.dianping.dobby.conosle.ConosleModule</module>
 				</modules>
 			</configuration>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.conosle.ConosleModule</role>
-			<implementation>com.dianping.tool.dobby.conosle.ConosleModule</implementation>
+			<role>com.dianping.dobby.conosle.ConosleModule</role>
+			<implementation>com.dianping.dobby.conosle.ConosleModule</implementation>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.conosle.page.home.Handler</role>
-			<implementation>com.dianping.tool.dobby.conosle.page.home.Handler</implementation>
+			<role>com.dianping.dobby.conosle.page.home.Handler</role>
+			<implementation>com.dianping.dobby.conosle.page.home.Handler</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.tool.dobby.conosle.page.home.JspViewer</role>
+					<role>com.dianping.dobby.conosle.page.home.JspViewer</role>
 				</requirement>
 				<requirement>
-					<role>com.dianping.tool.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.TicketManager</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.tool.dobby.conosle.page.home.JspViewer</role>
-			<implementation>com.dianping.tool.dobby.conosle.page.home.JspViewer</implementation>
+			<role>com.dianping.dobby.conosle.page.home.JspViewer</role>
+			<implementation>com.dianping.dobby.conosle.page.home.JspViewer</implementation>
 		</component>
 	</components>
 </plexus>
