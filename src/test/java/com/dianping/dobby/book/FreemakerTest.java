@@ -22,13 +22,13 @@ public class FreemakerTest {
 		for (int i = 0; i < 10; i++) {
 			books.add(createBook());
 		}
-		System.out.println("========================");
+		System.out.println("========================1");
 		System.out.println(render.renderList(books));
-		System.out.println("========================");
+		System.out.println("========================2");
 		System.out.println(render.renderDetail(createBook()));
-		System.out.println("========================");
+		System.out.println("========================3");
 		System.out.println(render.renderBorrow(new Date()));
-		System.out.println("========================");
+		System.out.println("========================4");
 		System.out.println(render.renderReturn());
 	}
 

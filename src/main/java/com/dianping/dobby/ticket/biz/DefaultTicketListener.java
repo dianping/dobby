@@ -22,6 +22,8 @@ public class DefaultTicketListener implements TicketListener {
 		case RESOLVED:
 			m_summarizer.sendSummaryEmail(ctx.getTicket());
 			break;
+		default:
+			break;
 		}
 
 		m_manager.persist();

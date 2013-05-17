@@ -11,7 +11,15 @@ import org.unidal.lookup.configuration.Component;
 
 import com.dianping.dobby.DobbyConstants;
 import com.dianping.dobby.DobbyModule;
+import com.dianping.dobby.book.biz.BookManager;
 import com.dianping.dobby.book.biz.BookMessageHandler;
+import com.dianping.dobby.book.biz.BookProcessor;
+import com.dianping.dobby.book.biz.BorrowContext;
+import com.dianping.dobby.book.biz.BorrowListener;
+import com.dianping.dobby.book.biz.DefaultBookManager;
+import com.dianping.dobby.book.biz.DefaultBookProcessor;
+import com.dianping.dobby.book.biz.DefaultBorrowContext;
+import com.dianping.dobby.book.biz.DefaultBorrowListener;
 import com.dianping.dobby.email.DefaultMessageParser;
 import com.dianping.dobby.email.EmailDispatcher;
 import com.dianping.dobby.email.EmailService;
@@ -67,7 +75,15 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
             .req(MessageQueue.class, ID_BOOK) //
             .req(MessageHandler.class, ID_BOOK));
       all.add(C(MessageQueue.class, ID_BOOK, MessageQueue.class));
-      all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class));
+      all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class) //
+            .req(BookProcessor.class, BookManager.class));
+
+      all.add(C(BorrowContext.class, DefaultBorrowContext.class) //
+            .req(BorrowListener.class));
+      all.add(C(BorrowListener.class, DefaultBorrowListener.class));
+      all.add(C(BookProcessor.class, DefaultBookProcessor.class) //
+            .req(BookManager.class));
+      all.add(C(BookManager.class, DefaultBookManager.class));
    }
 
    private void defineTicketComponents(List<Component> all) {

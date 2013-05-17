@@ -6,6 +6,7 @@
 </br>
 <table rules="all" border="1" >
 	<tr>
+		<td>编号</td>
 		<td>书名</td>
 		<td>作者</td>
 		<td>出版社</td>
@@ -13,6 +14,7 @@
 	</tr>
 	<#list books as item>
 		<tr>
+			<td>${item.isbn}</td>
 			<td>${item.title}</td>
 			<td>${item.author}</td>
 			<td>${item.press}</td>

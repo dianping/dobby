@@ -145,6 +145,40 @@
 			<role>com.dianping.dobby.email.MessageHandler</role>
 			<role-hint>book</role-hint>
 			<implementation>com.dianping.dobby.book.biz.BookMessageHandler</implementation>
+			<requirements>
+				<requirement>
+					<role>com.dianping.dobby.book.biz.BookProcessor</role>
+				</requirement>
+				<requirement>
+					<role>com.dianping.dobby.book.biz.BookManager</role>
+				</requirement>
+			</requirements>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.biz.BorrowContext</role>
+			<implementation>com.dianping.dobby.book.biz.DefaultBorrowContext</implementation>
+			<requirements>
+				<requirement>
+					<role>com.dianping.dobby.book.biz.BorrowListener</role>
+				</requirement>
+			</requirements>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.biz.BorrowListener</role>
+			<implementation>com.dianping.dobby.book.biz.DefaultBorrowListener</implementation>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.biz.BookProcessor</role>
+			<implementation>com.dianping.dobby.book.biz.DefaultBookProcessor</implementation>
+			<requirements>
+				<requirement>
+					<role>com.dianping.dobby.book.biz.BookManager</role>
+				</requirement>
+			</requirements>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.biz.BookManager</role>
+			<implementation>com.dianping.dobby.book.biz.DefaultBookManager</implementation>
 		</component>
 		<component>
 			<role>org.unidal.initialization.Module</role>

@@ -13,7 +13,7 @@ public class GmailEmailServiceTest extends ComponentTestCase {
    public void test() throws Exception {
       EmailService emailService = lookup(EmailService.class, DobbyConstants.ID_BOOK);
       InternetAddress[] to = InternetAddress.parse("yong.you@dianping.com,qimin.wu@dianping.com");
-      String content = Files.forIO().readFrom(getClass().getResourceAsStream("html.html"), "utf-8");
+      String content = Files.forIO().readFrom(getClass().getResourceAsStream("email1.html"), "utf-8");
 
       emailService.send(to, null, "中国1234", null, content);
    }
