@@ -25,13 +25,13 @@ public class DefaultBookProcessor extends ContainerHolder implements BookProcess
 		Book book = m_manager.findBookById(bookId);
 		BorrowState state = null;
 		BorrowState nextState = null;
-		Error error = Error.INPUT_COMMAND_ERROR;
+		BookMessageId error = BookMessageId.INPUT_COMMAND_ERROR;
 		Borrow borrow = getBorrowByStatus(book.getBorrowHistory(), by, BorrowState.BORROWING);
 
 		if (cmd.equals(BookCmds.BORROW)) {
 			int remaining = book.getRemaining();
 			if(remaining == 0){
-				error = Error.NO_BOOK_TO_BORROW;
+				error = BookMessageId.NO_BOOK_TO_BORROW;
 			}else{
 				if (borrow == null) {
 					state = BorrowState.RETURNED;
@@ -39,13 +39,13 @@ public class DefaultBookProcessor extends ContainerHolder implements BookProcess
 					addNewBorrowItemToHistory(by, book, nextState, expireDuration);
 					book.setRemaining(remaining -1);
 				}
-				error = Error.BORROW_SAME_BOOK_ALREADY_BORROWED;
+				error = BookMessageId.BORROW_SAME_BOOK_ALREADY_BORROWED;
 			}
 		} else if (cmd.equals(BookCmds.RETURN)) {
 			int remaining = book.getRemaining();
 			int total = book.getTotal();
 			if(remaining == total){
-				error = Error.NO_BOOK_TO_RETURN;
+				error = BookMessageId.NO_BOOK_TO_RETURN;
 			}else{
 				if (borrow != null) {
 					state = BorrowState.BORROWING;
@@ -54,7 +54,7 @@ public class DefaultBookProcessor extends ContainerHolder implements BookProcess
 					borrow.setStatus(nextState.name());
 					book.setRemaining(remaining +1);
 				}
-				error = Error.RETURN_BOOK_NOT_BORROWED;
+				error = BookMessageId.RETURN_BOOK_NOT_BORROWED;
 			}
 		}
 
@@ -102,5 +102,4 @@ public class DefaultBookProcessor extends ContainerHolder implements BookProcess
 	public void help() {
 		// TODO
 	}
-
 }

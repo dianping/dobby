@@ -13,6 +13,9 @@ public class EmailDispatcher implements Task {
    @Inject
    private MessageHandler m_handler;
 
+   @Inject
+   private EmailService m_service;
+   
    @Override
    public String getName() {
       return getClass().getSimpleName();
@@ -28,7 +31,8 @@ public class EmailDispatcher implements Task {
 
             try {
                m_handler.handle(payload);
-
+               m_service.markRead(payload.getNum());
+               
                t.setStatus(Transaction.SUCCESS);
             } catch (Exception e) {
                e.printStackTrace();
