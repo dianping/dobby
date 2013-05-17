@@ -13,9 +13,9 @@ import com.dianping.cat.Cat;
 import com.dianping.cat.message.Transaction;
 import com.dianping.dobby.mail.GmailService;
 import com.dianping.dobby.mail.Payload;
-import com.dianping.dobby.model.entity.Ticket;
-import com.dianping.dobby.ticket.TicketManager;
-import com.dianping.dobby.ticket.TicketProcessor;
+import com.dianping.dobby.ticket.biz.TicketManager;
+import com.dianping.dobby.ticket.biz.TicketProcessor;
+import com.dianping.dobby.ticket.model.entity.Ticket;
 
 public class TicketTask implements Task, Initializable {
 	@Inject

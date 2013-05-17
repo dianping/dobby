@@ -14,16 +14,16 @@ import com.dianping.dobby.TicketTask;
 import com.dianping.dobby.mail.ContentBuilder;
 import com.dianping.dobby.mail.DefaultMessageParser;
 import com.dianping.dobby.mail.MessageParser;
-import com.dianping.dobby.ticket.DefaultTicketContext;
-import com.dianping.dobby.ticket.DefaultTicketListener;
-import com.dianping.dobby.ticket.DefaultTicketManager;
-import com.dianping.dobby.ticket.DefaultTicketProcessor;
-import com.dianping.dobby.ticket.DefaultTicketSummarizer;
-import com.dianping.dobby.ticket.TicketContext;
-import com.dianping.dobby.ticket.TicketListener;
-import com.dianping.dobby.ticket.TicketManager;
-import com.dianping.dobby.ticket.TicketProcessor;
-import com.dianping.dobby.ticket.TicketSummarizer;
+import com.dianping.dobby.ticket.biz.DefaultTicketContext;
+import com.dianping.dobby.ticket.biz.DefaultTicketListener;
+import com.dianping.dobby.ticket.biz.DefaultTicketManager;
+import com.dianping.dobby.ticket.biz.DefaultTicketProcessor;
+import com.dianping.dobby.ticket.biz.DefaultTicketSummarizer;
+import com.dianping.dobby.ticket.biz.TicketContext;
+import com.dianping.dobby.ticket.biz.TicketListener;
+import com.dianping.dobby.ticket.biz.TicketManager;
+import com.dianping.dobby.ticket.biz.TicketProcessor;
+import com.dianping.dobby.ticket.biz.TicketSummarizer;
 
 public class ComponentsConfigurator extends AbstractResourceConfigurator {
 	@Override

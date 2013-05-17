@@ -7,6 +7,7 @@ import org.unidal.lookup.configuration.AbstractResourceConfigurator;
 import org.unidal.lookup.configuration.Component;
 
 import com.dianping.dobby.ticket.TicketProcessorTest.MockTicketManager;
+import com.dianping.dobby.ticket.biz.TicketManager;
 
 public class TicketProcessorTestConfigurator extends AbstractResourceConfigurator {
 	@Override

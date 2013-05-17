@@ -7,8 +7,8 @@ import junit.framework.Assert;
 import org.junit.Test;
 import org.unidal.helper.Files;
 
-import com.dianping.dobby.model.entity.Model;
-import com.dianping.dobby.model.transform.DefaultSaxParser;
+import com.dianping.dobby.ticket.model.entity.Model;
+import com.dianping.dobby.ticket.model.transform.DefaultSaxParser;
 
 public class ModelTest {
 	@Test

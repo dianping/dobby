@@ -11,7 +11,9 @@ import junit.framework.Assert;
 import org.junit.Test;
 import org.unidal.lookup.ComponentTestCase;
 
-import com.dianping.dobby.model.entity.Ticket;
+import com.dianping.dobby.ticket.biz.TicketManager;
+import com.dianping.dobby.ticket.biz.TicketProcessor;
+import com.dianping.dobby.ticket.model.entity.Ticket;
 
 public class TicketProcessorTest extends ComponentTestCase {
 	@Test

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wizard package="com.dianping.dobby">
    <model package="com.dianping.dobby.model" name="model">
-      <sample-model>src/test/resources/com/dianping/tool/dobby/ticket/ticket.xml</sample-model>
+      <sample-model>src/test/resources/com/dianping/dobby/ticket/ticket.xml</sample-model>
    </model>
 </wizard>

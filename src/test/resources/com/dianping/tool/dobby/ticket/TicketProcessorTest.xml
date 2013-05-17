@@ -1,8 +1,0 @@
-<plexus>
-	<components>
-		<component>
-			<role>com.dianping.tool.dobby.ticket.TicketManager</role>
-			<implementation>com.dianping.tool.dobby.ticket.TicketProcessorTest$MockTicketManager</implementation>
-		</component>
-	</components>
-</plexus>

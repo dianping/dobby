@@ -14,53 +14,53 @@
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.dobby.ticket.TicketManager</role>
-			<implementation>com.dianping.dobby.ticket.DefaultTicketManager</implementation>
+			<role>com.dianping.dobby.ticket.biz.TicketManager</role>
+			<implementation>com.dianping.dobby.ticket.biz.DefaultTicketManager</implementation>
 		</component>
 		<component>
-			<role>com.dianping.dobby.ticket.TicketProcessor</role>
-			<implementation>com.dianping.dobby.ticket.DefaultTicketProcessor</implementation>
+			<role>com.dianping.dobby.ticket.biz.TicketProcessor</role>
+			<implementation>com.dianping.dobby.ticket.biz.DefaultTicketProcessor</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.biz.TicketManager</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.dobby.ticket.TicketContext</role>
-			<implementation>com.dianping.dobby.ticket.DefaultTicketContext</implementation>
+			<role>com.dianping.dobby.ticket.biz.TicketContext</role>
+			<implementation>com.dianping.dobby.ticket.biz.DefaultTicketContext</implementation>
 			<instantiation-strategy>per-lookup</instantiation-strategy>
 			<requirements>
 				<requirement>
-					<role>com.dianping.dobby.ticket.TicketListener</role>
+					<role>com.dianping.dobby.ticket.biz.TicketListener</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.dobby.ticket.TicketListener</role>
-			<implementation>com.dianping.dobby.ticket.DefaultTicketListener</implementation>
+			<role>com.dianping.dobby.ticket.biz.TicketListener</role>
+			<implementation>com.dianping.dobby.ticket.biz.DefaultTicketListener</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.biz.TicketManager</role>
 				</requirement>
 				<requirement>
-					<role>com.dianping.dobby.ticket.TicketSummarizer</role>
+					<role>com.dianping.dobby.ticket.biz.TicketSummarizer</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.dobby.ticket.TicketSummarizer</role>
-			<implementation>com.dianping.dobby.ticket.DefaultTicketSummarizer</implementation>
+			<role>com.dianping.dobby.ticket.biz.TicketSummarizer</role>
+			<implementation>com.dianping.dobby.ticket.biz.DefaultTicketSummarizer</implementation>
 		</component>
 		<component>
 			<role>com.dianping.dobby.TicketTask</role>
 			<implementation>com.dianping.dobby.TicketTask</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.dobby.ticket.TicketProcessor</role>
+					<role>com.dianping.dobby.ticket.biz.TicketProcessor</role>
 				</requirement>
 				<requirement>
-					<role>com.dianping.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.biz.TicketManager</role>
 				</requirement>
 			</requirements>
 		</component>
@@ -81,29 +81,47 @@
 			<implementation>org.unidal.web.mvc.model.ModuleRegistry</implementation>
 			<configuration>
 				<modules>
-					<module default="true">com.dianping.dobby.conosle.ConosleModule</module>
+					<module>com.dianping.dobby.ticket.TicketModule</module>
+					<module default="true">com.dianping.dobby.book.BookModule</module>
 				</modules>
 			</configuration>
 		</component>
 		<component>
-			<role>com.dianping.dobby.conosle.ConosleModule</role>
-			<implementation>com.dianping.dobby.conosle.ConosleModule</implementation>
+			<role>com.dianping.dobby.ticket.TicketModule</role>
+			<implementation>com.dianping.dobby.ticket.TicketModule</implementation>
 		</component>
 		<component>
-			<role>com.dianping.dobby.conosle.page.home.Handler</role>
-			<implementation>com.dianping.dobby.conosle.page.home.Handler</implementation>
+			<role>com.dianping.dobby.ticket.page.home.Handler</role>
+			<implementation>com.dianping.dobby.ticket.page.home.Handler</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.dobby.conosle.page.home.JspViewer</role>
+					<role>com.dianping.dobby.ticket.page.home.JspViewer</role>
 				</requirement>
 				<requirement>
-					<role>com.dianping.dobby.ticket.TicketManager</role>
+					<role>com.dianping.dobby.ticket.biz.TicketManager</role>
 				</requirement>
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.dobby.conosle.page.home.JspViewer</role>
-			<implementation>com.dianping.dobby.conosle.page.home.JspViewer</implementation>
+			<role>com.dianping.dobby.ticket.page.home.JspViewer</role>
+			<implementation>com.dianping.dobby.ticket.page.home.JspViewer</implementation>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.BookModule</role>
+			<implementation>com.dianping.dobby.book.BookModule</implementation>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.page.home.Handler</role>
+			<implementation>com.dianping.dobby.book.page.home.Handler</implementation>
+			<requirements>
+				<requirement>
+					<role>com.dianping.dobby.book.page.home.JspViewer</role>
+				</requirement>
+			</requirements>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.page.home.JspViewer</role>
+			<implementation>com.dianping.dobby.book.page.home.JspViewer</implementation>
 		</component>
 	</components>
 </plexus>

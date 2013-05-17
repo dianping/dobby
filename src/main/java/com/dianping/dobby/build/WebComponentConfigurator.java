@@ -3,7 +3,8 @@ package com.dianping.dobby.build;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dianping.dobby.conosle.ConosleModule;
+import com.dianping.dobby.ticket.TicketModule;
+import com.dianping.dobby.book.BookModule;
 
 import org.unidal.lookup.configuration.Component;
 import org.unidal.web.configuration.AbstractWebComponentsConfigurator;
@@ -14,7 +15,7 @@ class WebComponentConfigurator extends AbstractWebComponentsConfigurator {
 	public List<Component> defineComponents() {
 		List<Component> all = new ArrayList<Component>();
 
-		defineModuleRegistry(all, ConosleModule.class, ConosleModule.class);
+		defineModuleRegistry(all, BookModule.class, TicketModule.class, BookModule.class);
 
 		return all;
 	}

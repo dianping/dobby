@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wizard package="com.dianping.dobby">
    <webapp package="com.dianping.dobby" name="dobby" webres="false" cat="true" plugin-management="true" jstl="true" layout="bootstrap">
-      <module name="conosle" path="console" default="true">
+      <module name="ticket" path="ticket" default="true">
          <page name="home" title="Home" default="true" path="home">
+            <description>Home</description>
+         </page>
+      </module>
+      <module name="book" path="book" default="false">
+         <page name="home" title="Home" default="true" path="home" template="default">
             <description>Home</description>
          </page>
       </module>

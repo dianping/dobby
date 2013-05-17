@@ -1,10 +1,10 @@
-package com.dianping.dobby.ticket;
+package com.dianping.dobby.book;
 
 import org.unidal.web.mvc.Action;
 import org.unidal.web.mvc.ActionContext;
 import org.unidal.web.mvc.ActionPayload;
 import org.unidal.web.mvc.Page;
 
-public class TicketContext<T extends ActionPayload<? extends Page, ? extends Action>> extends ActionContext<T> {
+public class BookContext<T extends ActionPayload<? extends Page, ? extends Action>> extends ActionContext<T> {
 
 }
