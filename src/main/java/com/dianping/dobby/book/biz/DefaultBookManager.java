@@ -55,4 +55,9 @@ public class DefaultBookManager implements BookManager, Initializable {
          Cat.logError(e);
       }
    }
+
+	@Override
+   public BookModel getModel() {
+	   return m_model;
+   }
 }

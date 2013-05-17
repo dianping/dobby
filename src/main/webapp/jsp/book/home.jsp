@@ -54,7 +54,6 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>ID</th>
 						<th>状态</th>
 						<th>借阅人</th>
 						<th>借出时间</th>
@@ -66,7 +65,6 @@
 					<c:forEach var="book" items="${model.books}">
 						<c:forEach var="borrow" items="${book.value.borrowHistory }">
 						<tr>
-							<td>#</td>
 							<td>${borrow.status}</td>
 							<td>${borrow.borrower }</td>
 							<td>[${w:format(borrow.borrowTime, 'yyyy-MM-dd hh:mm:ss')}]</td>
