@@ -1,9 +1,9 @@
 package com.dianping.dobby.ticket.page.home;
 
 public enum JspFile {
-	VIEW("/jsp/conosle/home.jsp"),
+	VIEW("/jsp/ticket/home.jsp"),
 
-	SUMMARY("/jsp/conosle/summary.jsp"),
+	SUMMARY("/jsp/ticket/summary.jsp"),
 
 	;
 

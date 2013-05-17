@@ -11,6 +11,10 @@
    </servlet>
    <servlet-mapping>
       <servlet-name>mvc-servlet</servlet-name>
-      <url-pattern>/console/*</url-pattern>
+      <url-pattern>/ticket/*</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>mvc-servlet</servlet-name>
+      <url-pattern>/book/*</url-pattern>
    </servlet-mapping>
 </web-app>
