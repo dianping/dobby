@@ -123,7 +123,10 @@ org.eclipse.jdt.core.compiler.compliance=1.6]]></content>
 							<goal>dal-model</goal>
 						</goals>
 						<configuration>
-							<manifest><![CDATA[${basedir}/src/main/resources/META-INF/dal/model/ticket-manifest.xml,]]></manifest>
+							<manifest><![CDATA[
+							${basedir}/src/main/resources/META-INF/dal/model/ticket-manifest.xml,
+							${basedir}/src/main/resources/META-INF/dal/model/book-manifest.xml,
+							]]></manifest>
 						</configuration>
 					</execution>
 				</executions>
