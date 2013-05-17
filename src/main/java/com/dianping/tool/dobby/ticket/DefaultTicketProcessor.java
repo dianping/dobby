@@ -66,7 +66,7 @@ public class DefaultTicketProcessor extends ContainerHolder implements TicketPro
 			Action action = new Action().setAt(now).setBy(by).setComment(comment);
 			TicketState nextState = null;
 
-			ticket.addAction(action);
+			ticket.getActions().add(0, action);
 
 			if ("assignTo".equalsIgnoreCase(cmd)) {
 				String assignedTo = args.length > 0 ? args[0] : null;
@@ -90,8 +90,10 @@ public class DefaultTicketProcessor extends ContainerHolder implements TicketPro
 
 			try {
 				if (nextState != null) {
-					action.setState(nextState.name());
-					ticket.setState(nextState.name());
+					String stateName = nextState.name();
+
+					action.setState(stateName);
+					ticket.setState(stateName);
 				}
 
 				ticket.setLastModifiedBy(by);

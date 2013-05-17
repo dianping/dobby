@@ -277,4 +277,59 @@ Frankie
          </action>
       </actions>
    </ticket>
+   <ticket id=" UserWeb " state="CREATED" creation-date="2013-01-21 11:00:53" last-modified-date="2013-01-21 11:00:53" created-by="qimin.wu@dianping.com" last-modified-by="qimin.wu@dianping.com">
+      <subject>CAT异常过多告警[ UserWeb ][SMS]</subject>
+      <content>
+please help check!
+
+
+2013/1/21 &lt;info@umail.dianping.com&gt;
+
+&gt; 异常超过阀值告警  项目名称 UserWeb  告警时间 2013-01-21 10:34:13  告警规则 [ Interval:3;
+&gt; Min:250; Max:2500000]  错误个数 276  CAT链接 link&lt;http://10.1.6.128:8080/cat/r/p?domain=UserWeb&amp;date=2013012110&gt;
+
+
+
+
+-- 
+Thanks,
+Frankie
+&lt;div dir="ltr"&gt;@qimin&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style&gt;please help check!&lt;/div&gt;&lt;/div&gt;&lt;div class="gmail_extra"&gt;&lt;br&gt;&lt;br&gt;&lt;div class="gmail_quote"&gt;2013/1/21  &lt;span dir="ltr"&gt;&amp;lt;&lt;a href="mailto:info@umail.dianping.com" target="_blank"&gt;info@umail.dianping.com&lt;/a&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;
+&lt;blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"&gt;&lt;h4&gt;异常超过阀值告警&lt;/h4&gt;
+&lt;table rules="all" border="1"&gt;
+	&lt;tbody&gt;&lt;tr&gt;
+		&lt;td&gt;项目名称&lt;/td&gt;
+		&lt;td&gt;UserWeb&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;告警时间&lt;/td&gt;
+		&lt;td&gt;2013-01-21 10:34:13&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;告警规则&lt;/td&gt;
+		&lt;td&gt;[ Interval:3; Min:250; Max:2500000]&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;错误个数&lt;/td&gt;
+		&lt;td&gt;276&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;CAT链接&lt;/td&gt;
+		&lt;td&gt; &lt;a href="http://10.1.6.128:8080/cat/r/p?domain=UserWeb&amp;amp;date=2013012110" target="_blank"&gt;link&lt;/a&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;img style="border:0" alt="" src="http://mailt.dianping.com/NewTrack.aspx?t=15&amp;amp;e=qimin.wu%40dianping.com" width="1" height="1"&gt;
+&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;br clear="all"&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;-- &lt;br&gt;&lt;div&gt;Thanks,&lt;/div&gt;
+&lt;div&gt;Frankie&lt;/div&gt;
+&lt;/div&gt;
+</content>
+   </ticket>
+   <ticket id="12312321321" state="ASSIGNED" assigned-to="qimin.wu@dianping.com" creation-date="2013-01-21 17:49:18" last-modified-date="2013-01-21 17:49:18" created-by="yong.you@dianping.com" last-modified-by="yong.you@dianping.com">
+      <subject>[12312321321]test</subject>
+      <content>老吴帮忙看看
+</content>
+      <actions>
+         <action by="yong.you@dianping.com" at="2013-01-21 17:49:18" assigned-to="qimin.wu@dianping.com" state="ASSIGNED">
+         </action>
+      </actions>
+   </ticket>
 </model>

@@ -11,6 +11,9 @@ import org.unidal.lookup.configuration.Component;
 
 import com.dianping.tool.dobby.TicketModule;
 import com.dianping.tool.dobby.TicketTask;
+import com.dianping.tool.dobby.mail.ContentBuilder;
+import com.dianping.tool.dobby.mail.DefaultMessageParser;
+import com.dianping.tool.dobby.mail.MessageParser;
 import com.dianping.tool.dobby.ticket.DefaultTicketContext;
 import com.dianping.tool.dobby.ticket.DefaultTicketListener;
 import com.dianping.tool.dobby.ticket.DefaultTicketManager;
@@ -26,6 +29,10 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator {
 	@Override
 	public List<Component> defineComponents() {
 		List<Component> all = new ArrayList<Component>();
+
+		all.add(C(ContentBuilder.class));
+		all.add(C(MessageParser.class, DefaultMessageParser.class) //
+		      .req(ContentBuilder.class));
 
 		all.add(C(TicketManager.class, DefaultTicketManager.class));
 		all.add(C(TicketProcessor.class, DefaultTicketProcessor.class) //

@@ -1,6 +1,19 @@
 <plexus>
 	<components>
 		<component>
+			<role>com.dianping.tool.dobby.mail.ContentBuilder</role>
+			<implementation>com.dianping.tool.dobby.mail.ContentBuilder</implementation>
+		</component>
+		<component>
+			<role>com.dianping.tool.dobby.mail.MessageParser</role>
+			<implementation>com.dianping.tool.dobby.mail.DefaultMessageParser</implementation>
+			<requirements>
+				<requirement>
+					<role>com.dianping.tool.dobby.mail.ContentBuilder</role>
+				</requirement>
+			</requirements>
+		</component>
+		<component>
 			<role>com.dianping.tool.dobby.ticket.TicketManager</role>
 			<implementation>com.dianping.tool.dobby.ticket.DefaultTicketManager</implementation>
 		</component>
