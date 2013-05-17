@@ -17,8 +17,8 @@ public class MailServiceTest extends ComponentTestCase{
 	public void test() throws EmailException, IOException{
 		GmailService service = new GmailService(new LinkedBlockingQueue<Payload>());
 		
-		List<String> tos = Arrays.asList("yong.you@dianping.com","qimin.wu@dianping.com");
-		service.sendMail("中国", "中国", tos, tos);
+		List<String> tos = Arrays.asList("yong.you@dianping.com","youyong205@126.com","qimin.wu@dianping.com");
+		//service.sendMail("中国", "中国", tos, tos);
 		String content = Files.forIO().readFrom(getClass().getResourceAsStream("html.html"), "utf-8");
 		System.out.println(content);
 		service.sendHtmlMail("中国12", content , tos, tos);
