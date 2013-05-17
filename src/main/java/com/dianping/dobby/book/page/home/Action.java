@@ -2,7 +2,7 @@ package com.dianping.dobby.book.page.home;
 
 public enum Action implements org.unidal.web.mvc.Action {
 	VIEW("view");
-
+	
 	private String m_name;
 
 	private Action(String name) {
