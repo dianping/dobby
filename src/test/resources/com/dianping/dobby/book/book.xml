@@ -9,10 +9,10 @@
 		<total>3</total>
 		<remaining>2</remaining>
 		<borrow-history>
-			<borrow status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
+			<borrow id="1001" status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
 				<return-time>2013-01-23 18:14:00</return-time>
 			</borrow>
-			<borrow status="borrowing" borrower="yiz.zhang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00" />
+			<borrow id="1002" status="borrowing" borrower="yiz.zhang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00" />
 		</borrow-history>
 	</book>
 	<book />

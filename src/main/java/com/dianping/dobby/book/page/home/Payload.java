@@ -6,34 +6,45 @@ import org.unidal.web.mvc.ActionPayload;
 import org.unidal.web.mvc.payload.annotation.FieldMeta;
 
 public class Payload implements ActionPayload<BookPage, Action> {
-   private BookPage m_page;
+	private BookPage m_page;
 
-   @FieldMeta("op")
-   private Action m_action;
+	@FieldMeta("op")
+	private Action m_action;
 
-   public void setAction(String action) {
-      m_action = Action.getByName(action, Action.VIEW);
-   }
+	@FieldMeta("id")
+	private int m_id;
 
-   @Override
-   public Action getAction() {
-      return m_action;
-   }
+	public void setAction(String action) {
+		m_action = Action.getByName(action, Action.VIEW);
+	}
 
-   @Override
-   public BookPage getPage() {
-      return m_page;
-   }
+	@Override
+	public Action getAction() {
+		return m_action;
+	}
 
-   @Override
-   public void setPage(String page) {
-      m_page = BookPage.getByName(page, BookPage.HOME);
-   }
+	@Override
+	public BookPage getPage() {
+		return m_page;
+	}
 
-   @Override
-   public void validate(ActionContext<?> ctx) {
-      if (m_action == null) {
-         m_action = Action.VIEW;
-      }
-   }
+	public int getId() {
+		return m_id;
+	}
+
+	public void setId(int id) {
+		m_id = id;
+	}
+
+	@Override
+	public void setPage(String page) {
+		m_page = BookPage.getByName(page, BookPage.HOME);
+	}
+
+	@Override
+	public void validate(ActionContext<?> ctx) {
+		if (m_action == null) {
+			m_action = Action.VIEW;
+		}
+	}
 }

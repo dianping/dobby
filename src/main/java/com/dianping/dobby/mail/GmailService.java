@@ -53,7 +53,8 @@ public class GmailService {
 	}
 
 	public GmailService(final BlockingQueue<Payload> queue) {
-		this(queue, "ticketmatetest@gmail.com", "xgeskoauugnqddyf");
+		//this(queue, "ticketmatetest@gmail.com", "xgeskoauugnqddyf");
+		this(queue, "book.robot.dianping@gmail.com", "xudgtsnoxivwclna");//book.robot.dianping123
 	}
 
 	public GmailService(final BlockingQueue<Payload> queue, String userName, String password) {
@@ -178,6 +179,7 @@ public class GmailService {
 		email.setFrom(name);
 		email.setSubject(subject);
 		email.setHtmlMsg(content);
+		email.setCharset("utf-8");
 
 		if (tos != null) {
 			for (String to : tos) {
@@ -202,6 +204,7 @@ public class GmailService {
 		email.setFrom(name);
 		email.setSubject(subject);
 		email.setMsg(content);
+		email.setCharset("utf-8");
 		if (tos != null) {
 			for (String to : tos) {
 				email.addTo(to);

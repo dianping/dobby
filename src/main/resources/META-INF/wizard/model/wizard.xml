@@ -4,6 +4,6 @@
       <sample-model>src/test/resources/com/dianping/dobby/ticket/ticket.xml</sample-model>
    </model>
    <model package="com.dianping.dobby.book.model" name="book">
-      <sample-model>src/test/resources/com/dianping/dobby/ticket/book.xml</sample-model>
+      <sample-model>src/test/resources/com/dianping/dobby/book/book.xml</sample-model>
    </model>
 </wizard>
