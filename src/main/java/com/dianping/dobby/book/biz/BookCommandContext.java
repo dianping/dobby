@@ -1,26 +1,21 @@
 package com.dianping.dobby.book.biz;
 
-import com.dianping.dobby.command.AbstractCommandContext;
-import com.dianping.dobby.email.EmailService;
+import com.dianping.dobby.book.model.entity.Book;
+import com.dianping.dobby.command.CommandContext;
 import com.dianping.dobby.email.MessagePayload;
 
-public class BookCommandContext extends AbstractCommandContext {
+public class BookCommandContext implements CommandContext {
    private MessagePayload m_payload;
 
-   private BookManager m_manager;
+   private BookMessageHandler m_handler;
 
-   public BookCommandContext(EmailService service, BookManager manager, MessagePayload payload) {
-      super(service);
-
-      m_manager = manager;
-      m_payload = payload;
+   public BookCommandContext(BookMessageHandler handler, MessagePayload payload) {
+      m_handler = handler;
    }
 
-   public int getIntArg(int index, int defaultValue) {
-      String[] params = m_payload.getCommandParams();
-
+   public int getArgInt(int index, int defaultValue) {
       try {
-         Integer.parseInt(params[index]);
+         return Integer.parseInt(getArgString(index, null));
       } catch (Exception e) {
          // ignore it
       }
@@ -28,23 +23,44 @@ public class BookCommandContext extends AbstractCommandContext {
       return defaultValue;
    }
 
-   public MessagePayload getPayload() {
-      return m_payload;
-   }
+   public String getArgString(int index, String defaultValue) {
+      String[] params = m_payload.getCommandParams();
+      String value = index < params.length ? params[index] : null;
 
-   public BookManager getManager() {
-      return m_manager;
+      if (value != null) {
+         return value;
+      } else {
+         return defaultValue;
+      }
    }
 
    public String getFrom() {
       return m_payload.getFrom();
    }
 
+   public BookManager getManager() {
+      return m_handler.getManager();
+   }
+
+   public MessagePayload getPayload() {
+      return m_payload;
+   }
+
    public void notify(BookMessageId id, Object... args) {
       switch (id) {
       case BOOK_NOT_FOUND:
-         // TODO
+         m_handler.onBookNotFound(m_payload, (Integer) args[0]);
          break;
+      case BORROW_SAME_BOOK_ALREADY_BORROWED:
+         m_handler.onBookAlreadyBorrowed(m_payload, (Book) args[0]);
+         break;
+      case NO_BOOK_TO_BORROW:
+         m_handler.onNoBookToBorrow(m_payload, (Book) args[0]);
+         break;
+      case BORROW_SUCCESSFUL:
+         m_handler.onBookBorrowSuccessful(m_payload, (Book) args[0]);
+         break;
+      // TODO more here
       }
    }
 }

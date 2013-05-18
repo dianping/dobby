@@ -15,6 +15,39 @@ public class DefaultBookProcessor extends ContainerHolder implements BookProcess
 	@Inject
 	private BookManager m_manager;
 
+	private void addNewBorrowItemToHistory(String by, Book book, BorrowState nextState, int expireDuration) {
+		List<Borrow> borrowList = book.getBorrowHistory();
+		Borrow borrow = new Borrow();
+		borrow.setBorrower(by);
+		borrow.setStatus(nextState.name());
+		Date currentTime = new Date(System.currentTimeMillis());
+		borrow.setBorrowTime(currentTime);
+		Date expiredTime = DateUtils.addDays(currentTime, expireDuration);
+		borrow.setExpiredTime(expiredTime);
+		borrowList.add(borrow);
+	}
+
+	private DefaultBorrowContext createBookContext(Book book) {
+		DefaultBorrowContext ctx = (DefaultBorrowContext) lookup(BorrowContext.class);
+		ctx.setBook(book);
+		return ctx;
+
+	}
+
+	private Borrow getBorrowByStatus(List<Borrow> list, String by, BorrowState state) {
+		for (Borrow b : list) {
+			if (b.getBorrower().equals(by) && BorrowState.getByName(b.getStatus(), null) == state) {
+				return b;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public void help() {
+		// TODO
+	}
+
 	@Override
 	public Collection<Book> listAllAvailbleBooks() {
 		return m_manager.findAllBooks();
@@ -68,38 +101,5 @@ public class DefaultBookProcessor extends ContainerHolder implements BookProcess
 		} finally {
 			release(ctx);
 		}
-	}
-
-	private Borrow getBorrowByStatus(List<Borrow> list, String by, BorrowState state) {
-		for (Borrow b : list) {
-			if (b.getBorrower().equals(by) && BorrowState.getByName(b.getStatus(), null) == state) {
-				return b;
-			}
-		}
-		return null;
-	}
-
-	private void addNewBorrowItemToHistory(String by, Book book, BorrowState nextState, int expireDuration) {
-		List<Borrow> borrowList = book.getBorrowHistory();
-		Borrow borrow = new Borrow();
-		borrow.setBorrower(by);
-		borrow.setStatus(nextState.name());
-		Date currentTime = new Date(System.currentTimeMillis());
-		borrow.setBorrowTime(currentTime);
-		Date expiredTime = DateUtils.addDays(currentTime, expireDuration);
-		borrow.setExpiredTime(expiredTime);
-		borrowList.add(borrow);
-	}
-
-	private DefaultBorrowContext createBookContext(Book book) {
-		DefaultBorrowContext ctx = (DefaultBorrowContext) lookup(BorrowContext.class);
-		ctx.setBook(book);
-		return ctx;
-
-	}
-
-	@Override
-	public void help() {
-		// TODO
 	}
 }

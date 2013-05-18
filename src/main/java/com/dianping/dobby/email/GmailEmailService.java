@@ -92,6 +92,11 @@ public class GmailEmailService implements EmailService, Initializable {
       }
    }
 
+   @Override
+   public String getAddress() {
+      return m_name;
+   }
+
    private Properties getProperties() {
       Properties props = System.getProperties();
 

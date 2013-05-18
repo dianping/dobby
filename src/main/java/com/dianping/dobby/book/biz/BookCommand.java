@@ -15,11 +15,11 @@ public enum BookCommand implements Command<BookCommandContext> {
       }
    },
 
-   BORROW("borrow", "@@borrow 123", "borrow a book") {
+   BORROW("borrow", "@@borrow 123", "Borrow a book") {
       @Override
       public void execute(BookCommandContext ctx) throws CommandException {
          BookManager manager = ctx.getManager();
-         int bookId = ctx.getIntArg(0, -1);
+         int bookId = ctx.getArgInt(0, -1);
          String by = ctx.getFrom();
          Book book = manager.findBookById(bookId);
 
@@ -59,7 +59,7 @@ public enum BookCommand implements Command<BookCommandContext> {
       }
    },
 
-   RETURN("return", "@@return 123", "return a book") {
+   RETURN("return", "@@return 123", "Return a book") {
       @Override
       public void execute(BookCommandContext ctx) throws CommandException {
          // TODO
