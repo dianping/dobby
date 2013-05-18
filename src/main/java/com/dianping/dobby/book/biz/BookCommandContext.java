@@ -1,5 +1,7 @@
 package com.dianping.dobby.book.biz;
 
+import java.util.Collection;
+
 import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.command.CommandContext;
 import com.dianping.dobby.email.MessagePayload;
@@ -61,7 +63,18 @@ public class BookCommandContext implements CommandContext {
       case BORROW_SUCCESSFUL:
          m_handler.onBookBorrowSuccessful(m_payload, (Book) args[0]);
          break;
-      // TODO more here
+      case NO_BOOK_TO_RETURN:
+      	m_handler.onNoBookToReturn(m_payload, (Book)args[0]);
+      	break;
+      case RETURN_BOOK_NOT_BORROWED:
+      	m_handler.onReturnBookNotBorrowed(m_payload, (Book)args[0]);
+      	break;
+      case RETURN_SUCCESSFUL:
+      	m_handler.onBookReturnSuccessful(m_payload, (Book) args[0]);
+      	break;
+      case SHOW_ALL_AVAILABLE_BOOK_LIST:
+      	m_handler.onShowAllAvailableBookList(m_payload, (Collection<Book>) args[0]);
+      	break;
       }
    }
 }

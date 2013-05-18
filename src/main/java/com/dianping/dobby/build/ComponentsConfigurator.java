@@ -13,16 +13,10 @@ import com.dianping.dobby.DobbyConstants;
 import com.dianping.dobby.DobbyModule;
 import com.dianping.dobby.book.biz.BookManager;
 import com.dianping.dobby.book.biz.BookMessageHandler;
-import com.dianping.dobby.book.biz.BookProcessor;
-import com.dianping.dobby.book.biz.BorrowContext;
-import com.dianping.dobby.book.biz.BorrowListener;
 import com.dianping.dobby.book.biz.DefaultBookManager;
-import com.dianping.dobby.book.biz.DefaultBookProcessor;
-import com.dianping.dobby.book.biz.DefaultBorrowContext;
-import com.dianping.dobby.book.biz.DefaultBorrowListener;
 import com.dianping.dobby.email.DefaultMessageParser;
-import com.dianping.dobby.email.EmailDispatcher;
 import com.dianping.dobby.email.EmailChannel;
+import com.dianping.dobby.email.EmailDispatcher;
 import com.dianping.dobby.email.GmailEmailChannel;
 import com.dianping.dobby.email.MessageContentExtractor;
 import com.dianping.dobby.email.MessageHandler;
@@ -83,11 +77,6 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
             .req(EmailChannel.class, ID_BOOK) //
             .req(BookManager.class, FreeMarkerView.class));
 
-      all.add(C(BorrowContext.class, DefaultBorrowContext.class) //
-            .req(BorrowListener.class));
-      all.add(C(BorrowListener.class, DefaultBorrowListener.class));
-      all.add(C(BookProcessor.class, DefaultBookProcessor.class) //
-            .req(BookManager.class));
       all.add(C(BookManager.class, DefaultBookManager.class));
    }
 
