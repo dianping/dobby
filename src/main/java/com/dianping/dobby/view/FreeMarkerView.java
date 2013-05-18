@@ -22,7 +22,7 @@ public class FreeMarkerView implements Initializable {
       m_configuration.setDefaultEncoding("UTF-8");
 
       try {
-         m_configuration.setClassForTemplateLoading(FreeMarkerView.class, "/freemaker");
+         m_configuration.setClassForTemplateLoading(FreeMarkerView.class, "/freemarker");
       } catch (Exception e) {
          Cat.logError(e);
       }
@@ -48,6 +48,7 @@ public class FreeMarkerView implements Initializable {
 
          return writer.toString();
       } catch (Throwable e) {
+         e.printStackTrace();
          Cat.logError(e);
       }
 

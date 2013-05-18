@@ -6,7 +6,7 @@ import org.unidal.lookup.annotation.Inject;
 
 import com.dianping.dobby.DobbyConstants;
 import com.dianping.dobby.book.model.entity.Book;
-import com.dianping.dobby.email.EmailService;
+import com.dianping.dobby.email.EmailChannel;
 import com.dianping.dobby.email.MessageHandler;
 import com.dianping.dobby.email.MessagePayload;
 import com.dianping.dobby.view.FreeMarkerView;
@@ -15,7 +15,7 @@ public class BookMessageHandler implements MessageHandler, DobbyConstants {
    public static final String ID = ID_BOOK;
 
    @Inject(ID_BOOK)
-   private EmailService m_service;
+   private EmailChannel m_service;
 
    @Inject
    private BookManager m_manager;
@@ -41,32 +41,35 @@ public class BookMessageHandler implements MessageHandler, DobbyConstants {
    }
 
    public void onBookAlreadyBorrowed(MessagePayload payload, Book book) {
+      String htmlContent = m_view.render("book/book_already_borrowed.ftl", "book", book);
 
+      sendHtmlEmail(payload, htmlContent);
    }
 
    public void onBookBorrowSuccessful(MessagePayload payload, Book book) {
-      String htmlContent = m_view.render("book/borrow_success.ftl", "book", book);
+      String htmlContent = m_view.render("book/book_borrow_successful.ftl", "book", book);
 
+      sendHtmlEmail(payload, htmlContent);
+   }
+
+   public void onBookNotFound(MessagePayload payload, int bookId) {
+      String htmlContent = m_view.render("book/book_not_found.ftl", "bookId", bookId);
+
+      sendHtmlEmail(payload, htmlContent);
+   }
+
+   public void onNoBookToBorrow(MessagePayload payload, Book book) {
+      String htmlContent = m_view.render("book/no_book_to_borrow.ftl", "book", book);
+
+      sendHtmlEmail(payload, htmlContent);
+   }
+
+   private void sendHtmlEmail(MessagePayload payload, String htmlContent) {
       try {
          m_service.send(InternetAddress.parse(payload.getFrom()), InternetAddress.parse(m_service.getAddress()), payload.getSubject(),
                null, htmlContent);
       } catch (Exception e) {
          e.printStackTrace();
       }
-   }
-
-   public void onBookNotFound(MessagePayload payload, int bookId) {
-      String htmlContent = m_view.render("book/no_book.ftl", "bookId", bookId);
-
-      try {
-         m_service.send(InternetAddress.parse(payload.getFrom()), InternetAddress.parse(m_service.getAddress()), "",
-               null, htmlContent);
-      } catch (Exception e) {
-         e.printStackTrace();
-      }
-   }
-
-   public void onNoBookToBorrow(MessagePayload payload, Book book) {
-
    }
 }

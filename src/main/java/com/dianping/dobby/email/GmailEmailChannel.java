@@ -27,7 +27,7 @@ import org.unidal.lookup.annotation.Inject;
 import com.dianping.cat.Cat;
 import com.dianping.cat.message.Transaction;
 
-public class GmailEmailService implements EmailService, Initializable {
+public class GmailEmailChannel implements EmailChannel, Initializable {
    private static final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
 
    @Inject
@@ -133,7 +133,7 @@ public class GmailEmailService implements EmailService, Initializable {
 
    @Override
    public void markRead(int... messageIds) throws Exception {
-      Transaction t = Cat.newTransaction(GmailEmailService.class.getSimpleName(), getClass().getSimpleName());
+      Transaction t = Cat.newTransaction(GmailEmailChannel.class.getSimpleName(), getClass().getSimpleName());
       Folder inbox = null;
 
       try {
@@ -172,7 +172,7 @@ public class GmailEmailService implements EmailService, Initializable {
 
    @Override
    public void pollUnread() throws Exception {
-      Transaction t = Cat.newTransaction(GmailEmailService.class.getSimpleName(), getClass().getSimpleName());
+      Transaction t = Cat.newTransaction(GmailEmailChannel.class.getSimpleName(), getClass().getSimpleName());
       Folder inbox = null;
 
       try {

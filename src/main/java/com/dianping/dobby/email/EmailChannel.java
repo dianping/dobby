@@ -2,7 +2,7 @@ package com.dianping.dobby.email;
 
 import javax.mail.internet.InternetAddress;
 
-public interface EmailService {
+public interface EmailChannel {
    public void close();
 
    public String getAddress();

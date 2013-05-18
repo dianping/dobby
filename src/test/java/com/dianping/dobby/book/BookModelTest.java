@@ -8,7 +8,7 @@ import org.unidal.helper.Files;
 import com.dianping.dobby.book.model.entity.BookModel;
 import com.dianping.dobby.book.model.transform.DefaultSaxParser;
 
-public class ModelTest {
+public class BookModelTest {
 	@Test
 	public void test() throws Exception {
 		InputStream in = getClass().getResourceAsStream("book.xml");

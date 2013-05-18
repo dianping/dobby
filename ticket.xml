@@ -332,7 +332,7 @@ Frankie
          </action>
       </actions>
    </ticket>
-   <ticket state="CREATED" creation-date="2013-05-17 20:23:50" last-modified-date="2013-05-18 10:13:42" created-by="qimin.wu@dianping.com" last-modified-by="ticketmatetest@gmail.com">
+   <ticket state="CREATED" creation-date="2013-05-17 20:23:50" last-modified-date="2013-05-18 10:22:37" created-by="qimin.wu@dianping.com" last-modified-by="ticketmatetest@gmail.com">
       <subject>test</subject>
       <content>Hello, world!
 
@@ -511,6 +511,14 @@ Frankie
 &lt;/div&gt;
 </content>
       <actions>
+         <action by="ticketmatetest@gmail.com" at="2013-05-18 10:22:37">
+            <comment>&lt;h1&gt;借阅成功 (102) 7天7语言&lt;/h1&gt;
+</comment>
+         </action>
+         <action by="ticketmatetest@gmail.com" at="2013-05-18 10:13:54">
+            <comment>&lt;h1&gt;借阅成功 (102) 7天7语言&lt;/h1&gt;
+</comment>
+         </action>
          <action by="ticketmatetest@gmail.com" at="2013-05-18 10:13:42">
             <comment>&lt;h1&gt;借阅成功 (102) 7天7语言&lt;/h1&gt;
 </comment>

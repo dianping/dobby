@@ -18,9 +18,9 @@
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.dobby.email.EmailService</role>
+			<role>com.dianping.dobby.email.EmailChannel</role>
 			<role-hint>ticket</role-hint>
-			<implementation>com.dianping.dobby.email.GmailEmailService</implementation>
+			<implementation>com.dianping.dobby.email.GmailEmailChannel</implementation>
 			<configuration>
 				<name>ticketmatetest@gmail.com</name>
 				<password>xgeskoauugnqddyf</password>
@@ -49,7 +49,7 @@
 					<role-hint>ticket</role-hint>
 				</requirement>
 				<requirement>
-					<role>com.dianping.dobby.email.EmailService</role>
+					<role>com.dianping.dobby.email.EmailChannel</role>
 					<role-hint>ticket</role-hint>
 				</requirement>
 			</requirements>
@@ -112,9 +112,9 @@
 			<implementation>com.dianping.dobby.ticket.biz.DefaultTicketSummarizer</implementation>
 		</component>
 		<component>
-			<role>com.dianping.dobby.email.EmailService</role>
+			<role>com.dianping.dobby.email.EmailChannel</role>
 			<role-hint>book</role-hint>
-			<implementation>com.dianping.dobby.email.GmailEmailService</implementation>
+			<implementation>com.dianping.dobby.email.GmailEmailChannel</implementation>
 			<configuration>
 				<name>book.robot.dianping@gmail.com</name>
 				<password>xudgtsnoxivwclna</password>
@@ -143,7 +143,7 @@
 					<role-hint>book</role-hint>
 				</requirement>
 				<requirement>
-					<role>com.dianping.dobby.email.EmailService</role>
+					<role>com.dianping.dobby.email.EmailChannel</role>
 					<role-hint>book</role-hint>
 				</requirement>
 			</requirements>
@@ -159,7 +159,7 @@
 			<implementation>com.dianping.dobby.book.biz.BookMessageHandler</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.dobby.email.EmailService</role>
+					<role>com.dianping.dobby.email.EmailChannel</role>
 					<role-hint>book</role-hint>
 				</requirement>
 				<requirement>
