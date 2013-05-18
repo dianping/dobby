@@ -11,6 +11,7 @@ public class BookCommandContext implements CommandContext {
 
    public BookCommandContext(BookMessageHandler handler, MessagePayload payload) {
       m_handler = handler;
+      m_payload = payload;
    }
 
    public int getArgInt(int index, int defaultValue) {
