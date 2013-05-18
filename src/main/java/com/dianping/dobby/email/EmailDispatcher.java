@@ -31,7 +31,7 @@ public class EmailDispatcher implements Task {
 
             try {
                m_handler.handle(payload);
-               m_service.markRead(payload.getNum());
+               // TODO m_service.markRead(payload.getNum());
                
                t.setStatus(Transaction.SUCCESS);
             } catch (Exception e) {

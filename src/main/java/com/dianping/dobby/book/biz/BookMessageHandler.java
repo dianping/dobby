@@ -45,7 +45,14 @@ public class BookMessageHandler implements MessageHandler, DobbyConstants {
    }
 
    public void onBookBorrowSuccessful(MessagePayload payload, Book book) {
+      String htmlContent = m_view.render("book/borrow_success.ftl", "book", book);
 
+      try {
+         m_service.send(InternetAddress.parse(payload.getFrom()), InternetAddress.parse(m_service.getAddress()), payload.getSubject(),
+               null, htmlContent);
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
    }
 
    public void onBookNotFound(MessagePayload payload, int bookId) {

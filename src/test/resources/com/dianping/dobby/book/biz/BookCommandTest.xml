@@ -1,0 +1,21 @@
+<plexus>
+	<components>
+		<component>
+			<role>com.dianping.dobby.email.MessageHandler</role>
+			<role-hint>book</role-hint>
+			<implementation>com.dianping.dobby.book.biz.BookCommandTest$MockBookMessageHandler</implementation>
+			<requirements>
+				<requirement>
+					<role>com.dianping.dobby.book.biz.BookManager</role>
+				</requirement>
+				<requirement>
+					<role>com.dianping.dobby.view.FreeMarkerView</role>
+				</requirement>
+				<requirement>
+					<role>com.dianping.dobby.email.EmailService</role>
+					<role-hint>book</role-hint>
+				</requirement>
+			</requirements>
+		</component>
+	</components>
+</plexus>
