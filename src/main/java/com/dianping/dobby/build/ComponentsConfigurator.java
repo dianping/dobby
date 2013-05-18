@@ -22,8 +22,8 @@ import com.dianping.dobby.book.biz.DefaultBorrowContext;
 import com.dianping.dobby.book.biz.DefaultBorrowListener;
 import com.dianping.dobby.email.DefaultMessageParser;
 import com.dianping.dobby.email.EmailDispatcher;
-import com.dianping.dobby.email.EmailService;
-import com.dianping.dobby.email.GmailEmailService;
+import com.dianping.dobby.email.EmailChannel;
+import com.dianping.dobby.email.GmailEmailChannel;
 import com.dianping.dobby.email.MessageContentExtractor;
 import com.dianping.dobby.email.MessageHandler;
 import com.dianping.dobby.email.MessageParser;
@@ -69,7 +69,7 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
    }
 
    private void defineBookComponents(List<Component> all) {
-      all.add(C(EmailService.class, ID_BOOK, GmailEmailService.class) //
+      all.add(C(EmailChannel.class, ID_BOOK, GmailEmailChannel.class) //
             .req(MessageQueue.class, ID_BOOK) //
             .req(MessageParser.class) //
             .config(E("name").value("book.robot.dianping@gmail.com"), // book.robot.dianping123
@@ -77,10 +77,10 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
       all.add(C(EmailDispatcher.class, ID_BOOK, EmailDispatcher.class) //
             .req(MessageQueue.class, ID_BOOK) //
             .req(MessageHandler.class, ID_BOOK) //
-            .req(EmailService.class, ID_BOOK));
+            .req(EmailChannel.class, ID_BOOK));
       all.add(C(MessageQueue.class, ID_BOOK, MessageQueue.class));
       all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class) //
-            .req(EmailService.class, ID_BOOK) //
+            .req(EmailChannel.class, ID_BOOK) //
             .req(BookManager.class, FreeMarkerView.class));
 
       all.add(C(BorrowContext.class, DefaultBorrowContext.class) //
@@ -92,7 +92,7 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
    }
 
    private void defineTicketComponents(List<Component> all) {
-      all.add(C(EmailService.class, ID_TICKET, GmailEmailService.class) //
+      all.add(C(EmailChannel.class, ID_TICKET, GmailEmailChannel.class) //
             .req(MessageQueue.class, ID_TICKET) //
             .req(MessageParser.class) //
             .config(E("name").value("ticketmatetest@gmail.com"), //
@@ -100,7 +100,7 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
       all.add(C(EmailDispatcher.class, ID_TICKET, EmailDispatcher.class) //
             .req(MessageQueue.class, ID_TICKET) //
             .req(MessageHandler.class, ID_TICKET) //
-            .req(EmailService.class, ID_TICKET));
+            .req(EmailChannel.class, ID_TICKET));
       all.add(C(MessageQueue.class, ID_TICKET, MessageQueue.class));
       all.add(C(MessageHandler.class, ID_TICKET, TicketMessageHandler.class) //
             .req(TicketProcessor.class, TicketManager.class));

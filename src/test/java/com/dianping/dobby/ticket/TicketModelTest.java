@@ -10,7 +10,7 @@ import org.unidal.helper.Files;
 import com.dianping.dobby.ticket.model.entity.Model;
 import com.dianping.dobby.ticket.model.transform.DefaultSaxParser;
 
-public class ModelTest {
+public class TicketModelTest {
 	@Test
 	public void test() throws Exception {
 		InputStream in = getClass().getResourceAsStream("ticket.xml");

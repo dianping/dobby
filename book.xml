@@ -21,6 +21,7 @@
          <borrow status="borrowing" borrower="yong.you2@dianping.com" borrow-time="2013-05-18 10:23:45" expired-time="2013-06-17 10:23:45">
          </borrow>
          <borrow status="borrowing" borrower="yong.you3@dianping.com" borrow-time="2013-05-18 10:23:45" expired-time="2013-06-17 10:23:45">
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-18 11:23:18" expired-time="2013-06-17 11:23:18">
          </borrow>
       </borrow-history>
    </book>
@@ -49,12 +50,14 @@
       <press>屌丝协会出版社</press>
       <category>人物传记</category>
       <total>1000</total>
-      <remaining>999</remaining>
+      <remaining>998</remaining>
       <borrow-history>
          <borrow status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
             <return-time>2013-01-23 18:14:00</return-time>
          </borrow>
          <borrow status="borrowing" borrower="jinghua.liang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00">
+         </borrow>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-18 10:52:23" expired-time="2013-06-17 10:52:23">
          </borrow>
       </borrow-history>
    </book>
@@ -65,10 +68,12 @@
       <press>屌丝协会出版社</press>
       <category>人物传记</category>
       <total>1000</total>
-      <remaining>999</remaining>
+      <remaining>998</remaining>
       <borrow-history>
          <borrow status="returned" borrower="tong.song@dianping.com" borrow-time="2013-01-18 18:14:00" expired-time="2013-02-17 18:14:00">
             <return-time>2013-01-23 18:14:00</return-time>
+         </borrow>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-18 11:15:09" expired-time="2013-06-17 11:15:09">
          </borrow>
       </borrow-history>
    </book>

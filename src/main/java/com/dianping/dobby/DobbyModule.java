@@ -6,7 +6,7 @@ import org.unidal.initialization.Module;
 import org.unidal.initialization.ModuleContext;
 
 import com.dianping.dobby.email.EmailDispatcher;
-import com.dianping.dobby.email.EmailService;
+import com.dianping.dobby.email.EmailChannel;
 
 public class DobbyModule extends AbstractModule implements DobbyConstants {
    public static final String ID = ID_DOBBY;
@@ -19,8 +19,8 @@ public class DobbyModule extends AbstractModule implements DobbyConstants {
    @Override
    protected void execute(ModuleContext ctx) throws Exception {
       // force initialized
-      ctx.lookup(EmailService.class, ID_TICKET);
-      ctx.lookup(EmailService.class, ID_BOOK);
+      ctx.lookup(EmailChannel.class, ID_TICKET);
+      ctx.lookup(EmailChannel.class, ID_BOOK);
 
       Threads.forGroup(DobbyConstants.NAME_DOBBY).start(ctx.lookup(EmailDispatcher.class, ID_TICKET));
       Threads.forGroup(DobbyConstants.NAME_DOBBY).start(ctx.lookup(EmailDispatcher.class, ID_BOOK));

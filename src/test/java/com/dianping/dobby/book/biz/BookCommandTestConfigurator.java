@@ -8,7 +8,7 @@ import org.unidal.lookup.configuration.Component;
 
 import com.dianping.dobby.DobbyConstants;
 import com.dianping.dobby.book.biz.BookCommandTest.MockBookMessageHandler;
-import com.dianping.dobby.email.EmailService;
+import com.dianping.dobby.email.EmailChannel;
 import com.dianping.dobby.email.MessageHandler;
 import com.dianping.dobby.view.FreeMarkerView;
 
@@ -18,7 +18,7 @@ public class BookCommandTestConfigurator extends AbstractResourceConfigurator im
 		List<Component> all = new ArrayList<Component>();
 
 		all.add(C(MessageHandler.class, ID_BOOK, MockBookMessageHandler.class) //
-		      .req(BookManager.class, FreeMarkerView.class).req(EmailService.class, ID_BOOK));
+		      .req(BookManager.class, FreeMarkerView.class).req(EmailChannel.class, ID_BOOK));
 
 		return all;
 	}

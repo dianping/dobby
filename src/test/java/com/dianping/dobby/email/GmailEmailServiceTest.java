@@ -11,7 +11,7 @@ import com.site.helper.Files;
 public class GmailEmailServiceTest extends ComponentTestCase {
    @Test
    public void test() throws Exception {
-      EmailService emailService = lookup(EmailService.class, DobbyConstants.ID_BOOK);
+      EmailChannel emailService = lookup(EmailChannel.class, DobbyConstants.ID_BOOK);
       InternetAddress[] to = InternetAddress.parse("yong.you@dianping.com,qimin.wu@dianping.com");
       String content = Files.forIO().readFrom(getClass().getResourceAsStream("email1.html"), "utf-8");
 
