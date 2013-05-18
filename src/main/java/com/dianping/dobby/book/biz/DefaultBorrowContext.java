@@ -12,7 +12,7 @@ public class DefaultBorrowContext implements BorrowContext {
 
    private Book m_book;
 
-   private Error m_error;
+   private BookMessageId m_error;
 
    @Override
    public BorrowListener getListener() {
@@ -40,11 +40,11 @@ public class DefaultBorrowContext implements BorrowContext {
       m_listener = listener;
    }
 
-   public Error getError() {
+   public BookMessageId getError() {
       return m_error;
    }
 
-   public void setErrorMessage(Error error) {
+   public void setErrorMessage(BookMessageId error) {
       m_error = error;
    }
 }

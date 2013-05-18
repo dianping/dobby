@@ -11,5 +11,5 @@ public interface BorrowContext {
 	
 	public Book getBook();
 	
-	public Error getError();
+	public BookMessageId getError();
 }

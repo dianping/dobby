@@ -16,62 +16,63 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 
 public class Render implements Initializable {
-	public Configuration m_configuration;
+   private Configuration m_configuration;
 
-	@Override
-	public void initialize() throws InitializationException {
-		m_configuration = new Configuration();
-		m_configuration.setDefaultEncoding("UTF-8");
-		try {
-			m_configuration.setClassForTemplateLoading(Render.class, "/freemaker");
-		} catch (Exception e) {
-			Cat.logError(e);
-		}
-	}
+   @Override
+   public void initialize() throws InitializationException {
+      m_configuration = new Configuration();
+      m_configuration.setDefaultEncoding("UTF-8");
 
-	private String render(Map<Object, Object> root, StringWriter sw, String name) {
-		try {
-			Template t = m_configuration.getTemplate(name);
+      try {
+         m_configuration.setClassForTemplateLoading(Render.class, "/freemaker");
+      } catch (Exception e) {
+         Cat.logError(e);
+      }
+   }
 
-			t.process(root, sw);
-		} catch (Exception e) {
-			Cat.logError(e);
-		}
-		return sw.toString();
-	}
+   private String render(Map<Object, Object> root, StringWriter sw, String name) {
+      try {
+         Template t = m_configuration.getTemplate(name);
 
-	public String renderBorrow(Date date) {
-		Map<Object, Object> root = new HashMap<Object, Object>();
-		StringWriter sw = new StringWriter(5000);
-		String name = "borrowSuccess.ftl";
-		
-		root.put("date", date);
-		return render(root, sw, name);
-	}
+         t.process(root, sw);
+      } catch (Exception e) {
+         Cat.logError(e);
+      }
+      return sw.toString();
+   }
 
-	public String renderDetail(Book book) {
-		Map<Object, Object> root = new HashMap<Object, Object>();
-		StringWriter sw = new StringWriter(5000);
-		String name = "detail.ftl";
+   public String renderBorrow(Date date) {
+      Map<Object, Object> root = new HashMap<Object, Object>();
+      StringWriter sw = new StringWriter(5000);
+      String name = "borrowSuccess.ftl";
 
-		root.put("book", book);
-		return render(root, sw, name);
-	}
+      root.put("date", date);
+      return render(root, sw, name);
+   }
 
-	public String renderList(List<Book> books) {
-		Map<Object, Object> root = new HashMap<Object, Object>();
-		StringWriter sw = new StringWriter(5000);
-		String name = "list.ftl";
-		
-		root.put("books", books);
-		return render(root, sw, name);
-	}
+   public String renderDetail(Book book) {
+      Map<Object, Object> root = new HashMap<Object, Object>();
+      StringWriter sw = new StringWriter(5000);
+      String name = "detail.ftl";
 
-	public String renderReturn() {
-		Map<Object, Object> root = new HashMap<Object, Object>();
-		StringWriter sw = new StringWriter(5000);
-		String name = "returnSuccess.ftl";
+      root.put("book", book);
+      return render(root, sw, name);
+   }
 
-		return render(root, sw, name);
-	}
+   public String renderList(List<Book> books) {
+      Map<Object, Object> root = new HashMap<Object, Object>();
+      StringWriter sw = new StringWriter(5000);
+      String name = "list.ftl";
+
+      root.put("books", books);
+      return render(root, sw, name);
+   }
+
+   public String renderReturn() {
+      Map<Object, Object> root = new HashMap<Object, Object>();
+      StringWriter sw = new StringWriter(5000);
+      String name = "returnSuccess.ftl";
+
+      return render(root, sw, name);
+   }
 }

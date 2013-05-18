@@ -8,6 +8,7 @@ import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
 import org.unidal.helper.Files;
 
+import com.dianping.cat.Cat;
 import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.book.model.entity.BookModel;
 import com.dianping.dobby.book.model.transform.DefaultSaxParser;
@@ -16,6 +17,11 @@ public class DefaultBookManager implements BookManager, Initializable {
    private File m_modelFile;
 
    private BookModel m_model;
+
+   @Override
+   public Collection<Book> findAllBooks() {
+      return m_model.getBooks().values();
+   }
 
    @Override
    public Book findBookById(int id) {
@@ -35,17 +41,23 @@ public class DefaultBookManager implements BookManager, Initializable {
             m_model = new BookModel();
          }
       } catch (Exception e) {
-         throw new InitializationException("Unable to load book.xml!", e);
+         Cat.logError(e);
+
+         throw new InitializationException(String.format("Unable to load books from %s!", m_modelFile), e);
       }
    }
 
    @Override
-   public void persistent(Book book) throws IOException {
-      Files.forIO().writeTo(m_modelFile, book.toString());
+   public void save(Book book) {
+      try {
+         Files.forIO().writeTo(m_modelFile, m_model.toString());
+      } catch (IOException e) {
+         Cat.logError(e);
+      }
    }
 
-   @Override
-   public Collection<Book> findAllBooks() {
-      return m_model.getBooks().values();
+	@Override
+   public BookModel getModel() {
+	   return m_model;
    }
 }

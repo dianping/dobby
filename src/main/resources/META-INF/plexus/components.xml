@@ -233,6 +233,9 @@
 				<requirement>
 					<role>com.dianping.dobby.book.page.home.JspViewer</role>
 				</requirement>
+				<requirement>
+					<role>com.dianping.dobby.book.biz.BookManager</role>
+				</requirement>
 			</requirements>
 		</component>
 		<component>
