@@ -1,6 +1,10 @@
 <plexus>
 	<components>
 		<component>
+			<role>com.dianping.dobby.view.FreeMarkerView</role>
+			<implementation>com.dianping.dobby.view.FreeMarkerView</implementation>
+		</component>
+		<component>
 			<role>com.dianping.dobby.email.MessageContentExtractor</role>
 			<implementation>com.dianping.dobby.email.MessageContentExtractor</implementation>
 		</component>
@@ -147,10 +151,13 @@
 			<implementation>com.dianping.dobby.book.biz.BookMessageHandler</implementation>
 			<requirements>
 				<requirement>
-					<role>com.dianping.dobby.book.biz.BookProcessor</role>
+					<role>com.dianping.dobby.email.EmailService</role>
 				</requirement>
 				<requirement>
 					<role>com.dianping.dobby.book.biz.BookManager</role>
+				</requirement>
+				<requirement>
+					<role>com.dianping.dobby.view.FreeMarkerView</role>
 				</requirement>
 			</requirements>
 		</component>

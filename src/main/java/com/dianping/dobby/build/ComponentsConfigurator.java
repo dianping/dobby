@@ -39,12 +39,15 @@ import com.dianping.dobby.ticket.biz.TicketManager;
 import com.dianping.dobby.ticket.biz.TicketMessageHandler;
 import com.dianping.dobby.ticket.biz.TicketProcessor;
 import com.dianping.dobby.ticket.biz.TicketSummarizer;
+import com.dianping.dobby.view.FreeMarkerView;
 
 public class ComponentsConfigurator extends AbstractResourceConfigurator implements DobbyConstants {
    @Override
    public List<Component> defineComponents() {
       List<Component> all = new ArrayList<Component>();
 
+      all.add(C(FreeMarkerView.class));
+      
       defineEmailComponents(all);
       defineTicketComponents(all);
       defineBookComponents(all);
@@ -76,7 +79,7 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
             .req(MessageHandler.class, ID_BOOK));
       all.add(C(MessageQueue.class, ID_BOOK, MessageQueue.class));
       all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class) //
-            .req(BookProcessor.class, BookManager.class));
+            .req(EmailService.class, BookManager.class, FreeMarkerView.class));
 
       all.add(C(BorrowContext.class, DefaultBorrowContext.class) //
             .req(BorrowListener.class));
