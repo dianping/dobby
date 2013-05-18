@@ -48,6 +48,10 @@
 					<role>com.dianping.dobby.email.MessageHandler</role>
 					<role-hint>ticket</role-hint>
 				</requirement>
+				<requirement>
+					<role>com.dianping.dobby.email.EmailService</role>
+					<role-hint>ticket</role-hint>
+				</requirement>
 			</requirements>
 		</component>
 		<component>
@@ -138,6 +142,10 @@
 					<role>com.dianping.dobby.email.MessageHandler</role>
 					<role-hint>book</role-hint>
 				</requirement>
+				<requirement>
+					<role>com.dianping.dobby.email.EmailService</role>
+					<role-hint>book</role-hint>
+				</requirement>
 			</requirements>
 		</component>
 		<component>
@@ -152,6 +160,7 @@
 			<requirements>
 				<requirement>
 					<role>com.dianping.dobby.email.EmailService</role>
+					<role-hint>book</role-hint>
 				</requirement>
 				<requirement>
 					<role>com.dianping.dobby.book.biz.BookManager</role>

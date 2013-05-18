@@ -47,7 +47,7 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
       List<Component> all = new ArrayList<Component>();
 
       all.add(C(FreeMarkerView.class));
-      
+
       defineEmailComponents(all);
       defineTicketComponents(all);
       defineBookComponents(all);
@@ -76,10 +76,12 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
                   E("password").value("xudgtsnoxivwclna")));
       all.add(C(EmailDispatcher.class, ID_BOOK, EmailDispatcher.class) //
             .req(MessageQueue.class, ID_BOOK) //
-            .req(MessageHandler.class, ID_BOOK));
+            .req(MessageHandler.class, ID_BOOK) //
+            .req(EmailService.class, ID_BOOK));
       all.add(C(MessageQueue.class, ID_BOOK, MessageQueue.class));
       all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class) //
-            .req(EmailService.class, BookManager.class, FreeMarkerView.class));
+            .req(EmailService.class, ID_BOOK) //
+            .req(BookManager.class, FreeMarkerView.class));
 
       all.add(C(BorrowContext.class, DefaultBorrowContext.class) //
             .req(BorrowListener.class));
@@ -97,7 +99,8 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
                   E("password").value("xgeskoauugnqddyf")));
       all.add(C(EmailDispatcher.class, ID_TICKET, EmailDispatcher.class) //
             .req(MessageQueue.class, ID_TICKET) //
-            .req(MessageHandler.class, ID_TICKET));
+            .req(MessageHandler.class, ID_TICKET) //
+            .req(EmailService.class, ID_TICKET));
       all.add(C(MessageQueue.class, ID_TICKET, MessageQueue.class));
       all.add(C(MessageHandler.class, ID_TICKET, TicketMessageHandler.class) //
             .req(TicketProcessor.class, TicketManager.class));
