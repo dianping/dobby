@@ -1,4 +1,4 @@
-package com.dianping.dobby.ticket;
+package com.dianping.dobby.ticket.biz;
 
 import java.io.IOException;
 import java.util.ArrayList;

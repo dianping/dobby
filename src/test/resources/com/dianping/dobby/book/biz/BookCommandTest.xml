@@ -8,14 +8,11 @@
 				<requirement>
 					<role>com.dianping.dobby.book.biz.BookManager</role>
 				</requirement>
-				<requirement>
-					<role>com.dianping.dobby.view.FreeMarkerView</role>
-				</requirement>
-				<requirement>
-					<role>com.dianping.dobby.email.EmailService</role>
-					<role-hint>book</role-hint>
-				</requirement>
 			</requirements>
+		</component>
+		<component>
+			<role>com.dianping.dobby.book.biz.BookManager</role>
+			<implementation>com.dianping.dobby.book.biz.BookCommandTest$MockBookManager</implementation>
 		</component>
 	</components>
 </plexus>

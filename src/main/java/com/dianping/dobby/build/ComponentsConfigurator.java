@@ -36,6 +36,28 @@ import com.dianping.dobby.ticket.biz.TicketSummarizer;
 import com.dianping.dobby.view.FreeMarkerView;
 
 public class ComponentsConfigurator extends AbstractResourceConfigurator implements DobbyConstants {
+   public static void main(String[] args) {
+      generatePlexusComponentsXmlFile(new ComponentsConfigurator());
+   }
+
+   private void defineBookComponents(List<Component> all) {
+      all.add(C(EmailChannel.class, ID_BOOK, GmailEmailChannel.class) //
+            .req(MessageQueue.class, ID_BOOK) //
+            .req(MessageParser.class) //
+            .config(E("name").value("book.robot.dianping@gmail.com"), // book.robot.dianping123
+                  E("password").value("xudgtsnoxivwclna")));
+      all.add(C(EmailDispatcher.class, ID_BOOK, EmailDispatcher.class) //
+            .req(MessageQueue.class, ID_BOOK) //
+            .req(MessageHandler.class, ID_BOOK) //
+            .req(EmailChannel.class, ID_BOOK));
+      all.add(C(MessageQueue.class, ID_BOOK, MessageQueue.class));
+      all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class) //
+            .req(EmailChannel.class, ID_BOOK) //
+            .req(BookManager.class, FreeMarkerView.class));
+
+      all.add(C(BookManager.class, DefaultBookManager.class));
+   }
+
    @Override
    public List<Component> defineComponents() {
       List<Component> all = new ArrayList<Component>();
@@ -62,24 +84,6 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
             .req(MessageContentExtractor.class));
    }
 
-   private void defineBookComponents(List<Component> all) {
-      all.add(C(EmailChannel.class, ID_BOOK, GmailEmailChannel.class) //
-            .req(MessageQueue.class, ID_BOOK) //
-            .req(MessageParser.class) //
-            .config(E("name").value("book.robot.dianping@gmail.com"), // book.robot.dianping123
-                  E("password").value("xudgtsnoxivwclna")));
-      all.add(C(EmailDispatcher.class, ID_BOOK, EmailDispatcher.class) //
-            .req(MessageQueue.class, ID_BOOK) //
-            .req(MessageHandler.class, ID_BOOK) //
-            .req(EmailChannel.class, ID_BOOK));
-      all.add(C(MessageQueue.class, ID_BOOK, MessageQueue.class));
-      all.add(C(MessageHandler.class, ID_BOOK, BookMessageHandler.class) //
-            .req(EmailChannel.class, ID_BOOK) //
-            .req(BookManager.class, FreeMarkerView.class));
-
-      all.add(C(BookManager.class, DefaultBookManager.class));
-   }
-
    private void defineTicketComponents(List<Component> all) {
       all.add(C(EmailChannel.class, ID_TICKET, GmailEmailChannel.class) //
             .req(MessageQueue.class, ID_TICKET) //
@@ -102,9 +106,5 @@ public class ComponentsConfigurator extends AbstractResourceConfigurator impleme
       all.add(C(TicketListener.class, DefaultTicketListener.class) //
             .req(TicketManager.class, TicketSummarizer.class));
       all.add(C(TicketSummarizer.class, DefaultTicketSummarizer.class));
-   }
-
-   public static void main(String[] args) {
-      generatePlexusComponentsXmlFile(new ComponentsConfigurator());
    }
 }

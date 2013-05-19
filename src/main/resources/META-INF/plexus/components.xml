@@ -171,28 +171,6 @@
 			</requirements>
 		</component>
 		<component>
-			<role>com.dianping.dobby.book.biz.BorrowContext</role>
-			<implementation>com.dianping.dobby.book.biz.DefaultBorrowContext</implementation>
-			<requirements>
-				<requirement>
-					<role>com.dianping.dobby.book.biz.BorrowListener</role>
-				</requirement>
-			</requirements>
-		</component>
-		<component>
-			<role>com.dianping.dobby.book.biz.BorrowListener</role>
-			<implementation>com.dianping.dobby.book.biz.DefaultBorrowListener</implementation>
-		</component>
-		<component>
-			<role>com.dianping.dobby.book.biz.BookProcessor</role>
-			<implementation>com.dianping.dobby.book.biz.DefaultBookProcessor</implementation>
-			<requirements>
-				<requirement>
-					<role>com.dianping.dobby.book.biz.BookManager</role>
-				</requirement>
-			</requirements>
-		</component>
-		<component>
 			<role>com.dianping.dobby.book.biz.BookManager</role>
 			<implementation>com.dianping.dobby.book.biz.DefaultBookManager</implementation>
 		</component>
@@ -237,6 +215,11 @@
 		<component>
 			<role>com.dianping.dobby.ticket.page.home.JspViewer</role>
 			<implementation>com.dianping.dobby.ticket.page.home.JspViewer</implementation>
+			<requirements>
+				<requirement>
+					<role>org.unidal.web.mvc.view.model.ModelHandler</role>
+				</requirement>
+			</requirements>
 		</component>
 		<component>
 			<role>com.dianping.dobby.book.BookModule</role>
@@ -257,6 +240,11 @@
 		<component>
 			<role>com.dianping.dobby.book.page.home.JspViewer</role>
 			<implementation>com.dianping.dobby.book.page.home.JspViewer</implementation>
+			<requirements>
+				<requirement>
+					<role>org.unidal.web.mvc.view.model.ModelHandler</role>
+				</requirement>
+			</requirements>
 		</component>
 	</components>
 </plexus>

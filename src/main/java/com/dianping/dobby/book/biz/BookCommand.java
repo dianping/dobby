@@ -13,15 +13,17 @@ public enum BookCommand implements Command<BookCommandContext> {
    HELP("help", "@@help", "This help page") {
       @Override
       public void execute(BookCommandContext ctx) throws CommandException {
-      	BookManager manager = ctx.getManager();
-      	Collection<Book> books = manager.findAllBooks();
-      	Collection<Book> availableBooks = new ArrayList<Book>();
-      	for(Book book: books){
-      		if(book.getRemaining() > 0){
-      			availableBooks.add(book);
-      		}
-      	}
-      	ctx.notify(BookMessageId.SHOW_ALL_AVAILABLE_BOOK_LIST, availableBooks);
+         BookManager manager = ctx.getManager();
+         Collection<Book> books = manager.findAllBooks();
+         Collection<Book> availableBooks = new ArrayList<Book>();
+
+         for (Book book : books) {
+            if (book.getRemaining() > 0) {
+               availableBooks.add(book);
+            }
+         }
+
+         ctx.notify(BookMessageId.SHOW_ALL_AVAILABLE_BOOK_LIST, availableBooks);
       }
    },
 
@@ -63,30 +65,30 @@ public enum BookCommand implements Command<BookCommandContext> {
    RETURN("return", "@@return 123", "Return a book") {
       @Override
       public void execute(BookCommandContext ctx) throws CommandException {
-      	BookManager manager = ctx.getManager();
+         BookManager manager = ctx.getManager();
          int bookId = ctx.getArgInt(0, -1);
          String by = ctx.getFrom();
          Book book = manager.findBookById(bookId);
-         
+
          if (book == null) {
             ctx.notify(BookMessageId.BOOK_NOT_FOUND, bookId);
             return;
          }
-         
+
          Borrow borrow = findActiveBorrow(book, by);
-         if(borrow == null){
-         	ctx.notify(BookMessageId.RETURN_BOOK_NOT_BORROWED, book);
-         	return;
+         if (borrow == null) {
+            ctx.notify(BookMessageId.RETURN_BOOK_NOT_BORROWED, book);
+            return;
          }
-         
-         if(book.getTotal() == book.getRemaining()){
-         	ctx.notify(BookMessageId.NO_BOOK_TO_RETURN, book);
-         	return;
+
+         if (book.getTotal() == book.getRemaining()) {
+            ctx.notify(BookMessageId.NO_BOOK_TO_RETURN, book);
+            return;
          }
-         
+
          book.incRemaining(1);
          borrow.setReturnTime(new Date()).setStatus("returned");
-         
+
          manager.save(book);
          ctx.notify(BookMessageId.RETURN_SUCCESSFUL, book);
       }
@@ -130,7 +132,7 @@ public enum BookCommand implements Command<BookCommandContext> {
    public String getName() {
       return m_name;
    }
-   
+
    private static Borrow findActiveBorrow(Book book, String by) {
       for (Borrow b : book.getBorrowHistory()) {
          if (b.getBorrower().equals(by) && b.getStatus().equals("borrowing")) {
