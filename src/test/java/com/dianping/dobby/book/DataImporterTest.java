@@ -29,18 +29,16 @@ public class DataImporterTest {
 		for (String line : lines) {
 			String[] words = StringUtils.split(line, ";");
 
-			if(manager.findBookById(words[0]) != null){
+			if (manager.findBookById(words[0]) != null) {
 				manager.rmBook(words[0]);
 			}
-			
-			if (manager.findBookById(words[0]) == null) {
-				Book book = new Book();
-				book.setId(words[0]);
-				book.setTitle(words[1]);
-				book.setCategory(words[2]);
 
-				manager.save(book);
-			}
+			Book book = new Book();
+			book.setId(words[0]);
+			book.setTitle(words[1]);
+			book.setCategory(words[2]);
+
+			manager.save(book);
 		}
 
 		List<String> historys = FileUtils.readLines(new File("src/test/resources/com/dianping/dobby/book/history.txt"));
@@ -62,6 +60,8 @@ public class DataImporterTest {
 			if (!ex) {
 				borrow.setStatus(words[5]);
 			}
+			
+			System.out.println(id);
 
 			Book book = manager.findBookById(id);
 			book.addBorrow(borrow);
