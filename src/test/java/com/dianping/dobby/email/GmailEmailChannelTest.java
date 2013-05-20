@@ -15,6 +15,6 @@ public class GmailEmailChannelTest extends ComponentTestCase {
       InternetAddress[] to = InternetAddress.parse("yong.you@dianping.com,qimin.wu@dianping.com");
       String content = Files.forIO().readFrom(getClass().getResourceAsStream("email1.html"), "utf-8");
 
-      emailService.send(to, null, "中国1234", null, content);
+      emailService.send(to, null, null, "中国1234", null, content);
    }
 }

@@ -13,197 +13,202 @@ import org.unidal.lookup.annotation.Inject;
 import org.unidal.tuple.Pair;
 
 public class DefaultMessageParser implements MessageParser {
-	private static final String[] SUBJECT_PREFIXES = { "Re:", "Fwd:", "�ظ�:", "ת��:" };
+   private static final String[] SUBJECT_PREFIXES = { "Re:", "Fwd:", "�ظ�:", "ת��:" };
 
-	@Inject
-	private MessageContentExtractor m_builder;
+   @Inject
+   private MessageContentExtractor m_builder;
 
-	private Map<String, String> buildNameToEmailMap(Address[] addresses) {
-		// name => email
-		Map<String, String> map = new HashMap<String, String>();
+   private Map<String, String> buildNameToEmailMap(Address[] addresses) {
+      // name => email
+      Map<String, String> map = new HashMap<String, String>();
 
-		for (Address address : addresses) {
-			if (address instanceof InternetAddress) {
-				InternetAddress ia = (InternetAddress) address;
-				String name = ia.getPersonal();
-				String email = ia.getAddress();
-				int pos = email.indexOf('@');
+      for (Address address : addresses) {
+         if (address instanceof InternetAddress) {
+            InternetAddress ia = (InternetAddress) address;
+            String name = ia.getPersonal();
+            String email = ia.getAddress();
+            int pos = email.indexOf('@');
 
-				if (name != null && name.length() > 0) {
-					map.put(name.toLowerCase(), email);
-				}
+            if (name != null && name.length() > 0) {
+               map.put(name.toLowerCase(), email);
+            }
 
-				map.put(email.substring(0, pos), email);
-			}
-		}
+            map.put(email.substring(0, pos), email);
+         }
+      }
 
-		return map;
-	}
+      return map;
+   }
 
-	private String getFirstLine(String content) {
-		StringBuilder sb = new StringBuilder(64);
-		int len = content == null ? 0 : content.length();
+   private String getFirstLine(String content) {
+      StringBuilder sb = new StringBuilder(64);
+      int len = content == null ? 0 : content.length();
 
-		for (int i = 0; i < len; i++) {
-			char ch = content.charAt(i);
+      for (int i = 0; i < len; i++) {
+         char ch = content.charAt(i);
 
-			switch (ch) {
-			case '\r':
-			case '\n':
-				return sb.toString();
-			case '<': // strip HTML tags
-				int off = i;
+         switch (ch) {
+         case '\r':
+         case '\n':
+            return sb.toString();
+         case '<': // strip HTML tags
+            int off = i;
 
-				while (i + 1 < len) {
-					i++;
+            while (i + 1 < len) {
+               i++;
 
-					if (content.charAt(i) == '>') {
-						if ("br".equalsIgnoreCase(content.substring(off + 1, i))) {
-							return sb.toString();
-						}
-						
-						break;
-					}
-				}
-				break;
-			default:
-				sb.append(ch);
-				break;
-			}
-		}
+               if (content.charAt(i) == '>') {
+                  if ("br".equalsIgnoreCase(content.substring(off + 1, i))) {
+                     return sb.toString();
+                  }
 
-		return sb.toString();
-	}
+                  break;
+               }
+            }
+            break;
+         default:
+            sb.append(ch);
+            break;
+         }
+      }
 
-	@Override
-	public MessagePayload parse(Message message) {
-		try {
-			MessagePayload payload = new MessagePayload();
+      return sb.toString();
+   }
 
-			int num = message.getMessageNumber();
-			Address[] fromAddresses = message.getFrom();
-			String rawSubject = message.getSubject();
-			String subject = parseSubject(rawSubject);
-			String id = parseId(subject);
-			String from = parseFromAddress(fromAddresses);
-			String content = m_builder.build(message.getContent());
+   @Override
+   public MessagePayload parse(Message message) {
+      try {
+         MessagePayload payload = new MessagePayload();
 
-			Pair<String, String[]> result = new Pair<String, String[]>();
+         int num = message.getMessageNumber();
+         Address[] fromAddresses = message.getFrom();
+         String rawSubject = message.getSubject();
+         String subject = parseSubject(rawSubject);
+         String id = parseId(subject);
+         String from = parseFromAddress(fromAddresses);
+         String content = m_builder.build(message.getContent());
 
-			parseCommand(message.getAllRecipients(), content, result);
+         Pair<String, String[]> result = new Pair<String, String[]>();
 
-			payload.setNum(num);
-			payload.setId(id);
-			payload.setSubject(subject);
-			payload.setFrom(from);
-			payload.setCommand(result.getKey());
-			payload.setCommandParams(result.getValue());
-			payload.setComment(content);
+         parseCommand(message.getAllRecipients(), content, result);
 
-			return payload;
-		} catch (Exception e) {
-			throw new RuntimeException(String.format("Error when parsing mail message: %s!", message), e);
-		}
-	}
+         payload.setNum(num);
+         payload.setId(id);
+         payload.setSubject(subject);
+         payload.setFrom(from);
+         payload.setCommand(result.getKey());
+         payload.setCommandParams(result.getValue());
+         payload.setComment(content);
 
-	@Override
-	public void parseCommand(Address[] addresses, String content, Pair<String, String[]> result) {
-		String line = getFirstLine(content);
-		List<String> parts = Splitters.by(' ').noEmptyItem().split(line);
+         String[] messageIds = message.getHeader("Message-ID");
+         if (messageIds != null && messageIds.length > 0) {
+            payload.setMessageId(messageIds[0]);
+         }
 
-		if (!parts.isEmpty()) {
-			String first = parts.remove(0);
+         return payload;
+      } catch (Exception e) {
+         throw new RuntimeException(String.format("Error when parsing mail message: %s!", message), e);
+      }
+   }
 
-			if (first.startsWith("@@")) {
-				String cmd = first.substring(2);
+   @Override
+   public void parseCommand(Address[] addresses, String content, Pair<String, String[]> result) {
+      String line = getFirstLine(content);
+      List<String> parts = Splitters.by(' ').noEmptyItem().split(line);
 
-				if (cmd.length() > 0) {
-					result.setKey(cmd);
-					result.setValue(parts.toArray(new String[0]));
-				}
-			} else if (first.startsWith("@")) {
-				String name = first.substring(1).toLowerCase();
-				Map<String, String> map = buildNameToEmailMap(addresses);
-				String email = map.get(name);
+      if (!parts.isEmpty()) {
+         String first = parts.remove(0);
 
-				if (email == null) {
-					String prefix1 = name + ".";
-					String prefix2 = name + " ";
+         if (first.startsWith("@@")) {
+            String cmd = first.substring(2);
 
-					for (Map.Entry<String, String> e : map.entrySet()) {
-						String key = e.getKey();
+            if (cmd.length() > 0) {
+               result.setKey(cmd);
+               result.setValue(parts.toArray(new String[0]));
+            }
+         } else if (first.startsWith("@")) {
+            String name = first.substring(1).toLowerCase();
+            Map<String, String> map = buildNameToEmailMap(addresses);
+            String email = map.get(name);
 
-						if (key.startsWith(prefix1) || key.startsWith(prefix2)) {
-							email = e.getValue();
-							break;
-						} else if (key.indexOf('.') < 0 && key.endsWith(name)) {
-							email = e.getValue();
-							break;
-						}
-					}
-				}
+            if (email == null) {
+               String prefix1 = name + ".";
+               String prefix2 = name + " ";
 
-				if (email != null) {
-					result.setKey("assignTo");
-					result.setValue(new String[] { email });
-				}
-			}
-		}
-	}
+               for (Map.Entry<String, String> e : map.entrySet()) {
+                  String key = e.getKey();
 
-	@Override
-	public String parseFromAddress(Address[] addresses) {
-		if (addresses != null) {
-			for (Address address : addresses) {
-				if (address instanceof InternetAddress) {
-					return ((InternetAddress) address).getAddress();
-				}
-			}
-		}
+                  if (key.startsWith(prefix1) || key.startsWith(prefix2)) {
+                     email = e.getValue();
+                     break;
+                  } else if (key.indexOf('.') < 0 && key.endsWith(name)) {
+                     email = e.getValue();
+                     break;
+                  }
+               }
+            }
 
-		return null;
-	}
+            if (email != null) {
+               result.setKey("assignTo");
+               result.setValue(new String[] { email });
+            }
+         }
+      }
+   }
 
-	@Override
-	public String parseId(String subject) {
-		if (subject != null) {
-			int off = subject.indexOf('[');
-			int pos = subject.indexOf(']', off + 1);
+   @Override
+   public String parseFromAddress(Address[] addresses) {
+      if (addresses != null) {
+         for (Address address : addresses) {
+            if (address instanceof InternetAddress) {
+               return ((InternetAddress) address).getAddress();
+            }
+         }
+      }
 
-			if (off >= 0 && pos > 0) {
-				return subject.substring(off + 1, pos).trim();
-			}
-		}
+      return null;
+   }
 
-		return null;
-	}
+   @Override
+   public String parseId(String subject) {
+      if (subject != null) {
+         int off = subject.indexOf('[');
+         int pos = subject.indexOf(']', off + 1);
 
-	@Override
-	public String parseSubject(String rawSubject) {
-		if (rawSubject == null) {
-			return null;
-		}
+         if (off >= 0 && pos > 0) {
+            return subject.substring(off + 1, pos).trim();
+         }
+      }
 
-		String subject = rawSubject;
+      return null;
+   }
 
-		while (true) {
-			boolean matched = false;
+   @Override
+   public String parseSubject(String rawSubject) {
+      if (rawSubject == null) {
+         return null;
+      }
 
-			for (String prefix : SUBJECT_PREFIXES) {
-				int len = prefix.length();
+      String subject = rawSubject;
 
-				if (subject.regionMatches(true, 0, prefix, 0, len)) {
-					subject = subject.substring(len).trim();
-					matched = true;
-					break;
-				}
-			}
+      while (true) {
+         boolean matched = false;
 
-			if (!matched) {
-				break;
-			}
-		}
+         for (String prefix : SUBJECT_PREFIXES) {
+            int len = prefix.length();
 
-		return subject;
-	}
+            if (subject.regionMatches(true, 0, prefix, 0, len)) {
+               subject = subject.substring(len).trim();
+               matched = true;
+               break;
+            }
+         }
+
+         if (!matched) {
+            break;
+         }
+      }
+
+      return subject;
+   }
 }

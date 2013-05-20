@@ -11,6 +11,6 @@ public interface EmailChannel {
 
    public void pollUnread() throws Exception;
 
-   public void send(InternetAddress[] to, InternetAddress[] cc, String subject, String content, String htmlContent)
+   public void send(InternetAddress[] to, InternetAddress[] cc, String originalMessageId, String subject, String content, String htmlContent)
          throws Exception;
 }

@@ -48,7 +48,7 @@ public class DefaultBookManager implements BookManager, Initializable {
    }
 
    @Override
-   public void save(Book book) {
+   public synchronized void save(Book book) {
       try {
          Files.forIO().writeTo(m_modelFile, m_model.toString());
       } catch (IOException e) {

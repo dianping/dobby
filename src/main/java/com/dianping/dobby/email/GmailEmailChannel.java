@@ -213,11 +213,15 @@ public class GmailEmailChannel implements EmailChannel, Initializable {
    }
 
    @Override
-   public void send(InternetAddress[] tos, InternetAddress[] ccs, String subject, String content, String htmlContent)
-         throws Exception {
+   public void send(InternetAddress[] tos, InternetAddress[] ccs, String originalMessageId, String subject,
+         String content, String htmlContent) throws Exception {
       HtmlEmail email = createHtmlEmail();
 
-      email.setSubject(subject);
+      email.setSubject(subject == null ? "No Subject" : subject);
+
+      if (originalMessageId != null) {
+         email.addHeader("In-Reply-To", originalMessageId);
+      }
 
       if (content != null) {
          email.setMsg(content);

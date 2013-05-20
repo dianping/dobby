@@ -51,6 +51,8 @@ public class BookCommandContext implements CommandContext {
 
    @SuppressWarnings("unchecked")
    public void notify(BookMessageId id, Object... args) {
+      m_handler.log(String.format("Notify BookMessageId: %s.", id));
+
       switch (id) {
       case BOOK_NOT_FOUND:
          m_handler.onBookNotFound(m_payload, (Integer) args[0]);
@@ -65,17 +67,17 @@ public class BookCommandContext implements CommandContext {
          m_handler.onBookBorrowSuccessful(m_payload, (Book) args[0]);
          break;
       case NO_BOOK_TO_RETURN:
-      	m_handler.onNoBookToReturn(m_payload, (Book)args[0]);
-      	break;
+         m_handler.onNoBookToReturn(m_payload, (Book) args[0]);
+         break;
       case RETURN_BOOK_NOT_BORROWED:
-      	m_handler.onReturnBookNotBorrowed(m_payload, (Book)args[0]);
-      	break;
+         m_handler.onReturnBookNotBorrowed(m_payload, (Book) args[0]);
+         break;
       case RETURN_SUCCESSFUL:
-      	m_handler.onBookReturnSuccessful(m_payload, (Book) args[0]);
-      	break;
+         m_handler.onBookReturnSuccessful(m_payload, (Book) args[0]);
+         break;
       case SHOW_ALL_AVAILABLE_BOOK_LIST:
-      	m_handler.onShowAllAvailableBookList(m_payload, (Collection<Book>) args[0]);
-      	break;
+         m_handler.onShowAllAvailableBookList(m_payload, (Collection<Book>) args[0]);
+         break;
       }
    }
 }

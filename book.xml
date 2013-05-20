@@ -51,7 +51,10 @@
          </borrow>
          <borrow status="borrowing" borrower="jinghua.liang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00">
          </borrow>
-         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-18 10:52:23" expired-time="2013-06-17 10:52:23">
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-18 10:52:23" expired-time="2013-06-17 10:52:23">
+            <return-time>2013-05-20 13:33:24</return-time>
+         </borrow>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-20 13:34:14" expired-time="2013-06-19 13:34:14">
          </borrow>
       </borrow-history>
    </book>
@@ -85,6 +88,9 @@
          </borrow>
          <borrow status="borrowing" borrower="tong.song@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00">
          </borrow>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-20 15:08:56" expired-time="2013-06-19 15:08:56">
+            <return-time>2013-05-20 15:09:45</return-time>
+         </borrow>
       </borrow-history>
    </book>
    <book id="106" isbn="9784072341274" created-date="2013-01-15 18:14:00">
@@ -116,6 +122,9 @@
             <return-time>2013-01-23 18:14:00</return-time>
          </borrow>
          <borrow status="borrowing" borrower="peng.hu@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00">
+         </borrow>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-20 13:55:51" expired-time="2013-06-19 13:55:51">
+            <return-time>2013-05-20 13:56:29</return-time>
          </borrow>
       </borrow-history>
    </book>

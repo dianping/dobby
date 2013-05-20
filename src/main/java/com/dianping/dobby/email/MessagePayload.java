@@ -17,15 +17,17 @@ public class MessagePayload {
 
 	private String[] m_commandParams;
 
+	private String m_messageId;
+	
 	public String getCommand() {
 		return m_command;
 	}
 
-	public String[] getCommandParams() {
+   public String[] getCommandParams() {
 		return m_commandParams;
 	}
 
-	public String getComment() {
+   public String getComment() {
 		return m_comment;
 	}
 
@@ -36,6 +38,10 @@ public class MessagePayload {
 	public String getId() {
 		return m_id;
 	}
+
+	public String getMessageId() {
+      return m_messageId;
+   }
 
 	public int getNum() {
 		return num;
@@ -64,6 +70,10 @@ public class MessagePayload {
 	public void setId(String id) {
 		m_id = id;
 	}
+
+	public void setMessageId(String messageId) {
+      m_messageId = messageId;
+   }
 
 	public void setNum(int num) {
 		this.num = num;

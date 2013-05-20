@@ -9,6 +9,7 @@
 
 <table rules="all" border="1" >
 	<tr>
+		<td>借书指令</td>
 		<td>编号</td>
 		<td>书名</td>
 		<td>ISBN</td>
@@ -18,6 +19,7 @@
 	</tr>
 	<#list books as item>
 		<tr>
+			<th>@@borrow ${item.id}</th>
 			<td>${item.id}</td>
 			<td>${item.title}</td>
 			<td>${item.isbn}</td>
