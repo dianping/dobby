@@ -11,6 +11,8 @@ public interface BookManager {
    public BookModel getModel();
 
    public void save(Book book);
+   
+   public void rmBook(String id);
 
    public Collection<Book> findAllBooks();
 }

@@ -87,6 +87,10 @@ public class BookCommandTest extends ComponentTestCase {
       public BookModel getModel() {
          return m_model;
       }
+
+		@Override
+      public void rmBook(String id) {
+      }
    }
 
    public static class MockBookMessageHandler extends BookMessageHandler {

@@ -61,4 +61,13 @@ public class DefaultBookManager implements BookManager, Initializable {
    public BookModel getModel() {
 	   return m_model;
    }
+
+	@Override
+   public synchronized void rmBook(String id) {
+		try{
+			m_model.getBooks().remove(id);
+		}catch(Exception e){
+         Cat.logError(e);
+		}
+   }
 }
