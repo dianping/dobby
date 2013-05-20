@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <model>
    <book id="101" isbn="9784072344071" created-date="2013-01-15 18:14:00">
-      <title>21年精通Java</title>
+      <title>21年快速精通Java</title>
       <description>本书深入浅出指导Java菜鸟的成神之路</description>
       <author>老吴</author>
       <press>点评大学出版社</press>
@@ -13,6 +13,16 @@
             <return-time>2013-01-23 18:14:00</return-time>
          </borrow>
          <borrow status="borrowing" borrower="yiz.zhang@dianping.com" borrow-time="2013-01-19 18:14:00" expired-time="2013-02-18 18:14:00">
+         </borrow>
+         <borrow status="borrowing" borrower="yong.you@dianping.com" borrow-time="2013-05-18 10:21:36" expired-time="2013-06-17 10:21:36">
+         </borrow>
+         <borrow status="borrowing" borrower="yong.you1@dianping.com" borrow-time="2013-05-18 10:22:23" expired-time="2013-06-17 10:22:23">
+         </borrow>
+         <borrow status="borrowing" borrower="yong.you2@dianping.com" borrow-time="2013-05-18 10:23:45" expired-time="2013-06-17 10:23:45">
+         </borrow>
+         <borrow status="borrowing" borrower="yong.you3@dianping.com" borrow-time="2013-05-18 10:23:45" expired-time="2013-06-17 10:23:45">
+         </borrow>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-18 11:23:18" expired-time="2013-06-17 11:23:18">
          </borrow>
          <borrow status="returned" borrower="yong.you@dianping.com" borrow-time="2013-05-18 10:21:36" expired-time="2013-06-17 10:21:36">
             <return-time>2013-05-19 08:51:25</return-time>
@@ -128,8 +138,147 @@
          </borrow>
       </borrow-history>
    </book>
-   <book>
-      <total>0</total>
-      <remaining>0</remaining>
+   <book id="1001" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>Java编程思想</title>
+      <description>本书是Java的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="yu.zhou@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-07-30 00:00:00">
+         </borrow>
+         <borrow status="returned" borrower="wengwei.li@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-10 00:00:00">
+            <return-time>2011-05-09 00:00:00</return-time>
+         </borrow>
+         <borrow status="borrowing" borrower="yixing.jiang@dianping.com" borrow-time="2011-04-23 00:00:00" expired-time="2011-05-15 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1002" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>Java技术内幕</title>
+      <description>本书是Java的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="returned" borrower="minghao.ji@dianping.com" borrow-time="2011-05-03 00:00:00" expired-time="2011-06-01 00:00:00">
+            <return-time>2011-06-30 00:00:00</return-time>
+         </borrow>
+         <borrow status="returned" borrower="libei.wang@dianping.com" borrow-time="2011-06-22 00:00:00" expired-time="2011-07-01 00:00:00">
+            <return-time>2011-06-24 00:00:00</return-time>
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1003" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>编程之美</title>
+      <description>本书是Java的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="liang.liu@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-12-20 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1004" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>Maven实战</title>
+      <description>本书是Java的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="jie.he@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-11-25 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1005" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>HeadFirst设计模式</title>
+      <description>本书一本设计模式的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="wenjing.wang@dianping.com" borrow-time="2011-09-27 00:00:00" expired-time="2011-11-27 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1006" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>Android开发入门教程</title>
+      <description>本书一本设计模式的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="haoming.ji@dianping.com" borrow-time="2011-05-18 00:00:00" expired-time="2011-07-01 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1007" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>敏捷软件开发</title>
+      <description>本书一本设计模式的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="mingxing.ma@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-15 00:00:00">
+         </borrow>
+         <borrow status="borrowing" borrower="yan.liu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-08-08 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1008" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>深入理解计算机系统</title>
+      <description>本书一本设计模式的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="xxx@dianping.com" borrow-time="2011-06-15 00:00:00" expired-time="2011-07-25 00:00:00">
+         </borrow>
+         <borrow status="borrowing" borrower="yutao.hou@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-11-30 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1009" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>Spring攻略</title>
+      <description>本书一本设计模式的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="yixing.jiang@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-06-01 00:00:00">
+         </borrow>
+      </borrow-history>
+   </book>
+   <book id="1010" isbn="9784072344072" created-date="3913-02-15 18:14:15">
+      <title>Java解惑</title>
+      <description>本书是Java的经典读物</description>
+      <author>abc</author>
+      <press>点评大学出版社</press>
+      <category>技术</category>
+      <total>2</total>
+      <remaining>1</remaining>
+      <borrow-history>
+         <borrow status="borrowing" borrower="xing.yang@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-11-30 00:00:00">
+         </borrow>
+      </borrow-history>
    </book>
 </model>

@@ -50,6 +50,7 @@ public class DefaultBookManager implements BookManager, Initializable {
    @Override
    public synchronized void save(Book book) {
       try {
+      	m_model.addBook(book);
          Files.forIO().writeTo(m_modelFile, m_model.toString());
       } catch (IOException e) {
          Cat.logError(e);

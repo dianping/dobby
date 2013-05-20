@@ -9,6 +9,11 @@
 	<packaging>war</packaging>
 	<dependencies>
 		<dependency>
+			<groupId>com.dianping.cat</groupId>
+			<artifactId>cat-core</artifactId>
+			<version>0.6.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.unidal.framework</groupId>
 			<artifactId>web-framework</artifactId>
 			<version>2.0.2</version>
@@ -72,6 +77,11 @@
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
 		</dependency>
 	</dependencies>
 	<build>
