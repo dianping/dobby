@@ -49,7 +49,8 @@ public enum BookCommand implements Command<BookCommandContext> {
          book.addBorrow(new Borrow().setBorrower(by).setStatus("borrowing") //
                .setBorrowTime(new Date()).setExpiredTime(new Date(System.currentTimeMillis() + 30 * DAY)));
 
-         manager.save(book);
+         manager.getModel().addBook(book);
+         manager.save();
 
          ctx.notify(BookMessageId.BORROW_SUCCESSFUL, book);
       }
@@ -82,7 +83,8 @@ public enum BookCommand implements Command<BookCommandContext> {
          book.incRemaining(1);
          borrow.setReturnTime(new Date()).setStatus("returned");
 
-         manager.save(book);
+         manager.getModel().addBook(book);
+         manager.save();
          ctx.notify(BookMessageId.RETURN_SUCCESSFUL, book);
       }
    };

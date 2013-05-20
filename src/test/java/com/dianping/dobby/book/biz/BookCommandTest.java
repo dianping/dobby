@@ -91,7 +91,7 @@ public class BookCommandTest extends ComponentTestCase {
       }
 
       @Override
-      public void save(Book book) {
+      public void save() {
       }
    }
 

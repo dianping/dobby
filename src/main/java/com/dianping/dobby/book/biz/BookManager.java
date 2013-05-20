@@ -10,7 +10,7 @@ public interface BookManager {
 
    public BookModel getModel();
 
-   public void save(Book book);
+   public void save();
 
    public List<Book> findAllAvaliableBooks();
 

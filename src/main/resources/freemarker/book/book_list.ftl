@@ -20,12 +20,12 @@
 	</tr>
 	<#list borrowed as item>
 		<tr>
-			<th>@@return ${item.id}</th>
+			<td>@@return ${item.id}</td>
 			<td>${item.id}</td>
 			<td>${item.title}</td>
-			<td>${item.isbn}</td>
-			<td>${item.author}</td>
-			<td>${item.press}</td>
+			<td>${item.isbn?default("")}</td>
+			<td>${item.author?default("")}</td>
+			<td>${item.press?default("")}</td>
 			<td>${item.remaining}</td>
 		</tr>
 	</#list>
@@ -46,12 +46,12 @@
 	</tr>
 	<#list all as item>
 		<tr>
-			<th>@@borrow ${item.id}</th>
+			<td>@@borrow ${item.id}</td>
 			<td>${item.id}</td>
 			<td>${item.title}</td>
-			<td>${item.isbn}</td>
-			<td>${item.author}</td>
-			<td>${item.press}</td>
+			<td>${item.isbn?default("")}</td>
+			<td>${item.author?default("")}</td>
+			<td>${item.press?default("")}</td>
 			<td>${item.remaining}</td>
 		</tr>
 	</#list>

@@ -49,7 +49,7 @@ public class BookMessageHandler implements MessageHandler, LogEnabled, DobbyCons
       BookCommand cmd = BookCommand.getByName(payload.getCommand(), BookCommand.HELP);
       BookCommandContext ctx = new BookCommandContext(this, payload);
 
-      log(String.format("Handle BookCommand: %s, context: %s.", cmd, ctx));
+      log(String.format("Received command: %s from %s.", cmd, payload.getFrom()));
 
       cmd.execute(ctx);
    }

@@ -51,8 +51,6 @@ public class BookCommandContext implements CommandContext {
 
    @SuppressWarnings("unchecked")
    public void notify(BookMessageId id, Object... args) {
-      m_handler.log(String.format("Notify BookMessageId: %s.", id));
-
       switch (id) {
       case BOOK_NOT_FOUND:
          m_handler.onBookNotFound(m_payload, (String) args[0]);
@@ -78,6 +76,10 @@ public class BookCommandContext implements CommandContext {
       case SHOW_ALL_AVAILABLE_BOOK_LIST:
          m_handler.onShowAllAvailableBookList(m_payload, (List<Book>) args[0], (List<Book>) args[1]);
          break;
+      default:
+         throw new UnsupportedOperationException(id.toString());
       }
+
+      m_handler.log(String.format("Action taken: %s.", id));
    }
 }

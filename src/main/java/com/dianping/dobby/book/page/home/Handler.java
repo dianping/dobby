@@ -33,17 +33,17 @@ public class Handler implements PageHandler<Context> {
 	@OutboundActionMeta(name = "home")
 	public void handleOutbound(Context ctx) throws ServletException, IOException {
 		Model model = new Model(ctx);
-		BookModel books = m_manager.getModel();
+		BookModel bookModel = m_manager.getModel();
 
 		String id = ctx.getPayload().getId();
 		
 		if (id != null) {
-			Book book = books.findBook(id);
-			books = new BookModel();
-			books.addBook(book);
+			Book book = bookModel.findBook(id);
+			bookModel = new BookModel();
+			bookModel.addBook(book);
 		}
 
-		model.setBooks(books.getBooks());
+		model.setBooks(bookModel.getBooks());
 		model.setAction(Action.VIEW);
 		model.setPage(BookPage.HOME);
 		m_jspViewer.view(ctx, model);
