@@ -24,7 +24,7 @@ public class DefaultBookManager implements BookManager, Initializable {
    }
 
    @Override
-   public Book findBookById(int id) {
+   public Book findBookById(String id) {
       return m_model.findBook(id);
    }
 

@@ -35,8 +35,9 @@ public class Handler implements PageHandler<Context> {
 		Model model = new Model(ctx);
 		BookModel books = m_manager.getModel();
 
-		int id = ctx.getPayload().getId();
-		if (id != 0) {
+		String id = ctx.getPayload().getId();
+		
+		if (id != null) {
 			Book book = books.findBook(id);
 			books = new BookModel();
 			books.addBook(book);

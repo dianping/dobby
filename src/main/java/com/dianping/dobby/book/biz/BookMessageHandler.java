@@ -71,7 +71,7 @@ public class BookMessageHandler implements MessageHandler, LogEnabled, DobbyCons
       sendNewEmail(payload, subject, htmlContent);
    }
 
-   public void onBookNotFound(MessagePayload payload, int bookId) {
+   public void onBookNotFound(MessagePayload payload, String bookId) {
       String htmlContent = m_view.render("book/book_not_found.ftl", "bookId", bookId);
 
       sendReplyEmail(payload, htmlContent);

@@ -12,7 +12,7 @@ public class Payload implements ActionPayload<BookPage, Action> {
 	private Action m_action;
 
 	@FieldMeta("id")
-	private int m_id;
+	private String m_id;
 
 	public void setAction(String action) {
 		m_action = Action.getByName(action, Action.VIEW);
@@ -28,11 +28,11 @@ public class Payload implements ActionPayload<BookPage, Action> {
 		return m_page;
 	}
 
-	public int getId() {
+	public String getId() {
 		return m_id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		m_id = id;
 	}
 

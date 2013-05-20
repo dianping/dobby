@@ -4,7 +4,7 @@
     <entity-ref name="book" type="list" names="books" />
   </entity>
   <entity name="book">
-    <attribute name="id" value-type="int" />
+    <attribute name="id" value-type="String" />
     <attribute name="isbn" value-type="String" />
     <attribute name="created-date" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
     <element name="title" value-type="String" />
@@ -17,6 +17,7 @@
     <entity-ref name="borrow" type="list" names="borrow-history" xml-indent="true" />
   </entity>
   <entity name="borrow">
+    <attribute name="id" value-type="int" />
     <attribute name="status" value-type="String" />
     <attribute name="borrower" value-type="String" />
     <attribute name="borrow-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />

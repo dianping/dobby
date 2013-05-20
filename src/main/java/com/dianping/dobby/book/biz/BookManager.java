@@ -6,7 +6,7 @@ import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.book.model.entity.BookModel;
 
 public interface BookManager {
-   public Book findBookById(int id);
+   public Book findBookById(String id);
 
    public BookModel getModel();
 

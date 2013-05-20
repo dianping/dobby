@@ -4,7 +4,7 @@
       <entity-ref name="book" type="map" names="books" />
    </entity>
    <entity name="book">
-      <attribute name="id" value-type="int" key="true" />
+      <attribute name="id" key="true" />
       <element name="total" value-type="int" primitive="true" />
       <element name="remaining" value-type="int" primitive="true" method-inc="true" />
       <entity-ref name="borrow" type="list" names="borrow-history" xml-indent="true" />

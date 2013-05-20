@@ -9,7 +9,7 @@ import com.dianping.dobby.book.model.entity.Book;
 
 public class Model extends ViewModel<BookPage, Action, Context> {
 
-	private Map<Integer, Book> m_books;
+	private Map<String, Book> m_books;
 
 	public Model(Context ctx) {
 		super(ctx);
@@ -20,11 +20,11 @@ public class Model extends ViewModel<BookPage, Action, Context> {
 		return Action.VIEW;
 	}
 
-	public Map<Integer, Book> getBooks() {
+	public Map<String, Book> getBooks() {
 		return m_books;
 	}
 
-	public void setBooks(Map<Integer, Book> books) {
+	public void setBooks(Map<String, Book> books) {
 		m_books = books;
 	}
 }

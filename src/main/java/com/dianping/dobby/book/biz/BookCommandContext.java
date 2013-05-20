@@ -55,7 +55,7 @@ public class BookCommandContext implements CommandContext {
 
       switch (id) {
       case BOOK_NOT_FOUND:
-         m_handler.onBookNotFound(m_payload, (Integer) args[0]);
+         m_handler.onBookNotFound(m_payload, (String) args[0]);
          break;
       case BORROW_SAME_BOOK_ALREADY_BORROWED:
          m_handler.onBookAlreadyBorrowed(m_payload, (Book) args[0]);

@@ -63,7 +63,7 @@ public class BookCommandTest extends ComponentTestCase {
       }
 
       @Override
-      public Book findBookById(int id) {
+      public Book findBookById(String id) {
          return m_model.findBook(id);
       }
 
@@ -101,7 +101,7 @@ public class BookCommandTest extends ComponentTestCase {
       }
 
       @Override
-      public void onBookNotFound(MessagePayload payload, int bookId) {
+      public void onBookNotFound(MessagePayload payload, String bookId) {
          s_sb.append("onBookNotFound");
       }
 
