@@ -65,7 +65,7 @@ public class DataImporterTest {
          manager.save(book);
       }
 
-      for (Book bk : manager.findAllBooks()) {
+      for (Book bk : manager.findAllAvaliableBooks()) {
          System.out.println(bk);
       }
    }

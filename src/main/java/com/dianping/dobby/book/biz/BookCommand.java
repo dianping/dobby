@@ -1,8 +1,7 @@
 package com.dianping.dobby.book.biz;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.book.model.entity.Borrow;
@@ -14,16 +13,10 @@ public enum BookCommand implements Command<BookCommandContext> {
       @Override
       public void execute(BookCommandContext ctx) throws CommandException {
          BookManager manager = ctx.getManager();
-         Collection<Book> books = manager.findAllBooks();
-         Collection<Book> availableBooks = new ArrayList<Book>();
+         List<Book> availableBooks = manager.findAllAvaliableBooks();
+         List<Book> borrowedBooks = manager.findAllBorrowedBooksBy(ctx.getFrom());
 
-         for (Book book : books) {
-            if (book.getRemaining() > 0) {
-               availableBooks.add(book);
-            }
-         }
-
-         ctx.notify(BookMessageId.SHOW_ALL_AVAILABLE_BOOK_LIST, availableBooks);
+         ctx.notify(BookMessageId.SHOW_ALL_AVAILABLE_BOOK_LIST, availableBooks, borrowedBooks);
       }
    },
 

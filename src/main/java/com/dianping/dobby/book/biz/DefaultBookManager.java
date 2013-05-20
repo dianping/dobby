@@ -2,7 +2,8 @@ package com.dianping.dobby.book.biz;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
@@ -11,17 +12,13 @@ import org.unidal.helper.Files;
 import com.dianping.cat.Cat;
 import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.book.model.entity.BookModel;
+import com.dianping.dobby.book.model.entity.Borrow;
 import com.dianping.dobby.book.model.transform.DefaultSaxParser;
 
 public class DefaultBookManager implements BookManager, Initializable {
    private File m_modelFile;
 
    private BookModel m_model;
-
-   @Override
-   public Collection<Book> findAllBooks() {
-      return m_model.getBooks().values();
-   }
 
    @Override
    public Book findBookById(String id) {
@@ -50,15 +47,43 @@ public class DefaultBookManager implements BookManager, Initializable {
    @Override
    public synchronized void save(Book book) {
       try {
-      	m_model.addBook(book);
+         m_model.addBook(book);
          Files.forIO().writeTo(m_modelFile, m_model.toString());
       } catch (IOException e) {
          Cat.logError(e);
       }
    }
 
-	@Override
+   @Override
    public BookModel getModel() {
-	   return m_model;
+      return m_model;
+   }
+
+   @Override
+   public List<Book> findAllAvaliableBooks() {
+      List<Book> books = new ArrayList<Book>();
+
+      for (Book book : m_model.getBooks().values()) {
+         if (book.getRemaining() > 0) {
+            books.add(book);
+         }
+      }
+
+      return books;
+   }
+
+   @Override
+   public List<Book> findAllBorrowedBooksBy(String borrower) {
+      List<Book> books = new ArrayList<Book>();
+
+      for (Book book : m_model.getBooks().values()) {
+         for (Borrow borrow : book.getBorrowHistory()) {
+            if (borrow.getReturnTime() == null && borrow.getBorrower().equals(borrower)) {
+               books.add(book);
+            }
+         }
+      }
+
+      return books;
    }
 }

@@ -1,6 +1,6 @@
 package com.dianping.dobby.book.biz;
 
-import java.util.Collection;
+import java.util.List;
 
 import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.command.CommandContext;
@@ -76,7 +76,7 @@ public class BookCommandContext implements CommandContext {
          m_handler.onBookReturnSuccessful(m_payload, (Book) args[0]);
          break;
       case SHOW_ALL_AVAILABLE_BOOK_LIST:
-         m_handler.onShowAllAvailableBookList(m_payload, (Collection<Book>) args[0]);
+         m_handler.onShowAllAvailableBookList(m_payload, (List<Book>) args[0], (List<Book>) args[1]);
          break;
       }
    }

@@ -1,7 +1,8 @@
 package com.dianping.dobby.book.biz;
 
 import java.io.InputStream;
-import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import junit.framework.Assert;
 
@@ -35,11 +36,6 @@ public class BookCommandTest extends ComponentTestCase {
    }
 
    @Test
-   public void testHelp() throws Exception {
-      check("help", "qimin.wu@dianping.com", "onShowAllAvailableBookList");
-   }
-
-   @Test
    public void testBorrowAndReturn() throws Exception {
       check("borrow", "yong.you@dianping.com", "onBookBorrowSuccessful", "101");
       check("borrow", "yong.you@dianping.com", "onBookAlreadyBorrowed", "101");
@@ -54,17 +50,32 @@ public class BookCommandTest extends ComponentTestCase {
       check("borrow", "hao.zhu@dianping.com", "onBookBorrowSuccessful", "101");
    }
 
+   @Test
+   public void testHelp() throws Exception {
+      check("help", "qimin.wu@dianping.com", "onShowAllAvailableBookList");
+   }
+
    public static class MockBookManager implements BookManager, Initializable {
       private BookModel m_model;
 
       @Override
-      public Collection<Book> findAllBooks() {
-         return m_model.getBooks().values();
+      public List<Book> findAllAvaliableBooks() {
+         return Collections.emptyList();
+      }
+
+      @Override
+      public List<Book> findAllBorrowedBooksBy(String borrower) {
+         return Collections.emptyList();
       }
 
       @Override
       public Book findBookById(String id) {
          return m_model.findBook(id);
+      }
+
+      @Override
+      public BookModel getModel() {
+         return m_model;
       }
 
       @Override
@@ -81,11 +92,6 @@ public class BookCommandTest extends ComponentTestCase {
 
       @Override
       public void save(Book book) {
-      }
-
-      @Override
-      public BookModel getModel() {
-         return m_model;
       }
    }
 
@@ -106,13 +112,13 @@ public class BookCommandTest extends ComponentTestCase {
       }
 
       @Override
-      public void onNoBookToBorrow(MessagePayload payload, Book book) {
-         s_sb.append("onNoBookToBorrow");
+      public void onBookReturnSuccessful(MessagePayload payload, Book book) {
+         s_sb.append("onBookReturnSuccessful");
       }
 
       @Override
-      public void onBookReturnSuccessful(MessagePayload payload, Book book) {
-         s_sb.append("onBookReturnSuccessful");
+      public void onNoBookToBorrow(MessagePayload payload, Book book) {
+         s_sb.append("onNoBookToBorrow");
       }
 
       @Override
@@ -126,7 +132,7 @@ public class BookCommandTest extends ComponentTestCase {
       }
 
       @Override
-      public void onShowAllAvailableBookList(MessagePayload payload, Collection<Book> availableBooks) {
+      public void onShowAllAvailableBookList(MessagePayload payload, List<Book> all, List<Book> borrowed) {
          s_sb.append("onShowAllAvailableBookList");
       }
    }

@@ -1,6 +1,6 @@
 package com.dianping.dobby.book.biz;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.mail.internet.InternetAddress;
 
@@ -101,8 +101,8 @@ public class BookMessageHandler implements MessageHandler, LogEnabled, DobbyCons
       sendReplyEmail(payload, htmlContent);
    }
 
-   public void onShowAllAvailableBookList(MessagePayload payload, Collection<Book> books) {
-      String htmlContent = m_view.render("book/book_list.ftl", "books", books);
+   public void onShowAllAvailableBookList(MessagePayload payload, List<Book> all, List<Book> borrowed) {
+      String htmlContent = m_view.render("book/book_list.ftl", "all", all, "borrowed", borrowed);
 
       sendReplyEmail(payload, htmlContent);
    }

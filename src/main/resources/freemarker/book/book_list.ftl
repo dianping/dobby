@@ -8,16 +8,43 @@
 <hr>
 
 <table rules="all" border="1" >
+	<caption>你已借的图书</caption>
 	<tr>
-		<td>借书指令</td>
-		<td>编号</td>
-		<td>书名</td>
-		<td>ISBN</td>
-		<td>作者</td>
-		<td>出版社</td>
-		<td>剩余数量</td>
+		<th>还书指令</th>
+		<th>编号</th>
+		<th>书名</th>
+		<th>ISBN</th>
+		<th>作者</th>
+		<th>出版社</th>
+		<th>剩余数量</th>
 	</tr>
-	<#list books as item>
+	<#list borrowed as item>
+		<tr>
+			<th>@@return ${item.id}</th>
+			<td>${item.id}</td>
+			<td>${item.title}</td>
+			<td>${item.isbn}</td>
+			<td>${item.author}</td>
+			<td>${item.press}</td>
+			<td>${item.remaining}</td>
+		</tr>
+	</#list>
+</table>
+
+<hr>
+
+<table rules="all" border="1" >
+	<caption>所有可借的图书</caption>
+	<tr>
+		<th>借书指令</th>
+		<th>编号</th>
+		<th>书名</th>
+		<th>ISBN</th>
+		<th>作者</th>
+		<th>出版社</th>
+		<th>剩余数量</th>
+	</tr>
+	<#list all as item>
 		<tr>
 			<th>@@borrow ${item.id}</th>
 			<td>${item.id}</td>
