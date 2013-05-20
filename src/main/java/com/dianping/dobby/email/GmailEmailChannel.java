@@ -42,6 +42,9 @@ public class GmailEmailChannel implements EmailChannel, Initializable {
    @Inject
    private String m_password;
 
+   @Inject
+   private int m_checkInterval = 10; // 10 seconds
+
    private Authenticator m_authenticator;
 
    private Store m_store;
@@ -247,6 +250,10 @@ public class GmailEmailChannel implements EmailChannel, Initializable {
       email.send();
    }
 
+   public void setCheckInterval(int checkInterval) {
+      m_checkInterval = checkInterval;
+   }
+
    public void setName(String name) {
       m_name = name;
    }
@@ -270,10 +277,12 @@ public class GmailEmailChannel implements EmailChannel, Initializable {
                // ignore it
             }
 
-            try {
-               TimeUnit.SECONDS.sleep(10); // every 10 seconds
-            } catch (InterruptedException e) {
-               break;
+            if (m_checkInterval > 0) {
+               try {
+                  TimeUnit.SECONDS.sleep(m_checkInterval);
+               } catch (InterruptedException e) {
+                  break;
+               }
             }
          }
       }

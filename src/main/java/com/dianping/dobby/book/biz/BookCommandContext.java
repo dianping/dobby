@@ -49,6 +49,7 @@ public class BookCommandContext implements CommandContext {
       return m_payload;
    }
 
+   @SuppressWarnings("unchecked")
    public void notify(BookMessageId id, Object... args) {
       switch (id) {
       case BOOK_NOT_FOUND:

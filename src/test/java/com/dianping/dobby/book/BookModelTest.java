@@ -16,6 +16,5 @@ public class BookModelTest {
 		BookModel model = DefaultSaxParser.parse(xml);
 		
 		System.out.println(model);
-
 	}
 }

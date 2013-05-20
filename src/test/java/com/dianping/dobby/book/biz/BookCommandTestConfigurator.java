@@ -7,28 +7,28 @@ import org.unidal.lookup.configuration.AbstractResourceConfigurator;
 import org.unidal.lookup.configuration.Component;
 
 import com.dianping.dobby.DobbyConstants;
+import com.dianping.dobby.book.biz.BookCommandTest.MockBookManager;
 import com.dianping.dobby.book.biz.BookCommandTest.MockBookMessageHandler;
-import com.dianping.dobby.email.EmailChannel;
 import com.dianping.dobby.email.MessageHandler;
-import com.dianping.dobby.view.FreeMarkerView;
 
 public class BookCommandTestConfigurator extends AbstractResourceConfigurator implements DobbyConstants {
-	@Override
-	public List<Component> defineComponents() {
-		List<Component> all = new ArrayList<Component>();
+   public static void main(String[] args) {
+      generatePlexusComponentsXmlFile(new BookCommandTestConfigurator());
+   }
 
-		all.add(C(MessageHandler.class, ID_BOOK, MockBookMessageHandler.class) //
-		      .req(BookManager.class, FreeMarkerView.class).req(EmailChannel.class, ID_BOOK));
+   @Override
+   public List<Component> defineComponents() {
+      List<Component> all = new ArrayList<Component>();
 
-		return all;
-	}
+      all.add(C(MessageHandler.class, ID_BOOK, MockBookMessageHandler.class) //
+            .req(BookManager.class));
+      all.add(C(BookManager.class, MockBookManager.class));
 
-	public static void main(String[] args) {
-		generatePlexusComponentsXmlFile(new BookCommandTestConfigurator());
-	}
+      return all;
+   }
 
-	@Override
-	protected Class<?> getTestClass() {
-		return BookCommandTest.class;
-	}
+   @Override
+   protected Class<?> getTestClass() {
+      return BookCommandTest.class;
+   }
 }

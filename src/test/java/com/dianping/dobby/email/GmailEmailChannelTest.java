@@ -3,12 +3,12 @@ package com.dianping.dobby.email;
 import javax.mail.internet.InternetAddress;
 
 import org.junit.Test;
+import org.unidal.helper.Files;
 import org.unidal.lookup.ComponentTestCase;
 
 import com.dianping.dobby.DobbyConstants;
-import com.site.helper.Files;
 
-public class GmailEmailServiceTest extends ComponentTestCase {
+public class GmailEmailChannelTest extends ComponentTestCase {
    @Test
    public void test() throws Exception {
       EmailChannel emailService = lookup(EmailChannel.class, DobbyConstants.ID_BOOK);

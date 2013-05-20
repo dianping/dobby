@@ -1,4 +1,4 @@
-package com.dianping.dobby.ticket;
+package com.dianping.dobby.ticket.biz;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.unidal.lookup.configuration.AbstractResourceConfigurator;
 import org.unidal.lookup.configuration.Component;
 
-import com.dianping.dobby.ticket.TicketProcessorTest.MockTicketManager;
 import com.dianping.dobby.ticket.biz.TicketManager;
+import com.dianping.dobby.ticket.biz.TicketProcessorTest.MockTicketManager;
 
 public class TicketProcessorTestConfigurator extends AbstractResourceConfigurator {
 	@Override
