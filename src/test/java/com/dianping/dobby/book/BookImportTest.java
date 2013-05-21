@@ -15,10 +15,10 @@ import com.dianping.dobby.book.biz.BookManager;
 import com.dianping.dobby.book.model.entity.Book;
 import com.dianping.dobby.book.model.entity.Borrow;
 
-public class DataImporterTest extends ComponentTestCase {
+public class BookImportTest extends ComponentTestCase {
 
    @Test
-   public void testImporter() throws Exception {
+   public void testImport() throws Exception {
       BookManager manager = lookup(BookManager.class);
       DateFormat format = new SimpleDateFormat("yyyy.MM.dd");
       List<String> lines = FileUtils.readLines(new File("src/test/resources/com/dianping/dobby/book/books.txt"));
