@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <web-app xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee">
+   <listener>
+      <listener-class>com.dianping.cat.servlet.CatListener</listener-class>
+   </listener>
+    <filter>
+        <filter-name>cat-filter</filter-name>
+        <filter-class>com.dianping.cat.servlet.CatFilter</filter-class>
+      <init-param>
+         <param-name>excludes</param-name>
+         <param-value>/css/*,/img/*,/js/*,*.jsp</param-value>
+      </init-param>
+    </filter>
+    <filter>
+      <filter-name>mvc-filter</filter-name>
+      <filter-class>org.unidal.web.MVCFilter</filter-class>
+      <init-param>
+         <param-name>excludes</param-name>
+         <param-value>/css/*,/img/*,/js/*,*.jsp</param-value>
+      </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>cat-filter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>mvc-filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+<!-- 
+
    <servlet>
       <servlet-name>mvc-servlet</servlet-name>
       <servlet-class>org.unidal.web.MVC</servlet-class>
@@ -16,5 +47,5 @@
    <servlet-mapping>
       <servlet-name>mvc-servlet</servlet-name>
       <url-pattern>/book/*</url-pattern>
-   </servlet-mapping>
+   </servlet-mapping> -->
 </web-app>

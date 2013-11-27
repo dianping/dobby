@@ -43,7 +43,7 @@ public class GmailEmailChannel implements EmailChannel, Initializable {
    private String m_password;
 
    @Inject
-   private int m_checkInterval = 10; // 10 seconds
+   private int m_checkInterval = 5; // 10 seconds
 
    private Authenticator m_authenticator;
 

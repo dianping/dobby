@@ -59,7 +59,12 @@ public class BookCommandTest extends ComponentTestCase {
       private BookModel m_model;
 
       @Override
-      public List<Book> findAllAvaliableBooks() {
+      public String buildCsv(boolean availableOnly) {
+         return null;
+      }
+
+      @Override
+      public List<Book> findAllBooks(boolean activeOnly) {
          return Collections.emptyList();
       }
 

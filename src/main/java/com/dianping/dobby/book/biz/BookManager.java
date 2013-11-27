@@ -8,11 +8,13 @@ import com.dianping.dobby.book.model.entity.BookModel;
 public interface BookManager {
    public Book findBookById(String id);
 
+   public List<Book> findAllBooks(boolean availableOnly);
+
+   public List<Book> findAllBorrowedBooksBy(String borrower);
+
    public BookModel getModel();
 
    public void save();
 
-   public List<Book> findAllAvaliableBooks();
-
-   public List<Book> findAllBorrowedBooksBy(String borrower);
+   public String buildCsv(boolean availableOnly);
 }

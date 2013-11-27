@@ -42,7 +42,7 @@ public class BookCommandContext implements CommandContext {
    }
 
    public BookManager getManager() {
-      return m_handler.getManager();
+      return m_handler.getBookManager();
    }
 
    public MessagePayload getPayload() {

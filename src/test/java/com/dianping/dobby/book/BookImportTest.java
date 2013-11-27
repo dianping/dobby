@@ -76,7 +76,7 @@ public class BookImportTest extends ComponentTestCase {
 
       manager.save();
 
-      for (Book bk : manager.findAllAvaliableBooks()) {
+      for (Book bk : manager.findAllBooks(true)) {
          System.out.println(bk);
       }
    }

@@ -13,7 +13,7 @@ public enum BookCommand implements Command<BookCommandContext> {
       @Override
       public void execute(BookCommandContext ctx) throws CommandException {
          BookManager manager = ctx.getManager();
-         List<Book> availableBooks = manager.findAllAvaliableBooks();
+         List<Book> availableBooks = manager.findAllBooks(true);
          List<Book> borrowedBooks = manager.findAllBorrowedBooksBy(ctx.getFrom());
 
          ctx.notify(BookMessageId.SHOW_ALL_AVAILABLE_BOOK_LIST, availableBooks, borrowedBooks);
@@ -60,7 +60,7 @@ public enum BookCommand implements Command<BookCommandContext> {
       @Override
       public void execute(BookCommandContext ctx) throws CommandException {
          BookManager manager = ctx.getManager();
-         String bookId = ctx.getArgString(0, ctx.getPayload().getId());
+         String bookId = ctx.getArgString(0, null);
          String by = ctx.getFrom();
          Book book = manager.findBookById(bookId);
 

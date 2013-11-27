@@ -1,26 +1,30 @@
 package com.dianping.dobby.book.page.home;
 
 public enum Action implements org.unidal.web.mvc.Action {
-	VIEW("view");
-	
-	private String m_name;
+   VIEW("view"),
 
-	private Action(String name) {
-		m_name = name;
-	}
+   EXPORT("export"),
 
-	public static Action getByName(String name, Action defaultAction) {
-		for (Action action : Action.values()) {
-			if (action.getName().equals(name)) {
-				return action;
-			}
-		}
+   IMPORT("import");
 
-		return defaultAction;
-	}
+   private String m_name;
 
-	@Override
-	public String getName() {
-		return m_name;
-	}
+   private Action(String name) {
+      m_name = name;
+   }
+
+   public static Action getByName(String name, Action defaultAction) {
+      for (Action action : Action.values()) {
+         if (action.getName().equals(name)) {
+            return action;
+         }
+      }
+
+      return defaultAction;
+   }
+
+   @Override
+   public String getName() {
+      return m_name;
+   }
 }

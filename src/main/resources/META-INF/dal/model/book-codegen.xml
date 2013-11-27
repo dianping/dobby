@@ -23,6 +23,7 @@
     <attribute name="borrow-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
     <attribute name="expired-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
     <element name="return-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
+    <element name="last-remind-time" value-type="Date" format="yyyy-MM-dd HH:mm:ss" />
   </entity>
 </model>
 

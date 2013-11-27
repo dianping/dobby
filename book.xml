@@ -6,14 +6,17 @@
       <total>10</total>
       <remaining>7</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="hao.zhu@dianping.com" borrow-time="2013-05-21 15:04:25" expired-time="2013-06-20 15:04:25">
+         </borrow>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 10:08:42" expired-time="2013-06-20 10:08:42">
+            <return-time>2013-05-21 16:13:59</return-time>
+         </borrow>
+         <borrow status="borrowing" borrower="yixing.jiang@dianping.com" borrow-time="2011-04-23 00:00:00" expired-time="2011-05-15 00:00:00">
+         </borrow>
          <borrow status="borrowing" borrower="yu.zhou@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-07-30 00:00:00">
          </borrow>
          <borrow status="returned" borrower="wengwei.li@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-10 00:00:00">
             <return-time>2011-05-09 00:00:00</return-time>
-         </borrow>
-         <borrow status="borrowing" borrower="yixing.jiang@dianping.com" borrow-time="2011-04-23 00:00:00" expired-time="2011-05-15 00:00:00">
-         </borrow>
-         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 10:08:42" expired-time="2013-06-20 10:08:42">
          </borrow>
       </borrow-history>
    </book>
@@ -23,23 +26,32 @@
       <total>10</total>
       <remaining>9</remaining>
       <borrow-history>
-         <borrow status="returned" borrower="minghao.ji@dianping.com" borrow-time="2011-05-03 00:00:00" expired-time="2011-06-01 00:00:00">
-            <return-time>2011-06-30 00:00:00</return-time>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:00:35" expired-time="2013-06-20 15:00:35">
+            <return-time>2013-05-21 15:01:42</return-time>
+         </borrow>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 14:20:59" expired-time="2013-06-20 14:20:59">
+            <return-time>2013-05-21 14:43:14</return-time>
+         </borrow>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-20 21:56:09" expired-time="2013-06-19 21:56:09">
+            <return-time>2013-05-20 22:03:55</return-time>
          </borrow>
          <borrow status="returned" borrower="libei.wang@dianping.com" borrow-time="2011-06-22 00:00:00" expired-time="2011-07-01 00:00:00">
             <return-time>2011-06-24 00:00:00</return-time>
          </borrow>
-         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-20 21:56:09" expired-time="2013-06-19 21:56:09">
-            <return-time>2013-05-20 22:03:55</return-time>
+         <borrow status="returned" borrower="minghao.ji@dianping.com" borrow-time="2011-05-03 00:00:00" expired-time="2011-06-01 00:00:00">
+            <return-time>2011-06-30 00:00:00</return-time>
          </borrow>
       </borrow-history>
    </book>
    <book id="C0044" created-date="2013-05-20 21:06:51">
       <title>编程之美</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:05:32" expired-time="2013-06-20 15:05:32">
+            <last-remind-time>2013-08-11 22:13:14</last-remind-time>
+         </borrow>
          <borrow status="borrowing" borrower="liang.liu@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-12-20 00:00:00">
          </borrow>
       </borrow-history>
@@ -47,9 +59,11 @@
    <book id="B0036" created-date="2013-05-20 21:06:51">
       <title>Maven实战</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="hao.zhu@dianping.com" borrow-time="2013-05-21 15:11:00" expired-time="2013-06-20 15:11:00">
+         </borrow>
          <borrow status="borrowing" borrower="jie.he@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-11-25 00:00:00">
          </borrow>
       </borrow-history>
@@ -57,9 +71,12 @@
    <book id="B0012" created-date="2013-05-20 21:06:51">
       <title>HeadFirst设计模式</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
+         <borrow status="returned" borrower="yaru.meng@dianping.com" borrow-time="2013-08-07 19:42:26" expired-time="2013-09-06 19:42:26">
+            <return-time>2013-08-07 19:45:54</return-time>
+         </borrow>
          <borrow status="borrowing" borrower="wenjing.wang@dianping.com" borrow-time="2011-09-27 00:00:00" expired-time="2011-11-27 00:00:00">
          </borrow>
       </borrow-history>
@@ -67,8 +84,8 @@
    <book id="A0022" created-date="2013-05-20 21:06:51">
       <title>Android开发入门教程</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="haoming.ji@dianping.com" borrow-time="2011-05-18 00:00:00" expired-time="2011-07-01 00:00:00">
          </borrow>
@@ -77,8 +94,8 @@
    <book id="B0013" created-date="2013-05-20 21:06:51">
       <title>敏捷软件开发</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="mingxing.ma@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-15 00:00:00">
          </borrow>
@@ -89,23 +106,25 @@
    <book id="B0035" created-date="2013-05-20 21:06:51">
       <title>深入理解计算机系统</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
-         <borrow status="borrowing" borrower="xxx@dianping.com" borrow-time="2011-06-15 00:00:00" expired-time="2011-07-25 00:00:00">
-         </borrow>
          <borrow status="borrowing" borrower="yutao.hou@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-11-30 00:00:00">
          </borrow>
          <borrow status="borrowing" borrower="yutao.hou@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2012-01-01 00:00:00">
+         </borrow>
+         <borrow status="borrowing" borrower="xxx@dianping.com" borrow-time="2011-06-15 00:00:00" expired-time="2011-07-25 00:00:00">
          </borrow>
       </borrow-history>
    </book>
    <book id="C0036" created-date="2013-05-20 21:06:51">
       <title>Spring攻略</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-08-07 17:19:07" expired-time="2013-09-06 17:19:07">
+         </borrow>
          <borrow status="borrowing" borrower="yixing.jiang@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-06-01 00:00:00">
          </borrow>
       </borrow-history>
@@ -113,8 +132,8 @@
    <book id="C0035" created-date="2013-05-20 21:06:51">
       <title>使用Java Web服务构建SOA</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="yu.zhou@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-07-30 00:00:00">
          </borrow>
@@ -123,9 +142,12 @@
    <book id="C0037" created-date="2013-05-20 21:06:51">
       <title>Java核心技术:高级特性</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:50:09" expired-time="2013-06-20 15:50:09">
+            <last-remind-time>2013-08-11 22:14:17</last-remind-time>
+         </borrow>
          <borrow status="borrowing" borrower="chen.chen@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-06-30 00:00:00">
          </borrow>
       </borrow-history>
@@ -133,8 +155,8 @@
    <book id="C0038" created-date="2013-05-20 21:06:51">
       <title>Javascript语言精粹</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="wenwei.li@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-10 00:00:00">
          </borrow>
@@ -143,8 +165,8 @@
    <book id="C0039" created-date="2013-05-20 21:06:51">
       <title>Java网络编程</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="feifeng.xu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-30 00:00:00">
          </borrow>
@@ -153,9 +175,15 @@
    <book id="C0040" created-date="2013-05-20 21:06:51">
       <title>ASP.NET 3.5 SPI高级编程</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:59:46" expired-time="2013-06-20 15:59:46">
+            <last-remind-time>2013-08-11 22:14:29</last-remind-time>
+         </borrow>
+         <borrow status="returned" borrower="hao.zhu@dianping.com" borrow-time="2013-05-21 14:56:53" expired-time="2013-06-20 14:56:53">
+            <return-time>2013-05-21 14:58:40</return-time>
+         </borrow>
          <borrow status="borrowing" borrower="zhanjun.niu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-06-01 00:00:00">
          </borrow>
       </borrow-history>
@@ -163,8 +191,8 @@
    <book id="C0041" created-date="2013-05-20 21:06:51">
       <title>Java Web开发详解</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="weixiu.huang@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-08 00:00:00">
          </borrow>
@@ -173,32 +201,38 @@
    <book id="C0042" created-date="2013-05-20 21:06:51">
       <title>RESTfull Web Service</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
-         <borrow status="borrowing" borrower="jiayi.xu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-04-22 00:00:00">
-         </borrow>
          <borrow status="borrowing" borrower="feifei.zhao@dianping.com" borrow-time="2011-07-18 00:00:00" expired-time="2011-07-31 00:00:00">
+         </borrow>
+         <borrow status="borrowing" borrower="jiayi.xu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-04-22 00:00:00">
          </borrow>
       </borrow-history>
    </book>
    <book id="C0033" created-date="2013-05-20 21:06:51">
       <title>重构-改善既有代码设计</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
-         <borrow status="borrowing" borrower="xing.yang@dianping.com" borrow-time="2011-04-27 00:00:00" expired-time="2011-05-30 00:00:00">
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-08-07 17:33:31" expired-time="2013-09-06 17:33:31">
+            <return-time>2013-08-07 17:36:39</return-time>
+         </borrow>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 14:54:10" expired-time="2013-06-20 14:54:10">
+            <return-time>2013-05-21 14:58:09</return-time>
          </borrow>
          <borrow status="borrowing" borrower="liang.liu@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-12-20 00:00:00">
+         </borrow>
+         <borrow status="borrowing" borrower="xing.yang@dianping.com" borrow-time="2011-04-27 00:00:00" expired-time="2011-05-30 00:00:00">
          </borrow>
       </borrow-history>
    </book>
    <book id="C0046" created-date="2013-05-20 21:06:51">
       <title>Java解惑</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="xing.yang@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-11-30 00:00:00">
          </borrow>
@@ -207,8 +241,8 @@
    <book id="C0014" created-date="2013-05-20 21:06:51">
       <title>C#本质</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="yixing.jiang@dianping.com" borrow-time="2011-05-12 00:00:00" expired-time="2011-07-01 00:00:00">
          </borrow>
@@ -217,8 +251,8 @@
    <book id="C0015" created-date="2013-05-20 21:06:51">
       <title>计算机程序的构造和解释</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="zhi.cun@dianping.com" borrow-time="2011-06-27 00:00:00" expired-time="2011-07-15 00:00:00">
          </borrow>
@@ -227,8 +261,8 @@
    <book id="C0016" created-date="2013-05-20 21:06:51">
       <title>WCF服务编程</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="xxx@dianping.com" borrow-time="2011-08-02 00:00:00" expired-time="2011-08-22 00:00:00">
          </borrow>
@@ -237,8 +271,8 @@
    <book id="C0045" created-date="2013-05-20 21:06:51">
       <title>分布式Java应用</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="xing.yang@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2011-11-30 00:00:00">
          </borrow>
@@ -247,8 +281,8 @@
    <book id="B0024" created-date="2013-05-20 21:06:51">
       <title>企业应用架构模式</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="mingxing.ma@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-05-14 00:00:00">
          </borrow>
@@ -257,9 +291,12 @@
    <book id="B0025" created-date="2013-05-20 21:06:51">
       <title>iPhone应用程序开发</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:28:32" expired-time="2013-06-20 15:28:32">
+            <last-remind-time>2013-08-11 22:14:55</last-remind-time>
+         </borrow>
          <borrow status="borrowing" borrower="hui.zhou@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2012-12-12 00:00:00">
          </borrow>
       </borrow-history>
@@ -267,9 +304,11 @@
    <book id="B0027" created-date="2013-05-20 21:06:51">
       <title>iPhone开发秘籍</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="hao.zhu@dianping.com" borrow-time="2013-05-21 15:07:05" expired-time="2013-06-20 15:07:05">
+         </borrow>
          <borrow status="borrowing" borrower="xinshu.zhou@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2012-12-12 00:00:00">
          </borrow>
       </borrow-history>
@@ -277,9 +316,12 @@
    <book id="B0028" created-date="2013-05-20 21:06:51">
       <title>Cocoa设计模式</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 16:49:41" expired-time="2013-06-20 16:49:41">
+            <last-remind-time>2013-08-11 22:15:04</last-remind-time>
+         </borrow>
          <borrow status="borrowing" borrower="hui.zhou@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2012-12-12 00:00:00">
          </borrow>
          <borrow status="borrowing" borrower="yanna.wu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2012-06-30 00:00:00">
@@ -289,8 +331,8 @@
    <book id="B0029" created-date="2013-05-20 21:06:51">
       <title>Linux内核开发实战指南</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="hui.zhou@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-12-30 00:00:00">
          </borrow>
@@ -299,9 +341,12 @@
    <book id="B0034" created-date="2013-05-20 21:06:51">
       <title>Hadoop权威指南</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 16:27:23" expired-time="2013-06-20 16:27:23">
+            <last-remind-time>2013-08-11 22:15:30</last-remind-time>
+         </borrow>
          <borrow status="borrowing" borrower="yix.zhang@dianping.com" borrow-time="2011-10-25 00:00:00" expired-time="2012-12-12 00:00:00">
          </borrow>
       </borrow-history>
@@ -309,8 +354,8 @@
    <book id="D0029" created-date="2013-05-20 21:06:51">
       <title>Don't make me think</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
          <borrow status="borrowing" borrower="jiayi.xu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-04-22 00:00:00">
          </borrow>
@@ -319,9 +364,12 @@
    <book id="C0022" created-date="2013-05-20 21:06:51">
       <title>PHP权威编程</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:45:06" expired-time="2013-06-20 15:45:06">
+            <last-remind-time>2013-08-11 22:15:43</last-remind-time>
+         </borrow>
          <borrow status="borrowing" borrower="chao.wang@dianping.com" borrow-time="2011-07-17 00:00:00" expired-time="2011-09-17 00:00:00">
          </borrow>
       </borrow-history>
@@ -329,9 +377,11 @@
    <book id="C0001" created-date="2013-05-20 21:06:51">
       <title>Struts实战</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="hao.zhu@dianping.com" borrow-time="2013-05-21 15:22:35" expired-time="2013-06-20 15:22:35">
+         </borrow>
          <borrow status="borrowing" borrower="cheng.yang@dianping.com" borrow-time="2011-06-28 00:00:00" expired-time="2011-07-30 00:00:00">
          </borrow>
       </borrow-history>
@@ -339,9 +389,12 @@
    <book id="D0025" created-date="2013-05-20 21:06:51">
       <title>我为什么看不懂你</title>
       <category>技术</category>
-      <total>1</total>
+      <total>2</total>
       <remaining>0</remaining>
       <borrow-history>
+         <borrow status="borrowing" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:13:55" expired-time="2013-06-20 15:13:55">
+            <last-remind-time>2013-08-11 22:16:08</last-remind-time>
+         </borrow>
          <borrow status="borrowing" borrower="junyi.zhao@dianping.com" borrow-time="2011-04-29 00:00:00" expired-time="2011-05-15 00:00:00">
          </borrow>
       </borrow-history>
@@ -349,9 +402,12 @@
    <book id="D0028" created-date="2013-05-20 21:06:51">
       <title>版本控制之道</title>
       <category>技术</category>
-      <total>1</total>
-      <remaining>0</remaining>
+      <total>2</total>
+      <remaining>1</remaining>
       <borrow-history>
+         <borrow status="returned" borrower="qimin.wu@dianping.com" borrow-time="2013-05-21 15:35:11" expired-time="2013-06-20 15:35:11">
+            <return-time>2013-05-21 15:37:24</return-time>
+         </borrow>
          <borrow status="borrowing" borrower="li.wu@dianping.com" borrow-time="2011-04-21 00:00:00" expired-time="2011-04-22 00:00:00">
          </borrow>
       </borrow-history>

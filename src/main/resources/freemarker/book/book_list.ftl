@@ -1,8 +1,8 @@
 <table rules="all" border="1" >
 	<tr><th>命令<th><th>格式</th><th>示例</th></tr>
 	<tr><td>帮助<td><td>@@help</td><td>@@help</td></tr>
-	<tr><td>借书<td><td>@@borrow &lt;id&gt;</td><td>@@borrow 101</td></tr>
-	<tr><td>还书<td><td>@@return &lt;id&gt;</td><td>@@return 101</td></tr>
+	<tr><td>借书<td><td>@@borrow &lt;id&gt;</td><td>@@borrow C0012</td></tr>
+	<tr><td>还书<td><td>@@return &lt;id&gt;</td><td>@@return C0012</td></tr>
 </table>
 
 <hr>

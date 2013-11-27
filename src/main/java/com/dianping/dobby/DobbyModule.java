@@ -5,8 +5,8 @@ import org.unidal.initialization.AbstractModule;
 import org.unidal.initialization.Module;
 import org.unidal.initialization.ModuleContext;
 
-import com.dianping.dobby.email.EmailDispatcher;
 import com.dianping.dobby.email.EmailChannel;
+import com.dianping.dobby.email.EmailDispatcher;
 
 public class DobbyModule extends AbstractModule implements DobbyConstants {
    public static final String ID = ID_DOBBY;
